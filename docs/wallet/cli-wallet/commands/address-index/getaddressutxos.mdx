@@ -1,0 +1,65 @@
+---
+sidebar_position: 3
+---
+import ReactPlayer from 'react-player'
+
+# getaddressutxos
+
+Returns all unspent outputs for an address (requires addressindex to be enabled).
+
+`raptoreum-cli getaddressutxos '{"addresses": ["XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg"]}'`
+
+<ReactPlayer playing controls url={[
+    {src: `${require('./assets/placeholder.webm').default}`, type: 'video/webm'}]} />
+
+
+## Arguments
+
+| Argument | Type | Description |
+|--|--|--|
+| "addresses" | (string) | (string) The base58check encoded address |
+| "start" | (number) | The start block height |
+| "end" | (number) | The end block height |
+
+```bash
+Arguments:
+{
+  "addresses"
+    [
+      "address"  (string) The base58check encoded address
+      ,...
+    ]
+}
+```
+
+## Output
+
+| Result | Type | Description |
+|--|--|--|
+| "transactionid" | (string) | The transaction id |
+| "txid" | (string) | The related txid |
+| "outputindex" | (number) | The output index |
+| "satoshis" | (number) | The number of duffs of the output |
+| "height" | (number) | The block height |
+
+```bash
+Result:
+[
+  {
+    "address"  (string) The address base58check encoded
+    "txid"  (string) The output txid
+    "outputIndex"  (number) The output index
+    "script"  (string) The script hex encoded
+    "satoshis"  (number) The number of duffs of the output
+    "height"  (number) The block height
+  }
+]
+```
+
+
+## Examples
+
+```bash
+curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getaddressutxos", "params": [{"addresses": ["XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg"]}] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+```
+

@@ -1,0 +1,68 @@
+---
+sidebar_position: 9
+---
+import ReactPlayer from 'react-player'
+
+# smartnodelist
+
+*smartnodelist ( "mode" "filter" )*
+
+Get a list of smartnodes in different modes. This call is identical to 'smartnode list' call.
+
+```bash
+# Available modes:
+  addr           - Print ip address associated with a smartnode (can be additionally filtered, partial match)
+  full           - Print info in format 'status payee lastpaidtime lastpaidblock IP'
+                   (can be additionally filtered, partial match)
+  info           - Print info in format 'status payee IP'
+                   (can be additionally filtered, partial match)
+  json           - Print info in JSON format (can be additionally filtered, partial match)
+  lastpaidblock  - Print the last block height a node was paid on the network
+  lastpaidtime   - Print the last time a node was paid on the network
+  owneraddress   - Print the smartnode owner Raptoreum address
+  payee          - Print the smartnode payout Raptoreum address (can be additionally filtered,
+                   partial match)
+  pubKeyOperator - Print the smartnode operator public key
+  status         - Print smartnode status: ENABLED / POSE_BANNED
+                   (can be additionally filtered, partial match)
+  votingaddress  - Print the smartnode voting Raptoreum address
+```
+
+`raptoreum-cli smartnodelist`
+
+<ReactPlayer playing controls url={[
+    {src: `${require('./assets/placeholder.webm').default}`, type: 'video/webm'}]} />
+
+## Arguments
+
+| Argument | Type | Description |
+|--|--|--|
+| "mode" | (string) | The mode to run list in |
+| "filter" | (string) | Filter results. Partial match by outpoint by default in all modes, additional matches in some modes are also available |
+
+```bash
+Arguments:
+1. "mode"      (string, optional/required to use filter, defaults = json) The mode to run list in
+2. "filter"    (string, optional) Filter results. Partial match by outpoint by default in all modes,
+                                    additional matches in some modes are also available
+```
+
+
+## Output
+
+| Result | Type | Description |
+|--|--|--|
+| ... | ... | ... |
+
+```bash
+Result:
+{
+}
+```
+
+## Examples
+
+```bash
+curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "smartnodelist", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+```
+

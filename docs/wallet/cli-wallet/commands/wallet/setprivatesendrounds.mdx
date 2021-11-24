@@ -1,0 +1,46 @@
+---
+sidebar_position: 46
+---
+import ReactPlayer from 'react-player'
+
+# setprivatesendrounds
+
+*setprivatesendrounds rounds*
+
+Set the number of rounds for PrivateSend mixing.
+
+`raptoreum-cli setprivatesendrounds 4`
+
+<ReactPlayer playing controls url={[
+    {src: `${require('./assets/setprivatesendrounds.webm').default}`, type: 'video/webm'}]} />
+
+## Arguments
+
+| Argument | Type | Description |
+|--|--|--|
+| amount | (numeric) | The default amount is 1000 Cannot be more than 21000000 nor less than 2 |
+
+```bash
+Arguments:
+1. rounds         (numeric, required) The default number of rounds is 4 Cannot be more than 16 nor less than 2
+```
+
+## Output
+
+| Result | Type | Description |
+|--|--|--|
+| ... | ... | ... |
+
+```bash
+Result:
+{
+  ...
+}
+```
+
+## Examples
+
+```bash
+curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "setprivatesendrounds", "params": [16] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+```
+

@@ -1,0 +1,38 @@
+---
+sidebar_position: 15
+---
+import ReactPlayer from 'react-player'
+
+# getmempoolinfo
+
+Returns details on the active state of the TX memory pool.
+
+`raptoreum-cli getmempoolinfo`
+
+<ReactPlayer playing controls url={[
+    {src: `${require('./assets/placeholder.webm').default}`, type: 'video/webm'}]} />
+
+## Output
+
+| Result | Type | Description |
+|--|--|--|
+| "size" | (numeric) | Current tx count |
+
+```bash
+Result:
+{
+  "size": xxxxx,               (numeric) Current tx count
+  "bytes": xxxxx,              (numeric) Sum of all tx sizes
+  "usage": xxxxx,              (numeric) Total memory usage for the mempool
+  "maxmempool": xxxxx,         (numeric) Maximum memory usage for the mempool
+  "mempoolminfee": xxxxx       (numeric) Minimum feerate (RTM per KB) for tx to be accepted
+  "instantsendlocks": xxxxx,   (numeric) Number of unconfirmed instant send locks
+}
+```
+
+
+## Examples
+
+```bash
+curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getmempoolinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+```

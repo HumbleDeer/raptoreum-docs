@@ -1,0 +1,46 @@
+---
+sidebar_position: 4
+---
+import ReactPlayer from 'react-player'
+
+# getsuperblockbudget
+
+*getsuperblockbudget index*
+
+Returns the absolute maximum sum of superblock payments allowed.
+
+`raptoreum-cli getsuperblockbudget 1000`
+
+<ReactPlayer playing controls url={[
+    {src: `${require('./assets/placeholder.webm').default}`, type: 'video/webm'}]} />
+
+
+## Arguments
+
+| Argument | Type | Description |
+|--|--|--|
+| index | (number) | The block index |
+
+```bash
+Arguments:
+1. index         (numeric, required) The block index
+```
+
+## Output
+
+| Result | Type | Description |
+|--|--|--|
+| n | (number) | The absolute maximum sum of superblock payments allowed, in RTM |
+
+```bash
+Result:
+n                (numeric) The absolute maximum sum of superblock payments allowed, in RTM
+```
+
+
+## Examples
+
+```bash
+curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getsuperblockbudget", "params": [1000] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+```
+

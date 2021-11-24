@@ -1,0 +1,59 @@
+---
+sidebar_position: 8
+---
+import ReactPlayer from 'react-player'
+
+# smartnode
+
+*smartnode "command" ...*
+
+Set of commands to execute smartnode related actions
+
+```bash
+# Available commands:
+  count        - Get information about number of smartnodes (DEPRECATED options: 'total', 'ps', 'enabled', 'qualify', 'all')
+  current      - Print info on current smartnode winner to be paid the next block (calculated locally)
+  outputs      - Print smartnode compatible outputs
+  status       - Print smartnode status information
+  list         - Print list of all known smartnodes (see smartnodelist for more info)
+  winner       - Print info on next smartnode winner to vote for
+  winners      - Print list of smartnode winners
+```
+
+`raptoreum-cli smartnode count`
+
+## Arguments
+
+| Argument | Type | Description |
+|--|--|--|
+| "command" | (string) | The command to execute |
+
+```bash
+Arguments:
+1. "command"        (string or set of strings, required) The command to execute
+```
+
+<ReactPlayer playing controls url={[
+    {src: `${require('./assets/placeholder.webm').default}`, type: 'video/webm'}]} />
+
+
+## Output
+
+| Result | Type | Description |
+|--|--|--|
+| ... | ... | ... |
+
+```bash
+Result:
+{
+  ...
+}
+```
+
+
+## Examples
+
+```bash
+curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "smartnode", "params": ["count"] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+```
+

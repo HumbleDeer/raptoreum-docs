@@ -1,0 +1,50 @@
+---
+sidebar_position: 10
+---
+import ReactPlayer from 'react-player'
+
+# getaccountaddress
+
+*getaccountaddress "account"*
+
+DEPRECATED. Returns the current Raptoreum address for receiving payments to this account.
+
+```bash
+raptoreum-cli getaccountaddress 
+raptoreum-cli getaccountaddress ""
+raptoreum-cli getaccountaddress "myaccount"
+```
+
+<ReactPlayer playing controls url={[
+    {src: `${require('./assets/getaccountaddress.webm').default}`, type: 'video/webm'}]} />
+
+
+## Arguments
+
+| Argument | Type | Description |
+|--|--|--|
+| "account" | (string) | The account name for the address. It can also be set to the empty string "" to represent the default account. The account does not need to exist, it will be created and a new address created  if there is no account by the given name.  |
+
+```bash
+Arguments:
+1. "account"       (string, required) The account name for the address. It can also be set to the empty string "" to represent the default account. The account does not need to exist, it will be created and a new address created  if there is no account by the given name.
+```
+
+## Output
+
+| Result | Type | Description |
+|--|--|--|
+| "address" | (string) | The account raptoreum address |
+
+```bash
+Result:
+"address"          (string) The account raptoreum address
+```
+
+
+## Examples
+
+```bash
+curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getaccount", "params": ["XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG"] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+```
+

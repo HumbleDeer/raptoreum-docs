@@ -1,0 +1,65 @@
+---
+sidebar_position: 3
+---
+import ReactPlayer from 'react-player'
+
+# getaddressmempool
+
+Returns all mempool deltas for an address (requires addressindex to be enabled).
+
+`raptoreum-cli getaddressmempool '{"addresses": ["XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg"]}'`
+
+<ReactPlayer playing controls url={[
+    {src: `${require('./assets/placeholder.webm').default}`, type: 'video/webm'}]} />
+
+
+## Arguments
+
+| Argument | Type | Description |
+|--|--|--|
+| "addresses" | (string) | (string) The base58check encoded address |
+
+```bash
+Arguments:
+{
+  "addresses"
+    [
+      "address"  (string) The base58check encoded address
+      ,...
+    ]
+}
+```
+
+## Output
+
+| Result | Type | Description |
+|--|--|--|
+| "address" | (string) | The base58check encoded address |
+| "txid" | (string) | The related txid |
+| "index" | (number) | The related input or output index |
+| "timestamp" | (number) | The time the transaction entered the mempool (seconds) |
+| "prevtxid" | (string) | The previous txid (if spending) |
+| "prevout" | (string) | The previous transaction output index (if spending) |
+
+```bash
+Result:
+[
+  {
+    "address"  (string) The base58check encoded address
+    "txid"  (string) The related txid
+    "index"  (number) The related input or output index
+    "satoshis"  (number) The difference of duffs
+    "timestamp"  (number) The time the transaction entered the mempool (seconds)
+    "prevtxid"  (string) The previous txid (if spending)
+    "prevout"  (string) The previous transaction output index (if spending)
+  }
+]
+```
+
+
+## Examples
+
+```bash
+curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getaddressmempool", "params": [{"addresses": ["XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg"]}] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+```
+

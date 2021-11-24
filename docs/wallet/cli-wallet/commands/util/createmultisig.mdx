@@ -1,0 +1,58 @@
+---
+sidebar_position: 1
+---
+import ReactPlayer from 'react-player'
+
+# createmultisig
+
+*createmultisig nrequired ["key",...]*
+
+Creates a multi-signature address with n signature of m keys required.
+It returns a json object with the address and redeemScript.
+
+```bash
+# Create a multisig address from 2 addresses
+raptoreum-cli createmultisig 2 "[\"Xt4qk9uKvQYAonVGSZNXqxeDmtjaEWgfrs\",\"XoSoWQkpgLpppPoyyzbUFh1fq2RBvW6UK1\"]"
+```
+
+<ReactPlayer playing controls url={[
+    {src: `${require('./assets/placeholder.webm').default}`, type: 'video/webm'}]} />
+
+
+## Arguments
+
+| Argument | Type | Description |
+|--|--|--|
+| "address" | (string) | The base58check encoded address |
+
+```bash
+Arguments:
+1. nrequired      (numeric, required) The number of required signatures out of the n keys or addresses.
+2. "keys"       (string, required) A json array of keys which are raptoreum addresses or hex-encoded public keys
+     [
+       "key"    (string) raptoreum address or hex-encoded public key
+       ,...
+     ]
+```
+
+## Output
+
+| Result | Type | Description |
+|--|--|--|
+| ... | ... | ... |
+
+```bash
+Result:
+{
+  "address":"multisigaddress",  (string) The value of the new multisig address.
+  "redeemScript":"script"       (string) The string value of the hex-encoded redemption script.
+}
+```
+
+
+## Examples
+
+```bash
+curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "createmultisig", "params": [2, "[\"Xt4qk9uKvQYAonVGSZNXqxeDmtjaEWgfrs\",\"XoSoWQkpgLpppPoyyzbUFh1fq2RBvW6UK1\"]"] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+```
+

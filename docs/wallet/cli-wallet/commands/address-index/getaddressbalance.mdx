@@ -1,0 +1,54 @@
+---
+sidebar_position: 1
+---
+import ReactPlayer from 'react-player'
+
+# getaddressbalance
+
+Get balance of specific address
+
+`raptoreum-cli getaddressbalance '{"addresses": ["XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg"]}'`
+
+<ReactPlayer playing controls url={[
+    {src: `${require('./assets/placeholder.webm').default}`, type: 'video/webm'}]} />
+
+
+## Arguments
+
+| Argument | Type | Description |
+|--|--|--|
+| "address" | (string) | The base58check encoded address |
+
+```bash
+Arguments:
+{
+  "addresses"
+    [
+      "address"  (string) The base58check encoded address
+      ,...
+    ]
+}
+```
+
+## Output
+
+| Result | Type | Description |
+|--|--|--|
+| "balance" | (string) | The current balance in duffs |
+| "received" | (string) | The total number of duffs received (including change) |
+
+```bash
+Result:
+{
+  "balance"  (string) The current balance in duffs
+  "received"  (string) The total number of duffs received (including change)
+}
+```
+
+
+## Examples
+
+```bash
+curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getaddressbalance", "params": [{"addresses": ["XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg"]}] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+```
+

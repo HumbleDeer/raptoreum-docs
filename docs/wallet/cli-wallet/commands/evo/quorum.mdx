@@ -1,0 +1,63 @@
+---
+sidebar_position: 3
+---
+import ReactPlayer from 'react-player'
+
+# quorum
+
+*quorum "command" ...*
+
+Set of commands for quorums/LLMQs.
+To get help on individual commands, use "help quorum command".
+
+```bash
+# Available commands:
+  list              - List of on-chain quorums
+  info              - Return information about a quorum
+  dkgsimerror       - Simulates DKG errors and malicious behavior
+  dkgstatus         - Return the status of the current DKG process
+  memberof          - Checks which quorums the given smartnode is a member of
+  sign              - Threshold-sign a message
+  hasrecsig         - Test if a valid recovered signature is present
+  getrecsig         - Get a recovered signature
+  isconflicting     - Test if a conflict exists
+```
+
+`raptoreum-cli quorum list`
+
+
+<ReactPlayer playing controls url={[
+    {src: `${require('./assets/placeholder.webm').default}`, type: 'video/webm'}]} />
+
+
+## Arguments
+
+| Argument | Type | Description |
+|--|--|--|
+| "command" | (string) | The command to execute |
+
+```bash
+Arguments:
+1. "command"        (string, required) The command to execute
+```
+
+## Output
+
+| Result | Type | Description |
+|--|--|--|
+| ... | ... | ... |
+
+```bash
+Result:
+{
+  ...
+}
+```
+
+
+## Examples
+
+```bash
+curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "quorum", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+```
+

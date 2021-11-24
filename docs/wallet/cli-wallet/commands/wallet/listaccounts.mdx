@@ -1,0 +1,60 @@
+---
+sidebar_position: 29
+---
+import ReactPlayer from 'react-player'
+
+# listaccounts
+
+*listaccounts ( minconf addlocked include_watchonly)*
+
+DEPRECATED. Returns Object that has account names as keys, account balances as values.
+
+```bash
+# List account balances where there at least 1 confirmation
+raptoreum-cli listaccounts 
+
+# List account balances including zero confirmation transactions
+raptoreum-cli listaccounts 0
+
+# List account balances for 6 or more confirmations
+raptoreum-cli listaccounts 6
+```
+
+<ReactPlayer playing controls url={[
+    {src: `${require('./assets/listaccounts.webm').default}`, type: 'video/webm'}]} />
+
+## Arguments
+
+| Argument | Type | Description |
+|--|--|--|
+| minconf | (numeric) | nly include transactions with at least this many confirmations  |
+| addlocked | (bool) | Whether to include transactions locked via InstantSend.  |
+| include_watchonly | (bool) | Include balances in watch-only addresses (see 'importaddress')  |
+
+```bash
+Arguments:
+1. minconf             (numeric, optional, default=1) Only include transactions with at least this many confirmations
+2. addlocked           (bool, optional, default=false) Whether to include transactions locked via InstantSend.
+3. include_watchonly   (bool, optional, default=false) Include balances in watch-only addresses (see 'importaddress')
+```
+
+## Output
+
+| Result | Type | Description |
+|--|--|--|
+| "account" | (numeric) | The property name is the account name, and the value is the total balance for the account. |
+
+```bash
+Result:
+{                    (json object where keys are account names, and values are numeric balances
+  "account": x.xxx,  (numeric) The property name is the account name, and the value is the total balance for the account.
+  ...
+}
+```
+
+## Examples
+
+```bash
+curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listaccounts", "params": [6] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+```
+

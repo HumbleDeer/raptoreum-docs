@@ -1,0 +1,51 @@
+---
+sidebar_position: 6
+---
+import ReactPlayer from 'react-player'
+
+# dumpprivkey
+
+*dumpprivkey "address"*
+
+Reveals the private key corresponding to 'address'.
+Then the importprivkey can be used with this output
+
+```bash
+# Examples:
+raptoreum-cli dumpprivkey "myaddress"
+raptoreum-cli importprivkey "mykey"
+```
+
+<ReactPlayer playing controls url={[
+    {src: `${require('./assets/dumpprivkey.webm').default}`, type: 'video/webm'}]} />
+
+
+## Arguments
+
+| Argument | Type | Description |
+|--|--|--|
+| "address" | (string) | The raptoreum address for the private key  |
+
+```bash
+Arguments:
+1. "address"   (string, required) The raptoreum address for the private key
+```
+
+## Output
+
+| Result | Type | Description |
+|--|--|--|
+| "key"  | (string) | The private key |
+
+```bash
+Result:
+"key"                (string) The private key
+```
+
+
+## Examples
+
+```bash
+curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "dumpprivkey", "params": ["myaddress"] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+```
+

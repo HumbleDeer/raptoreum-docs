@@ -1,0 +1,42 @@
+---
+sidebar_position: 2
+---
+import ReactPlayer from 'react-player'
+
+# abortrescan
+
+*abortrescan*
+
+Stops current wallet rescan triggered e.g. by an importprivkey call.
+
+```bash
+# Import a private key
+raptoreum-cli importprivkey "mykey"
+
+# Abort the running wallet rescan
+raptoreum-cli abortrescan 
+```
+
+<ReactPlayer playing controls url={[
+    {src: `${require('./assets/abortrescan.webm').default}`, type: 'video/webm'}]} />
+
+## Output
+
+| Result | Type | Description |
+|--|--|--|
+| ... | ... | ... |
+
+```bash
+Result:
+{
+  ...
+}
+```
+
+
+## Examples
+
+```bash
+curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "abortrescan", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+```
+

@@ -1,0 +1,56 @@
+---
+sidebar_position: 48
+---
+import ReactPlayer from 'react-player'
+
+# signmessage
+
+*signmessage "address" "message"*
+
+Sign a message with the private key of an address
+
+```bash
+# Unlock the wallet for 30 seconds
+raptoreum-cli walletpassphrase "mypassphrase" 30
+
+# Create the signature
+raptoreum-cli signmessage "XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG" "my message"
+
+# Verify the signature
+raptoreum-cli verifymessage "XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG" "signature" "my message"
+```
+
+<ReactPlayer playing controls url={[
+    {src: `${require('./assets/signmessage.webm').default}`, type: 'video/webm'}]} />
+
+## Arguments
+
+| Argument | Type | Description |
+|--|--|--|
+| "address" | (string) | The raptoreum address to use for the private key. |
+| "message" | (string) | The message to create a signature of. |
+
+```bash
+Arguments:
+1. "address"         (string, required) The raptoreum address to use for the private key.
+2. "message"         (string, required) The message to create a signature of.
+```
+
+## Output
+
+| Result | Type | Description |
+|--|--|--|
+| "signature" | (string) | The signature of the message encoded in base 64 |
+
+```bash
+Result:
+"signature"          (string) The signature of the message encoded in base 64
+```
+
+## Examples
+
+```bash
+curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "signmessage", "params": ["XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG", "my message"] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+```
+
+

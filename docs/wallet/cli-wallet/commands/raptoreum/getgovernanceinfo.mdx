@@ -1,0 +1,40 @@
+---
+sidebar_position: 1
+---
+import ReactPlayer from 'react-player'
+
+# getgovernanceinfo
+
+*getgovernanceinfo*
+
+Returns an object containing governance parameters.
+
+`raptoreum-cli getgovernanceinfo`
+
+<ReactPlayer playing controls url={[
+    {src: `${require('./assets/placeholder.webm').default}`, type: 'video/webm'}]} />
+
+## Output
+
+| Result | Type | Description |
+|--|--|--|
+| ... | ... | ... |
+
+```bash
+Result:
+{
+  "governanceminquorum": xxxxx,           (numeric) the absolute minimum number of votes needed to trigger a governance action
+  "proposalfee": xxx.xx,                  (numeric) the collateral transaction fee which must be paid to create a proposal in RTM
+  "superblockcycle": xxxxx,               (numeric) the number of blocks between superblocks
+  "lastsuperblock": xxxxx,                (numeric) the block number of the last superblock
+  "nextsuperblock": xxxxx,                (numeric) the block number of the next superblock
+}
+```
+
+## Examples
+
+```bash
+curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getgovernanceinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+```
+
+

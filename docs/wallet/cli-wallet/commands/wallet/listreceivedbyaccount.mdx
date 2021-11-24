@@ -1,0 +1,63 @@
+---
+sidebar_position: 33
+---
+import ReactPlayer from 'react-player'
+
+# listreceivedbyaccount
+
+*listreceivedbyaccount ( minconf addlocked include_empty include_watchonly)*
+
+DEPRECATED. List incoming payments grouped by account.
+
+```bash
+raptoreum-cli listreceivedbyaccount 
+raptoreum-cli listreceivedbyaccount 6 false true
+```
+
+<ReactPlayer playing controls url={[
+    {src: `${require('./assets/listreceivedbyaccount.webm').default}`, type: 'video/webm'}]} />
+
+## Arguments
+
+| Argument | Type | Description |
+|--|--|--|
+| minconf | (numeric) | nly include transactions with at least this many confirmations  |
+| addlocked | (bool) | Whether to include transactions locked via InstantSend.  |
+| include_empty | (bool) | Whether to include accounts that haven't received any payments.  |
+| include_watchonly | (bool) | Include balances in watch-only addresses (see 'importaddress')  |
+
+```bash
+Arguments:
+1. minconf           (numeric, optional, default=1) The minimum number of confirmations before payments are included.
+2. addlocked         (bool, optional, default=false) Whether to include transactions locked via InstantSend.
+3. include_empty     (bool, optional, default=false) Whether to include accounts that haven't received any payments.
+4. include_watchonly (bool, optional, default=false) Whether to include watch-only addresses (see 'importaddress').
+
+```
+
+## Output
+
+| Result | Type | Description |
+|--|--|--|
+| "involvesWatchonly" | (bool) | Only returned if imported addresses were involved in transaction |
+
+```bash
+Result:
+[
+  {
+    "involvesWatchonly" : true,   (bool) Only returned if imported addresses were involved in transaction
+    "account" : "accountname",    (string) The account name of the receiving account
+    "amount" : x.xxx,             (numeric) The total amount received by addresses with this account
+    "confirmations" : n           (numeric) The number of blockchain confirmations of the most recent transaction included
+    "label" : "label"             (string) A comment for the address/transaction, if any
+  }
+  ,...
+]
+```
+
+## Examples
+
+```bash
+curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listreceivedbyaccount", "params": [6, false, true, true] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+```
+

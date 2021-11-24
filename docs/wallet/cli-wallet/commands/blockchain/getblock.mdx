@@ -1,0 +1,86 @@
+---
+sidebar_position: 3
+---
+import ReactPlayer from 'react-player'
+
+# getblock
+
+Returns all mempool deltas for an address (requires addressindex to be enabled).
+
+`raptoreum-cli getblock "00000000000fd08c2fb661d2fcb0d49abb3a91e5f27082ce64feed3b4dede2e2"`
+
+<ReactPlayer playing controls url={[
+    {src: `${require('./assets/placeholder.webm').default}`, type: 'video/webm'}]} />
+
+
+## Arguments
+
+| Argument | Type | Description |
+|--|--|--|
+| "blockhash" | (string) | The block hash |
+| "verbosity" | (numeric) | 0 for hex-encoded data, 1 for a json object (default), and 2 for json object with transaction data|
+
+```bash
+Arguments:
+{
+  "blockhash" (string, required) The block hash
+  "verbosity" (numeric, optional, default=1) 0 for hex-encoded data, 1 for a json object, and 2 for json object with transaction data
+}
+```
+
+## Output
+
+| Result | Type | Description |
+|--|--|--|
+| "data" | (string) | A string that is serialized, hex-encoded data for block 'hash'. |
+
+```bash
+Result (for verbosity = 0):
+"data"             (string) A string that is serialized, hex-encoded data for block 'hash'.
+
+Result (for verbose = 1):
+{
+  "hash" : "hash",     (string) the block hash (same as provided)
+  "confirmations" : n,   (numeric) The number of confirmations, or -1 if the block is not on the main chain
+  "size" : n,            (numeric) The block size
+  "height" : n,          (numeric) The block height or index
+  "version" : n,         (numeric) The block version
+  "versionHex" : "00000000", (string) The block version formatted in hexadecimal
+  "merkleroot" : "xxxx", (string) The merkle root
+  "tx" : [               (array of string) The transaction ids
+     "transactionid"     (string) The transaction id
+     ,...
+  ],
+  "cbTx" : {             (json object) The coinbase special transaction 
+     "version"           (numeric) The coinbase special transaction version
+     "height"            (numeric) The block height
+     "merkleRootMNList" : "xxxx", (string) The merkle root of the smartnode list
+     "merkleRootQuorums" : "xxxx", (string) The merkle root of the quorum list
+  },
+  "time" : ttt,          (numeric) The block time in seconds since epoch (Jan 1 1970 GMT)
+  "mediantime" : ttt,    (numeric) The median block time in seconds since epoch (Jan 1 1970 GMT)
+  "nonce" : n,           (numeric) The nonce
+  "bits" : "1d00ffff", (string) The bits
+  "difficulty" : x.xxx,  (numeric) The difficulty
+  "chainwork" : "xxxx",  (string) Expected number of hashes required to produce the chain up to this block (in hex)
+  "previousblockhash" : "hash",  (string) The hash of the previous block
+  "nextblockhash" : "hash"       (string) The hash of the next block
+}
+
+Result (for verbosity = 2):
+{
+  ...,                     Same output as verbosity = 1.
+  "tx" : [               (array of Objects) The transactions in the format of the getrawtransaction RPC. Different from verbosity = 1 "tx" result.
+         ,...
+  ],
+  ,...                     Same output as verbosity = 1.
+}
+
+```
+
+
+## Examples
+
+```bash
+curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblock", "params": ["00000000000fd08c2fb661d2fcb0d49abb3a91e5f27082ce64feed3b4dede2e2"] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+```

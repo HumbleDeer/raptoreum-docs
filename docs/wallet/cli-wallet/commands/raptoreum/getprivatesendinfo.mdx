@@ -1,0 +1,65 @@
+---
+sidebar_position: 3
+---
+import ReactPlayer from 'react-player'
+
+# getprivatesendinfo
+
+*getprivatesendinfo*
+
+Returns an object containing an information about PrivateSend settings and state.
+
+`raptoreum-cli getprivatesendinfo `
+
+<ReactPlayer playing controls url={[
+    {src: `${require('./assets/placeholder.webm').default}`, type: 'video/webm'}]} />
+
+## Output
+
+| Result | Type | Description |
+|--|--|--|
+| ... | ... | ... |
+
+```bash
+Result (for regular nodes):
+{
+  "enabled": true|false,             (bool) Whether mixing functionality is enabled
+  "running": true|false,             (bool) Whether mixing is currently running
+  "multisession": true|false,        (bool) Whether PrivateSend Multisession option is enabled
+  "max_sessions": xxx,               (numeric) How many parallel mixing sessions can there be at once
+  "max_rounds": xxx,                 (numeric) How many rounds to mix
+  "max_amount": xxx,                 (numeric) Target PrivateSend balance in RTM
+  "max_denoms": xxx,                 (numeric) How many inputs of each denominated amount to create
+  "queue_size": xxx,                 (numeric) How many queues there are currently on the network
+  "sessions":                        (array of json objects)
+    [
+      {
+      "protxhash": "...",            (string) The ProTxHash of the smartnode
+      "outpoint": "txid-index",      (string) The outpoint of the smartnode
+      "service": "host:port",        (string) The IP address and port of the smartnode
+      "denomination": xxx,           (numeric) The denomination of the mixing session in RTM
+      "state": "...",                (string) Current state of the mixing session
+      "entries_count": xxx,          (numeric) The number of entries in the mixing session
+      }
+      ,...
+    ],
+  "keys_left": xxx,                  (numeric) How many new keys are left since last automatic backup
+  "warnings": "..."                  (string) Warnings if any
+}
+
+Result (for smartnodes):
+{
+  "queue_size": xxx,                 (numeric) How many queues there are currently on the network
+  "denomination": xxx,               (numeric) The denomination of the mixing session in RTM
+  "state": "...",                    (string) Current state of the mixing session
+  "entries_count": xxx,              (numeric) The number of entries in the mixing session
+}
+```
+
+
+## Examples
+
+```bash
+curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getprivatesendinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+```
+

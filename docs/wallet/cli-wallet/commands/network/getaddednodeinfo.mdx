@@ -1,0 +1,62 @@
+---
+sidebar_position: 4
+---
+import ReactPlayer from 'react-player'
+
+# getaddednodeinfo
+
+*getaddednodeinfo ( "node" )*
+
+Returns information about the given added node, or all added nodes
+(note that onetry addnodes are not listed here)
+
+```bash
+raptoreum-cli getaddednodeinfo 
+raptoreum-cli getaddednodeinfo "192.168.0.201"
+```
+
+<ReactPlayer playing controls url={[
+    {src: `${require('./assets/placeholder.webm').default}`, type: 'video/webm'}]} />
+
+
+## Arguments
+
+| Argument | Type | Description |
+|--|--|--|
+| "node" | (string) | If provided, return information about this specific node, otherwise all nodes are returned. |
+
+```bash
+Arguments:
+1. "node"   (string, optional) If provided, return information about this specific node, otherwise all nodes are returned.
+```
+
+## Output
+
+| Result | Type | Description |
+|--|--|--|
+| "addednode" | (string) | he node IP address or name (as provided to addnode) |
+
+```bash
+Result:
+[
+  {
+    "addednode" : "192.168.0.201",   (string) The node IP address or name (as provided to addnode)
+    "connected" : true|false,          (boolean) If connected
+    "addresses" : [                    (list of objects) Only when connected = true
+       {
+         "address" : "192.168.0.201:9999",  (string) The raptoreum server IP and port we're connected to
+         "connected" : "outbound"           (string) connection, inbound or outbound
+       }
+     ]
+  }
+  ,...
+]
+```
+
+
+## Examples
+
+```bash
+curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getaddednodeinfo", "params": ["192.168.0.201"] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+```
+

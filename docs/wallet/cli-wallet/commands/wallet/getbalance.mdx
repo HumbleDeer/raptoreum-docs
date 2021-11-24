@@ -1,0 +1,62 @@
+---
+sidebar_position: 12
+---
+import ReactPlayer from 'react-player'
+
+# getbalance
+
+*getbalance ( "account" minconf addlocked include_watchonly )*
+
+If account is not specified, returns the server's total available balance.
+If account is specified (DEPRECATED), returns the balance in the account.
+Note that the account "" is not the same as leaving the parameter out.
+The server total may be different to the balance in the default "" account.
+
+```bash
+# The total amount in the wallet with 1 or more confirmations
+raptoreum-cli getbalance 
+
+# The total amount in the wallet at least 6 blocks confirmed
+raptoreum-cli getbalance "*" 6
+```
+
+<ReactPlayer playing controls url={[
+    {src: `${require('./assets/getbalance.webm').default}`, type: 'video/webm'}]} />
+
+
+## Arguments
+
+| Argument | Type | Description |
+|--|--|--|
+| "account" | (string) | DEPRECATED. The selected account, or "*" for entire wallet. It may be the default account using "".  |
+| minconf | (number) | Only include transactions confirmed at least this many times. |
+| addlocked | (boolean) | Whether to include the value of transactions locked via InstantSend in the wallet's balance. |
+| include_watchonly | (boolean) | Also include balance in watch-only addresses (see 'importaddress') |
+
+
+```bash
+Arguments:
+1. "account"        (string, optional) DEPRECATED. The selected account, or "*" for entire wallet. It may be the default account using "".
+2. minconf          (numeric, optional, default=1) Only include transactions confirmed at least this many times.
+3. addlocked      (bool, optional, default=false) Whether to include the value of transactions locked via InstantSend in the wallet's balance.
+4. include_watchonly (bool, optional, default=false) Also include balance in watch-only addresses (see 'importaddress')
+```
+
+## Output
+
+| Result | Type | Description |
+|--|--|--|
+| amount | (number) | The total amount in RTM received for this account. |
+
+```bash
+Result:
+amount              (numeric) The total amount in RTM received for this account.
+```
+
+
+## Examples
+
+```bash
+curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getbalance", "params": ["*", 6] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+```
+

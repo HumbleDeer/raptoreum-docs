@@ -1,0 +1,51 @@
+---
+sidebar_position: 4
+---
+import ReactPlayer from 'react-player'
+
+# help
+
+*help ( "command" ) ("subCommand")*
+
+List all commands, or get help for a specified command.
+
+```bash
+raptoreum-cli help
+raptoreum-cli help getinfo
+raptoreum-cli help getblock
+```
+
+<ReactPlayer playing controls url={[
+    {src: `${require('./assets/placeholder.webm').default}`, type: 'video/webm'}]} />
+
+
+## Arguments
+
+| Argument | Type | Description |
+|--|--|--|
+| "command" | (string) | The command to get help on |
+| "subCommand" | (string) | The subcommand to get help on. Please not that not all subcommands support this at the moment |
+
+```bash
+Arguments:
+1. "command"     (string, optional) The command to get help on
+2. "subCommand"  (string, optional) The subcommand to get help on. Please not that not all subcommands support this at the moment
+```
+
+## Output
+
+| Result | Type | Description |
+|--|--|--|
+| "result" | (string) | "Debug mode: " followed by the specified category. |
+
+```bash
+Result:
+"text"     (string) The help text
+```
+
+## Examples
+
+```bash
+curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "help", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+```
+

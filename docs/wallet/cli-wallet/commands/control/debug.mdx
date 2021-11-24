@@ -1,0 +1,55 @@
+---
+sidebar_position: 1
+---
+import ReactPlayer from 'react-player'
+
+# debug
+
+*debug "category"*
+
+Change debug category on the fly. Specify single category or use '+' to specify many.
+The valid debug categories are: net, tor, mempool, http, bench, zmq, db, rpc, estimatefee, addrman, selectcoins, reindex, cmpctblock, rand, prune, proxy, mempoolrej, libevent, coindb, qt, leveldb, chainlocks, gobject, instantsend, keepass, llmq, llmq-dkg, llmq-sigs, mnpayments, mnsync, privatesend, spork.
+libevent logging is configured on startup and cannot be modified by this RPC during runtime.
+
+There are also a few meta-categories:
+ - "all", "1" and "" activate all categories at once;
+ - "raptoreum" activates all Raptoreum-specific categories at once;
+ - "none" (or "0") deactivates all categories at once.
+
+Note: If specified category doesn't match any of the above, no error is thrown.
+
+`raptoreum-cli debug raptoreum`
+
+<ReactPlayer playing controls url={[
+    {src: `${require('./assets/placeholder.webm').default}`, type: 'video/webm'}]} />
+
+
+## Arguments
+
+| Argument | Type | Description |
+|--|--|--|
+| "category" | (string) | The name of the debug category to turn on. |
+
+```bash
+Arguments:
+1. "category"          (string, required) The name of the debug category to turn on.
+```
+
+## Output
+
+| Result | Type | Description |
+|--|--|--|
+| "result" | (string) | "Debug mode: " followed by the specified category. |
+
+```bash
+Result:
+  result               (string) "Debug mode: " followed by the specified category.
+```
+
+
+## Examples
+
+```bash
+curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "debug", "params": [raptoreum+net] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+```
+

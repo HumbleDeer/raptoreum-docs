@@ -1,0 +1,107 @@
+---
+sidebar_position: 6
+---
+import ReactPlayer from 'react-player'
+
+# getrawtransaction
+
+*getrawtransaction "txid" ( verbose )*
+
+NOTE: By default this function only works for mempool transactions. If the -txindex option is
+enabled, it also works for blockchain transactions.
+DEPRECATED: for now, it also works for transactions with unspent outputs.
+
+Return the raw transaction data.
+
+If verbose is 'true', returns an Object with information about 'txid'.
+If verbose is 'false' or omitted, returns a string that is serialized, hex-encoded data for 'txid'.
+
+```bash
+raptoreum-cli getrawtransaction "mytxid"
+raptoreum-cli getrawtransaction "mytxid" true
+```
+
+<ReactPlayer playing controls url={[
+    {src: `${require('./assets/sendrawtransaction.webm').default}`, type: 'video/webm'}]} />
+
+<sub>Video Guide - credit @rocket</sub>
+<ReactPlayer playing controls url='https://www.youtube.com/watch?v=Yd---pu4oTg' muted={true} playing={false} />
+
+
+## Arguments
+
+| Argument | Type | Description |
+|--|--|--|
+| "txid" | (string) | The transaction id |
+
+```bash
+Arguments:
+1. "txid"      (string, required) The transaction id
+2. verbose       (bool, optional, default=false) If false, return a string, otherwise return a json object
+```
+
+## Output
+
+| Result | Type | Description |
+|--|--|--|
+| "data" | (string) | The serialized, hex-encoded data for 'txid' |
+
+```bash
+Result (if verbose is not set or set to false):
+"data"      (string) The serialized, hex-encoded data for 'txid'
+
+Result (if verbose is set to true):
+{
+  "txid" : "id",        (string) The transaction id (same as provided)
+  "size" : n,             (numeric) The transaction size
+  "version" : n,          (numeric) The version
+  "locktime" : ttt,       (numeric) The lock time
+  "vin" : [               (array of json objects)
+     {
+       "txid": "id",    (string) The transaction id
+       "vout": n,         (numeric) 
+       "scriptSig": {     (json object) The script
+         "asm": "asm",  (string) asm
+         "hex": "hex"   (string) hex
+       },
+       "sequence": n      (numeric) The script sequence number
+     }
+     ,...
+  ],
+  "vout" : [              (array of json objects)
+     {
+       "value" : x.xxx,            (numeric) The value in RTM
+       "n" : n,                    (numeric) index
+       "scriptPubKey" : {          (json object)
+         "asm" : "asm",          (string) the asm
+         "hex" : "hex",          (string) the hex
+         "reqSigs" : n,            (numeric) The required sigs
+         "type" : "pubkeyhash",  (string) The type, eg 'pubkeyhash'
+         "addresses" : [           (json array of string)
+           "address"        (string) raptoreum address
+           ,...
+         ]
+       }
+     }
+     ,...
+  ],
+  "extraPayloadSize" : n    (numeric) Size of DIP2 extra payload. Only present if it's a special TX
+  "extraPayload" : "hex"    (string) Hex encoded DIP2 extra payload data. Only present if it's a special TX
+  "hex" : "data",         (string) The serialized, hex-encoded data for 'txid'
+  "blockhash" : "hash",   (string) the block hash
+  "height" : n,             (numeric) The block height
+  "confirmations" : n,      (numeric) The confirmations
+  "time" : ttt,             (numeric) The transaction time in seconds since epoch (Jan 1 1970 GMT)
+  "blocktime" : ttt         (numeric) The block time in seconds since epoch (Jan 1 1970 GMT)
+  "instantlock" : true|false, (bool) Current transaction lock state
+  "instantlock_internal" : true|false, (bool) Current internal transaction lock state
+  "chainlock" : true|false, (bool) The state of the corresponding block chainlock
+}
+```
+
+## Examples
+
+```bash
+curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getrawtransaction", "params": ["mytxid", true] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+```
+
