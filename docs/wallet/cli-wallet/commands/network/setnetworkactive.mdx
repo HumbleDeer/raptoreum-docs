@@ -1,0 +1,47 @@
+---
+sidebar_position: 11
+---
+import ReactPlayer from 'react-player'
+
+# setnetworkactive
+
+*setnetworkactive true|false*
+
+Disable/enable all p2p network activity.
+
+`raptoreum-cli setnetworkactive true`
+
+<ReactPlayer playing controls url={[
+    {src: `${require('./assets/placeholder.webm').default}`, type: 'video/webm'}]} />
+
+
+## Arguments
+
+| Argument | Type | Description |
+|--|--|--|
+| "state" | (boolean) | true to enable networking, false to disable |
+
+
+```bash
+Arguments:
+1. "state"        (boolean, required) true to enable networking, false to disable
+```
+
+## Output
+
+| Result | Type | Description |
+|--|--|--|
+| ... | ... | ... |
+
+```bash
+Result:
+{
+  ...
+}
+```
+
+## Examples
+```bash
+curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "setnetworkactive", "params": [true] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+```
+

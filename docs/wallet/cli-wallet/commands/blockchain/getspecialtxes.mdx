@@ -1,0 +1,69 @@
+---
+sidebar_position: 18
+---
+import ReactPlayer from 'react-player'
+
+# getspecialtxes
+
+*getspecialtxes "blockhash" ( type count skip verbosity ) *
+
+Returns an array of special transactions found in the specified block
+
+If verbosity is 0, returns tx hash for each transaction.
+If verbosity is 1, returns hex-encoded data for each transaction.
+If verbosity is 2, returns an Object with information for each transaction.
+
+`raptoreum-cli getspecialtxes "00000000000fd08c2fb661d2fcb0d49abb3a91e5f27082ce64feed3b4dede2e2"`
+
+<ReactPlayer playing controls url={[
+    {src: `${require('./assets/placeholder.webm').default}`, type: 'video/webm'}]} />
+
+
+## Arguments
+
+| Argument | Type | Description |
+|--|--|--|
+| "blockhash" | (string) | The block hash |
+| type | (numeric) | Filter special txes by type, -1 means all  |
+| count | (numeric) | The number of transactions to return |
+| skip | (numeric) | The number of transactions to skip |
+| verbosity | (numeric) | 0 for hashes, 1 for hex-encoded data, and 2  |
+
+```bash
+Arguments:
+1. "blockhash"          (string, required) The block hash
+2. type                 (numeric, optional, default=-1) Filter special txes by type, -1 means all types
+3. count                (numeric, optional, default=10) The number of transactions to return
+4. skip                 (numeric, optional, default=0) The number of transactions to skip
+5. verbosity            (numeric, optional, default=0) 0 for hashes, 1 for hex-encoded data, and 2 for json object
+```
+
+## Output
+
+| Result | Type | Description |
+|--|--|--|
+| "txid" | (string) | The transaction id |
+
+```bash
+Result (for verbosity = 0):
+[
+  "txid" : "xxxx",    (string) The transaction id
+]
+
+Result (for verbosity = 1):
+[
+  "data",               (string) A string that is serialized, hex-encoded data for the transaction
+]
+
+Result (for verbosity = 2):
+[                       (array of Objects) The transactions in the format of the getrawtransaction RPC.
+  ...,
+]
+```
+
+
+## Examples
+
+```bash
+curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getspecialtxes", "params": ["00000000000fd08c2fb661d2fcb0d49abb3a91e5f27082ce64feed3b4dede2e2"] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+```

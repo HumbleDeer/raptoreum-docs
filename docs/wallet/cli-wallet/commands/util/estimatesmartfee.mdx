@@ -1,0 +1,68 @@
+---
+sidebar_position: 3
+---
+import ReactPlayer from 'react-player'
+
+# estimatesmartfee
+
+*estimatesmartfee conf_target ("estimate_mode")*
+
+Estimates the approximate fee per kilobyte needed for a transaction to begin
+confirmation within conf_target blocks if possible and return the number of blocks
+for which the estimate is valid.
+
+
+The request target will be clamped between 2 and the highest target
+fee estimation is able to return based on how long it has been running.
+An error is returned if not enough transactions and blocks
+have been observed to make an estimate for any number of blocks.
+
+`raptoreum-cli estimatesmartfee 6`
+
+
+<ReactPlayer playing controls url={[
+    {src: `${require('./assets/placeholder.webm').default}`, type: 'video/webm'}]} />
+
+
+## Arguments
+
+| Argument | Type | Description |
+|--|--|--|
+| "address" | (string) | The base58check encoded address |
+
+```bash
+Arguments:
+1. conf_target     (numeric) Confirmation target in blocks (1 - 1008)
+2. "estimate_mode" (string, optional, default=CONSERVATIVE) The fee estimate mode.
+                   Whether to return a more conservative estimate which also satisfies
+                   a longer history. A conservative estimate potentially returns a
+                   higher feerate and is more likely to be sufficient for the desired
+                   target, but is not as responsive to short term drops in the
+                   prevailing fee market.  Must be one of:
+       "UNSET" (defaults to CONSERVATIVE)
+       "ECONOMICAL"
+       "CONSERVATIVE"
+```
+
+## Output
+
+| Result | Type | Description |
+|--|--|--|
+| ... | ... | ... |
+
+```bash
+Result:
+{
+  "feerate" : x.x,     (numeric, optional) estimate fee-per-kilobyte (in RTM)
+  "errors": [ str... ] (json array of strings, optional) Errors encountered during processing
+  "blocks" : n         (numeric) block number where estimate was found
+}
+```
+
+
+## Examples
+
+```bash
+curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "estimatesmartfee", "params": [5] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+```
+

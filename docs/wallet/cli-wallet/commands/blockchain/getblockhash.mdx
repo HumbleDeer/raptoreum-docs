@@ -1,0 +1,43 @@
+---
+sidebar_position: 6
+---
+import ReactPlayer from 'react-player'
+
+# getblockhash
+
+Returns hash of block in best-block-chain at height provided.
+
+`raptoreum-cli getblockhash 1000`
+
+<ReactPlayer playing controls url={[
+    {src: `${require('./assets/placeholder.webm').default}`, type: 'video/webm'}]} />
+
+
+## Arguments
+
+| Argument | Type | Description |
+|--|--|--|
+| "height" | (numeric) | The height index |
+
+```bash
+Arguments:
+"height" (numeric, required) The height index
+```
+
+## Output
+
+| Result | Type | Description |
+|--|--|--|
+| "hash" | (string) | The block hash |
+
+```bash
+Result:
+"hash"         (string) The block hash
+```
+
+
+## Examples
+
+```bash
+curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblockhash", "params": [1000] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+```

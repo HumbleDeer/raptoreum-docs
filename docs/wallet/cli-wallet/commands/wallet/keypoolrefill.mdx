@@ -1,0 +1,46 @@
+---
+sidebar_position: 28
+---
+import ReactPlayer from 'react-player'
+
+# keypoolrefill
+
+*keypoolrefill ( newsize )*
+
+Fills the keypool.
+
+`raptoreum-cli keypoolrefill`
+
+<ReactPlayer playing controls url={[
+    {src: `${require('./assets/keypoolrefill.webm').default}`, type: 'video/webm'}]} />
+
+## Arguments
+
+| Argument | Type | Description |
+|--|--|--|
+| newsize | (numeric) | The new keypool size  |
+
+```bash
+Arguments:
+1. newsize     (numeric, optional, default=1000) The new keypool size
+```
+
+## Output
+
+| Result | Type | Description |
+|--|--|--|
+| ... | ... | ... |
+
+```bash
+Result:
+{
+  ...
+}
+```
+
+## Examples
+
+```bash
+curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "keypoolrefill", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+```
+

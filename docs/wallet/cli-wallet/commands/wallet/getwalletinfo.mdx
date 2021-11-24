@@ -1,0 +1,56 @@
+---
+sidebar_position: 19
+---
+import ReactPlayer from 'react-player'
+
+# getwalletinfo
+
+*getwalletinfo*
+
+Returns an object containing various wallet state info.
+
+`raptoreum-cli getwalletinfo `
+
+<ReactPlayer playing controls url={[
+    {src: `${require('./assets/getwalletinfo.webm').default}`, type: 'video/webm'}]} />
+
+## Output
+
+| Result | Type | Description |
+|--|--|--|
+| "walletname" | (string) | the wallet name |
+
+```bash
+Result:
+{
+  "walletname": xxxxx,             (string) the wallet name
+  "walletversion": xxxxx,     (numeric) the wallet version
+  "balance": xxxxxxx,         (numeric) the total confirmed balance of the wallet in RTM
+  "privatesend_balance": xxxxxx, (numeric) the PrivateSend balance in RTM
+  "unconfirmed_balance": xxx, (numeric) the total unconfirmed balance of the wallet in RTM
+  "immature_balance": xxxxxx, (numeric) the total immature balance of the wallet in RTM
+  "txcount": xxxxxxx,         (numeric) the total number of transactions in the wallet
+  "keypoololdest": xxxxxx,    (numeric) the timestamp (seconds since Unix epoch) of the oldest pre-generated key in the key pool
+  "keypoolsize": xxxx,        (numeric) how many new keys are pre-generated (only counts external keys)
+  "keypoolsize_hd_internal": xxxx, (numeric) how many new keys are pre-generated for internal use (used for change outputs, only appears if the wallet is using this feature, otherwise external keys are used)
+  "keys_left": xxxx,          (numeric) how many new keys are left since last automatic backup
+  "unlocked_until": ttt,      (numeric) the timestamp in seconds since epoch (midnight Jan 1 1970 GMT) that the wallet is unlocked for transfers, or 0 if the wallet is locked
+  "paytxfee": x.xxxx,         (numeric) the transaction fee configuration, set in RTM/kB
+  "hdchainid": "<hash>",      (string) the ID of the HD chain
+  "hdaccountcount": xxx,      (numeric) how many accounts of the HD chain are in this wallet
+    [
+      {
+      "hdaccountindex": xxx,         (numeric) the index of the account
+      "hdexternalkeyindex": xxxx,    (numeric) current external childkey index
+      "hdinternalkeyindex": xxxx,    (numeric) current internal childkey index
+      }
+      ,...
+    ]
+}
+```
+
+## Examples
+
+```bash
+curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getwalletinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+```

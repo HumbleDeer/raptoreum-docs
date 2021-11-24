@@ -1,0 +1,63 @@
+---
+sidebar_position: 7
+---
+import ReactPlayer from 'react-player'
+
+# sendrawtransaction
+
+*sendrawtransaction "hexstring" ( allowhighfees instantsend bypasslimits)*
+
+Submits raw transaction (serialized, hex-encoded) to local node and network.
+
+Also see createrawtransaction and signrawtransaction calls.
+
+```bash
+# Create a transaction
+raptoreum-cli createrawtransaction "[{\"txid\" : \"mytxid\",\"vout\":0}]" "{\"myaddress\":0.01}"
+
+# Sign the transaction, and get back the hex
+raptoreum-cli signrawtransaction "myhex"
+
+# Send the transaction (signed hex)
+raptoreum-cli sendrawtransaction "signedhex"
+```
+
+<ReactPlayer playing controls url={[
+    {src: `${require('./assets/sendrawtransaction.webm').default}`, type: 'video/webm'}]} />
+
+<sub>Video Guide - credit @rocket</sub>
+<ReactPlayer playing controls url='https://www.youtube.com/watch?v=Yd---pu4oTg' muted={true} playing={false} />
+
+
+## Arguments
+
+| Argument | Type | Description |
+|--|--|--|
+| "address" | (string) | The base58check encoded address |
+
+```bash
+Arguments:
+1. "hexstring"    (string, required) The hex string of the raw transaction)
+2. allowhighfees  (boolean, optional, default=false) Allow high fees
+3. instantsend    (boolean, optional, default=false) Deprecated and ignored
+4. bypasslimits   (boolean, optional, default=false) Bypass transaction policy limits
+```
+
+## Output
+
+| Result | Type | Description |
+|--|--|--|
+| "hex" | (string) | The transaction hash in hex |
+
+```bash
+Result:
+"hex"             (string) The transaction hash in hex
+```
+
+
+## Examples
+
+```bash
+curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "sendrawtransaction", "params": ["signedhex"] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+```
+

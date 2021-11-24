@@ -1,0 +1,51 @@
+---
+sidebar_position: 3
+---
+import ReactPlayer from 'react-player'
+
+# submitblock
+
+*submitblock "hexdata"  ( "dummy" )*
+
+Attempts to submit new block to network.
+- See https://en.bitcoin.it/wiki/BIP_0022 for full specification.
+
+`raptoreum-cli submitblock "mydata"`
+
+<ReactPlayer playing controls url={[
+    {src: `${require('./assets/placeholder.webm').default}`, type: 'video/webm'}]} />
+
+
+## Arguments
+
+| Argument | Type | Description |
+|--|--|--|
+| "hexdata" | (string) | (string) the hex-encoded block data to submit |
+| "dummy" | (number) | dummy value, for compatibility with BIP22. This value is ignored. |
+
+```bash
+Arguments:
+1. "hexdata"        (string, required) the hex-encoded block data to submit
+2. "dummy"          (optional) dummy value, for compatibility with BIP22. This value is ignored.
+```
+
+## Output
+
+| Result | Type | Description |
+|--|--|--|
+| ... | ... | ... |
+
+```bash
+Result:
+{
+  ...
+}
+```
+
+
+## Examples
+
+```bash
+curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "submitblock", "params": ["mydata"] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+```
+

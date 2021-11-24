@@ -1,0 +1,53 @@
+---
+sidebar_position: 10
+---
+import ReactPlayer from 'react-player'
+
+# spork
+
+*spork "command"*
+
+Shows information about current state of sporks
+
+`raptoreum-cli spork show`
+
+<ReactPlayer playing controls url={[
+    {src: `${require('./assets/placeholder.webm').default}`, type: 'video/webm'}]} />
+
+## Arguments
+
+| Argument | Type | Description |
+|--|--|--|
+| "command" | (string) | The command to execute |
+
+```bash
+Arguments:
+1. "command"        (string or set of strings, required) The command to execute
+```
+
+## Output
+
+| Result | Type | Description |
+|--|--|--|
+| ... | ... | ... |
+
+```bash
+Result:
+For 'show':
+{
+  "SPORK_NAME" : spork_value,    (number) The value of the specific spork with the name SPORK_NAME
+  ...
+}
+For 'active':
+{
+  "SPORK_NAME" : true|false,     (boolean) 'true' for time-based sporks if spork is active and 'false' otherwise
+  ...
+}
+```
+
+## Examples
+
+```bash
+curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "spork", "params": ["show"] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+```
+

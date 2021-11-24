@@ -1,0 +1,59 @@
+---
+sidebar_position: 39
+---
+import ReactPlayer from 'react-player'
+
+# move
+
+*move "fromaccount" "toaccount" amount ( minconf "comment" )*
+
+DEPRECATED. Move a specified amount from one account in your wallet to another.
+
+```bash
+# Move 0.01 RTM from the default account to the account named tabby
+raptoreum-cli move "" "tabby" 0.01
+
+# Move 0.01 RTM timotei to akiko with a comment and funds have 6 confirmations
+raptoreum-cli move "timotei" "akiko" 0.01 6 "happy birthday!"
+```
+
+
+<ReactPlayer playing controls url={[
+    {src: `${require('./assets/move.webm').default}`, type: 'video/webm'}]} />
+
+## Arguments
+
+| Argument | Type | Description |
+|--|--|--|
+| "fromaccount" | (string) | The name of the account to move funds from. May be the default account using "". |
+| "toaccount" | (string) | The name of the account to move funds to. May be the default account using "". |
+| amount | (numeric) | Quantity of RTM to move between accounts. |
+| dummy | (numeric) | Ignored. Remains for backward compatibility. |
+| "comment" | (string) | An optional comment, stored in the wallet only. |
+
+```bash
+Arguments:
+1. "fromaccount"    (string, required) The name of the account to move funds from. May be the default account using "".
+2. "toaccount"      (string, required) The name of the account to move funds to. May be the default account using "".
+3. amount           (numeric) Quantity of RTM to move between accounts.
+4. (dummy)          (numeric, optional) Ignored. Remains for backward compatibility.
+5. "comment"        (string, optional) An optional comment, stored in the wallet only.
+```
+
+## Output
+
+| Result | Type | Description |
+|--|--|--|
+| true|false | (boolean) | Whether the command was successful or not |
+
+```bash
+Result:
+true|false          (boolean) true if successful.
+```
+
+## Examples
+
+```bash
+curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "move", "params": ["timotei", "akiko", 0.01, 6, "happy birthday!"] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+```
+

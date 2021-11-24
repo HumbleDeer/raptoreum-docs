@@ -1,0 +1,58 @@
+---
+sidebar_position: 16
+---
+import ReactPlayer from 'react-player'
+
+# getreceivedbyaddress
+
+*getreceivedbyaddress "address" ( minconf addlocked )*
+
+Returns the total amount received by the given address in transactions with at least minconf confirmations.
+
+```bash
+# The amount from transactions with at least 1 confirmation
+raptoreum-cli getreceivedbyaddress "XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG"
+
+# The amount including unconfirmed transactions, zero confirmations
+raptoreum-cli getreceivedbyaddress "XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG" 0
+
+# The amount with at least 6 confirmations
+raptoreum-cli getreceivedbyaddress "XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG" 6
+```
+
+<ReactPlayer playing controls url={[
+    {src: `${require('./assets/getreceivedbyaddress.webm').default}`, type: 'video/webm'}]} />
+
+## Arguments
+
+| Argument | Type | Description |
+|--|--|--|
+| "address" | (string) | The raptoreum address for transactions.  |
+| minconf | (numeric) | Only include transactions confirmed at least this many times.  |
+| addlocked | (boolean) | Whether to include transactions locked via InstantSend.  |
+
+
+```bash
+Arguments:
+1. "address"         (string, required) The raptoreum address for transactions.
+2. minconf             (numeric, optional, default=1) Only include transactions confirmed at least this many times.
+3. addlocked           (bool, optional, default=false) Whether to include transactions locked via InstantSend.
+```
+
+## Output
+
+| Result | Type | Description |
+|--|--|--|
+| amount | (numeric) | The total amount in RTM received for this address. |
+
+```bash
+Result:
+amount   (numeric) The total amount in RTM received at this address.
+```
+
+## Examples
+
+```bash
+curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getreceivedbyaddress", "params": ["XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG", 6] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+```
+

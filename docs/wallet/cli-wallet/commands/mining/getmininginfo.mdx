@@ -1,0 +1,45 @@
+---
+sidebar_position: 2
+---
+import ReactPlayer from 'react-player'
+
+# getmininginfo
+
+*getmininginfo*
+
+Returns a json object containing mining-related information.
+
+`raptoreum-cli getmininginfo `
+
+<ReactPlayer playing controls url={[
+    {src: `${require('./assets/placeholder.webm').default}`, type: 'video/webm'}]} />
+
+## Output
+
+| Result | Type | Description |
+|--|--|--|
+| "blocks" | (number) | The current block |
+
+```bash
+Result:
+{
+  "blocks": nnn,             (numeric) The current block
+  "currentblocksize": nnn,   (numeric) The last block size
+  "currentblocktx": nnn,     (numeric) The last block transaction
+  "difficulty": xxx.xxxxx    (numeric) The current difficulty
+  "errors": "..."            (string) Current errors
+  "networkhashps": nnn,      (numeric) The network hashes per second
+  "hashespersec": nnn,       (numeric) Your current hashes per second
+  "algos": nnn,              (string) Current solving block algos orders
+  "pooledtx": n              (numeric) The size of the mempool
+  "chain": "xxxx",           (string) current network name as defined in BIP70 (main, test, regtest)
+}
+```
+
+
+## Examples
+
+```bash
+curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getmininginfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+```
+

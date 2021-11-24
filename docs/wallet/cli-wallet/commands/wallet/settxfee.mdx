@@ -1,0 +1,44 @@
+---
+sidebar_position: 47
+---
+import ReactPlayer from 'react-player'
+
+# settxfee
+
+*settxfee amount*
+
+Set the transaction fee per kB. Overwrites the paytxfee parameter.
+
+`raptoreum-cli settxfee 0.00001`
+
+<ReactPlayer playing controls url={[
+    {src: `${require('./assets/settxfee.webm').default}`, type: 'video/webm'}]} />
+
+## Arguments
+
+| Argument | Type | Description |
+|--|--|--|
+| amount | (numeric) | The transaction fee in RTM/kB |
+
+```bash
+Arguments:
+1. amount         (numeric or string, required) The transaction fee in RTM/kB
+```
+
+## Output
+
+| Result | Type | Description |
+|--|--|--|
+| true|false | (boolean) | Returns true if successful |
+
+```bash
+Result:
+true|false        (boolean) Returns true if successful
+```
+
+## Examples
+
+```bash
+curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "settxfee", "params": [0.00001] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+```
+
