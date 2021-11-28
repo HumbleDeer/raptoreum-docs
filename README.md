@@ -2,28 +2,27 @@
 
 - Search will not create indexes until `yarn build` is ran
 
-### Install:
+## Install:
 
 1. yarn
-
-### Deploy:
-
-1. yarn build
-2. yarn serve
-
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
 ### Dev:
 
 1. yarn start
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+## Deploy:
 
+1. yarn build
+2. yarn serve
 
-### Deployment
+## Docker:
 
-```
-$ GIT_USER=<Your GitHub username> USE_SSH=true yarn deploy
-```
+Build the container:
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+```sudo docker build . -t raptor/docs```
+
+Run the container:
+
+```docker run -p 3005:3000 -d raptor/docs```
+
+This will make the applications accessible on port 3005 (via port 3000 inside container).
