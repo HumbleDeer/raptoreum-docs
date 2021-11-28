@@ -17,6 +17,8 @@ COPY . .
 # Runs on 3000
 EXPOSE 3000
 
-# Cmd to serve
-CMD [ "yarn", "serve" ]
+# Build app
+RUN yarn build
 
+# Serve
+CMD [ "yarn", "serve" ]
