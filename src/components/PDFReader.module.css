@@ -1,0 +1,24 @@
+.pageNavigator {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding: 1rem 0;
+  width: 100%;
+}
+
+.alignRight {
+  margin-left: auto;
+}
+
+.pdfContainer {
+  display: flex;
+  width: 100%;
+  margin: auto;
+  align-content: center;
+  justify-content: center;
+  display:inline-block;
+}
+
+.buttonSpacing {
+  padding: 0.5rem 0;
+}
