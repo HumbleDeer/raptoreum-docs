@@ -5,45 +5,4 @@ import Link from '@docusaurus/Link';
 
 # Intro
 
-<div class="container">
-  <div class="row">
-    <div class="col col--4">    
-    <div class="card-demo">
-        <div class="card">
-            <div class="card__header">
-            <h3>Official Wallet</h3>
-            </div>
-            <div class="card__body">
-            <p>
-                Explore the Raptoreum Core wallet
-            </p>
-            </div>
-            <div class="card__footer">
-            <Link to="/docs/wallet/gui-wallet/quick-start">
-            <button class="button button--primary button--block">GUI Wallet 🪙</button>
-            </Link>
-            </div>
-        </div>
-        </div>
-    </div>
-    <div class="col col--4">
-        <div class="card-demo">
-        <div class="card">
-            <div class="card__header">
-            <h3>CLI Wallet</h3>
-            </div>
-            <div class="card__body">
-            <p>
-                Explore the terminal-based wallet.
-            </p>
-            </div>
-            <div class="card__footer">
-            <Link to="/docs/wallet/cli-wallet/quick-start">
-            <button class="button button--primary button--block">CLI Wallet 🪙</button>
-            </Link>
-            </div>
-        </div>
-        </div>    
-    </div>
-  </div>
-</div>
+Smartnodes are responsible for storing and executing smart contracts, having nodes handle contracts rather than adding them to blocks greatly reduces the chances of scaling issues, like Ethereum has been experiencing. In addition this also allows larger smart contracts and a wider variety of languages that can be used to create them.
