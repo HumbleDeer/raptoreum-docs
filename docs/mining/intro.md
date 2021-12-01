@@ -5,45 +5,10 @@ import Link from '@docusaurus/Link';
 
 # Intro
 
-<div class="container">
-  <div class="row">
-    <div class="col col--4">    
-    <div class="card-demo">
-        <div class="card">
-            <div class="card__header">
-            <h3>Official Wallet</h3>
-            </div>
-            <div class="card__body">
-            <p>
-                Explore the Raptoreum Core wallet
-            </p>
-            </div>
-            <div class="card__footer">
-            <Link to="/docs/wallet/gui-wallet/quick-start">
-            <button class="button button--primary button--block">GUI Wallet 🪙</button>
-            </Link>
-            </div>
-        </div>
-        </div>
-    </div>
-    <div class="col col--4">
-        <div class="card-demo">
-        <div class="card">
-            <div class="card__header">
-            <h3>CLI Wallet</h3>
-            </div>
-            <div class="card__body">
-            <p>
-                Explore the terminal-based wallet.
-            </p>
-            </div>
-            <div class="card__footer">
-            <Link to="/docs/wallet/cli-wallet/quick-start">
-            <button class="button button--primary button--block">CLI Wallet 🪙</button>
-            </Link>
-            </div>
-        </div>
-        </div>    
-    </div>
-  </div>
-</div>
+On this page You will find every relevant information, Guide and Repository links for mining Raptoreum that are currently available.
+
+GPU mining is not supported yet. Solo/Pool CPU mining is available.
+
+If you encounter any problem and need assistance, join our official Discord to get support.
+
+Also please note that this documentation is subject to change as new miners are developed. As soon as a new optimized miner is available we will try to always update the documentation accordingly.

@@ -1,0 +1,55 @@
+---
+sidebar_position: 2
+---
+
+# Find a Miner
+
+<div class="container">
+  <div class="row">
+    <div class="col col--4">
+        <div class="card">
+          <div class="card__body">
+            <h4>cpuminer-gr-avx2</h4>
+            <small>
+              Here is currently the latest/fastest official miner release for all intel/amd CPU's.
+            </small>
+          </div>
+          <div class="card__footer">
+          <a href="https://github.com/WyvernTKC/cpuminer-gr-avx2">
+            <button class="button button--primary button--block">Visit</button>
+          </a>
+          </div>
+        </div>
+      </div> 
+          <div class="col col--4">
+        <div class="card">
+          <div class="card__body">
+            <h4>cpuminer-gr</h4>
+            <small>
+              A CPU miner for ARM based CPU's.
+            </small>
+          </div>
+          <div class="card__footer">
+          <a href="https://github.com/michal-zurkowski/cpuminer-gr">
+            <button class="button button--primary button--block">Visit</button>
+          </a>
+          </div>
+        </div>
+      </div> 
+          <div class="col col--4">
+        <div class="card">
+          <div class="card__body">
+            <h4>XMRig</h4>
+            <small>
+              XMRig is a high performance, open source, cross platform RandomX, KawPow, CryptoNight and AstroBWT unified CPU/GPU miner and RandomX benchmark.
+            </small>
+          </div>
+          <div class="card__footer">
+          <a href="https://github.com/xmrig/xmrig">
+            <button class="button button--primary button--block">Visit</button>
+          </a>
+          </div>
+        </div>
+      </div> 
+  </div>
+</div>
