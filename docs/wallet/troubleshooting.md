@@ -1,34 +1,73 @@
 ---
-sidebar_position: 5
+sidebar_position: 7
 ---
 
 # Troubleshooting
 
-## Raptoreumcore Troubleshooting & Maintenance
+Raptoreumcore Troubleshooting
 
-### Balances
-`Available`:  Total of All Mature Inputs
+### Raptoreumcore Fails To Synchronize
 
-`Pending`: Pending TX totals
+Raptoreumcore can fail to synchronize for a few different reasons, the most common ones being:
 
-`Immature`: Received TXs Waiting to Confirm
+- A bad / invalid header or block locally. In your debug console > Peers you will see peers connecting and then being banned as a symptom.
+- Corrupted database files. Wallet will fail to progress on synchronization.
+- Errors related to .dat files, most commonly mncache.dat and sporks.dat.
 
-`Total`: Available + Immature Balances
+To fix the first two issues it is best to resynchronize the wallet either from scratch or from bootstrap. Using the bootstrap is much faster. Either option starts with removing the following folders from Raptoreumcore data directory:
+```
+blocks
+chainstate
+evodb
+llmq
+```
+If you want to resynchronize from scratch start the wallet now. If you want to use the bootstrap:
 
-### Private Send Info
+- Download bootstrap.zip listed on our latest release: https://github.com/Raptor3um/raptoreum/releases/
+- Unzip the bootstrap and copy the folders into Raptoreumcore data directory.
+- Start the wallet.
+
+### Fixing .dat Related Errors
+
+In most cases stopping the wallet and removing the mentioned .dat file is enough. If after starting the wallet you receive further .dat errors or the same .dat error then remove all .dat files except for any wallet.dat files, and start the wallet.
 
 :::note
 
-Can be used for privacy mixing of your funds Explained in `Menu → Help → PrivateSend`
+The first time starting Raptoreumcore progress will seem quite slow, this does not mean the wallet is not synchronizing, it can take up to a day for it to fully synchronize. The slow part is when it says "Synchronizing headers" after that it progresses much quicker.
 
 :::
 
-`Status`: Status of PrivateSend
+### Raptoreumcore is Showing Incorrect Balance
 
-`PrivateSend Balance`: Current balance of PrivateSend
+Go to `Tools > Wallet Repair > Rescan` blockchain files. Using CLI you can do this by using the `-rescan` flag when starting raptoreumd:
 
-`Amount and Rounds`: Amount to PrivateSend and mixing rounds
+```bash
+./raptoreumd -rescan
+```
 
-### Recent Transactions
+### Fixing Long Synchronization Times
 
-`Recent Transactions`: Most Recent Wallet TXs (Inbound & Outbound)
+The first time you synchronize RaptoreumCore it can take up to a day to fully synchronize. You can reduce this time in most cases to less than one hour by using a bootstrap. We provide a bootstrap with our releases on Github for this reason, it is updated once per month. You can use the bootstrap like so:
+
+1. Download: <https://github.com/Raptor3um/raptoreum/releases/ (look for bootstrap.zip in latest release)
+2. Stop wallet or daemon
+
+In your wallets data directory delete folders:
+```
+blocks
+chainstate
+evodb
+llmq
+```
+3. Unzip bootstrap and copy folder into your data directory
+4. Start wallet
+
+### Miscellaneous
+
+If you are experiencing errors or having a hard time synchronizing the wallet and do not see your specific issue above removing all files in your Raptoreumcore data directory except:
+
+- wallet.dat files.
+- "backups" directory.
+- raptoreum.conf if used.
+
+Using the bootstrap will in most cases fix the problem. If not make sure you are using the correct wallet for your operating system. If you cannot resolve the issue don't hesitate to drop in on our Discord for support.
