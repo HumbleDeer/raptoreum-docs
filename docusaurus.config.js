@@ -1,5 +1,8 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable no-undef */
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
+const path = require('path');
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
@@ -14,7 +17,7 @@ const config = {
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'Raptor3um', // Usually your GitHub org/user name.
-  projectName: 'raptordocs', // Usually your repo name.
+  projectName: 'docs', // Usually your repo name.
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -42,9 +45,35 @@ const config = {
     ],
   ],
   plugins: [
-    // ...
     '@aldridged/docusaurus-plugin-lunr',
     require.resolve('docusaurus-lunr-search'),
+    // @ts-ignore
+    function customPlugin(context, options) {
+      return {
+        name: 'custom-plugin',
+        configureWebpack(config, isServer, utils) {
+          const {getCacheLoader} = utils;
+          return {
+            module: {
+              rules: [
+                // {
+                //   test: /\.foo$/,
+                //   use: [getCacheLoader(isServer), 'my-custom-webpack-loader'],
+                // },
+                {
+                  test: /\.pdf$/,
+                  use: ['file-loader'],
+                },
+                {
+                  test: /\.node$/,
+                  use: ['node-loader'],
+                }
+              ],
+            },
+          };
+        },
+      };
+    },
   ],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
