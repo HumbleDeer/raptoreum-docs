@@ -2,6 +2,7 @@
 sidebar_position: 1
 ---
 import ReactPlayer from 'react-player'
+import ReleaseWidget from '../../../src/components/ReleaseWidget';
 
 # Quick Start
 
@@ -15,18 +16,7 @@ Get started quickly with the Raptoreum Wallet CLI.
 
 Download the Windows [Release](https://github.com/Raptor3um/raptoreum/releases)
 
-| Release | URL |
-|--|--|
-| Windows Installer | [raptoreum-1.2.15.2-win64-setup.exe](https://github.com/Raptor3um/raptoreum/releases/download/1.2.15.2/raptoreum-1.2.15.2-win64-setup.exe) |
-| Windows Standalone | [raptoreum_1.2.15.2_windows_64.zip](https://github.com/Raptor3um/raptoreum/releases/download/1.2.15.2/raptoreum_1.2.15.2_windows_64.zip) |
-
-#### Installer:
-
-- Run the Installer
-- Follow the steps
-- Run Raptoreum Core
-- Run CLI from `C:\Program Files\RaptoreumCore\daemon\raptoreum-cli.exe`
-- Allow Wallet to Sync (Use the bootstrap)
+<ReleaseWidget releaseType="windows-cli" />
 
 #### Standalone Zip:
 
@@ -43,17 +33,11 @@ Download the Windows [Release](https://github.com/Raptor3um/raptoreum/releases)
 
 Download the Unix/Linux [Release](https://github.com/Raptor3um/raptoreum/releases)
 
-| Release | URL |
-|--|--|
-| Ubuntu 18 | [raptoreum_1.2.15.2_ubuntu18_64.tar.gz](https://github.com/Raptor3um/raptoreum/releases/download/1.2.15.2/raptoreum_1.2.15.2_ubuntu18_64.tar.gz) |
-| Ubuntu 20 | [raptoreum_1.2.15.2_ubuntu20_64.tar.gz](https://github.com/Raptor3um/raptoreum/releases/download/1.2.15.2/raptoreum_1.2.15.2_ubuntu20_64.tar.gz) |
-| Source (zip) | [raptoreum_1.2.15.2_ubuntu20_64.tar.gz](https://github.com/Raptor3um/raptoreum/archive/refs/tags/1.2.15.2.zip) |
-| Source (tar) | [raptoreum_1.2.15.2_ubuntu20_64.tar.gz](https://github.com/Raptor3um/raptoreum/releases/download/1.2.15.2/raptoreum_1.2.15.2_ubuntu20_64.tar.gz) |
+<ReleaseWidget releaseType="ubuntu" />
 
 #### Precompiled Binaries:
 
 - Download release for Ubuntu 18 or 20:
-  * `wget https://github.com/Raptor3um/raptoreum/releases/download/1.2.15.2/raptoreum_1.2.15.2_ubuntu20_64.tar.gz`
 - Extract contents:
   * `tar xzvf raptoreum_1.2.15.2_ubuntu20_64.tar.gz`
 - Use the following per use case:
@@ -63,8 +47,4 @@ Download the Unix/Linux [Release](https://github.com/Raptor3um/raptoreum/release
   * `raptoreum-tx` - Raptoreum Tx Utility
 - Run Daemon and `raptoreum-cli` for Wallet CLI
 - Allow Daemon to Sync (Use the [bootstrap](/docs/wallet/bootstrap))
-
-#### Build from Source:
-
-- Stuff here
 

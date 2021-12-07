@@ -29,7 +29,7 @@ const Button = (props: any) => {
     case 'mining':
       buttonText = 'Mining';
       emoji = '⛏️';
-      buttonURL = '/docs/wallet/intro/';
+      buttonURL = '/docs/mining/intro/';
       break;
     case 'wallet':
       buttonText = 'Wallet';
@@ -47,6 +47,7 @@ const Button = (props: any) => {
     case 'smartnodes':
       buttonText = 'Smartnodes';
       emoji = '⚙';
+      buttonURL = '/docs/smartnodes/intro/';
       break;
     default:
       break;
