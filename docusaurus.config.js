@@ -52,7 +52,7 @@ const config = {
       navbar: {
         title: 'Raptoreum Documentation',
         logo: {
-          alt: 'Ratporeum',
+          alt: 'Raptoreum',
           src: 'img/raptoreum_logo.png',
         },
         items: [
@@ -77,11 +77,11 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Links',
             items: [
               {
-                label: 'Home',
-                to: '/docs/general',
+                label: 'Homepage',
+                to: 'https://www.raptoreum.com',
               },
             ],
           },
@@ -95,6 +95,14 @@ const config = {
               {
                 label: 'Telegram',
                 href: 'https://t.me/raptoreum',
+              },
+              {
+                label: 'Reddit',
+                href: 'https://www.reddit.com/r/raptoreum/',
+              },
+              {
+                label: 'Twitter',
+                href: 'https://twitter.com/raptoreum',
               },
             ],
           },
