@@ -23,7 +23,7 @@ Build the container:
 
 Run the container:
 
-```docker run -p 3005:3000 -d raptor/docs```
+```sudo docker run -p 3005:3000 -d raptor/docs```
 
 This will make the applications accessible on port 3005 (via port 3000 inside container).
 
