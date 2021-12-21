@@ -36,15 +36,15 @@ function HomepageHeader() {
             alt="Raptoreum"
           />
           <h1 className="hero__title">Raptoreum</h1>
-          <div className="row">
-            <div className="col col--3 padding-top--lg margin-top--sm">
-              <Button type="mining" />
-            </div>
+          <div className="row padding-bottom--lg">
             <div className="col col--3 padding-top--lg margin-top--sm">
               <Button type="wallet" />
             </div>
             <div className="col col--3 padding-top--lg margin-top--sm">
-              <Button type="network" />
+              <Button type="mining" />
+            </div>
+            <div className="col col--3 padding-top--lg margin-top--sm">
+              <Button type="papers" />
             </div>
             <div className="col col--3 padding-top--lg margin-top--sm">
               <Button type="smartnodes" />

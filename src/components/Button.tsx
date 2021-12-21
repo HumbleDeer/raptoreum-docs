@@ -49,6 +49,11 @@ const Button = (props: any) => {
       emoji = '⚙';
       buttonURL = '/docs/smartnodes/intro/';
       break;
+    case 'papers':
+      buttonText = 'Papers';
+      emoji = '📜';
+      buttonURL = '/docs/about-raptoreum/papers/raptoreumlightpaper';
+      break;
     default:
       break;
   }
