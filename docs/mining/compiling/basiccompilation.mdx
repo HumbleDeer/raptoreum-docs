@@ -1,0 +1,166 @@
+---
+sidebar_position: 1
+---
+
+# Basic Compiling
+
+## Important Notes
+
+- Some important notes before we go into compiling on Windows:
+- MMSR mod is supported on Windows and Linux based OS systems.
+- Huge Pages are supported on Windows, WSL based OS and native Linux OS systems.
+- To enable MSR mod you have to run the miner as root/administrator.
+- To enable Huge Pages on WSL and Native Linux systems just execute the miner with root privilege's.
+- To enable Huge Pages on Windows follow this guide: 
+
+```
+https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/enable-the-lock-pages-in-memory-option-windows?view=sql-server-ver15
+```
+
+
+:::note
+
+This tutorial is geared for `cpuminer-gr-avx2` miner - but may apply to other miners as well.
+
+:::
+
+
+Here are some advantages / reasonings why you should consider compiling your own miner using WSL:
+
+- You build the code from source and not using a prebuilt binary that has potential risk of having a virus. (The executable files in the same repository are safe)
+- The miner you build will be built for your CPU's instruction set that it supports and should be faster.
+- Building your own miner using WSL will save you the issues with anti viruses flagging miners and you don't need to do folder exclusions.
+
+## Compiling using WSL / Ubuntu 20.04 LTS
+
+:::note
+
+Note that Virtualization must be enabled in your BIOS settings.
+
+:::
+
+Detailed info for WSL setup: `https://docs.microsoft.com/en-us/windows/wsl/install-win10#manual-installation-steps`
+
+Update for WSL kernel package: `https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi` 
+
+:::info
+
+You will need to set WSL Version 2 as the default.
+
+:::
+
+```bash
+#This enables WSL.
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+
+#This enables Virtual Machine Platform
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+
+#Restart Your System.
+#You will need to download WSL2 kernel update package from the link mentioned above. 
+#Set WSL 2 as the default version (note that windows 10 is required for this to work)
+wsl --set-default-version 2
+```
+
+- Open Microsoft Store and download and install Ubuntu 20.04 (you can chose other Linux based OS)
+
+- You should have a CLI interface where you can set up a user name and password for your ubuntu instance.
+
+- Update your Ubuntu and install the required tools to build your own binary:
+
+```bash
+#Update and Upgrade ubuntu:
+sudo apt get update
+sudo apt get upgrade
+
+#Download build essentials:
+sudo apt-get install build-essential libssl-dev libcurl4-openssl-dev libjansson-dev libgmp-dev automake zlib1g-dev git
+
+#Clone the repository:
+git clone https://github.com/WyvernTKC/cpuminer-gr-avx2.git
+
+#Enter the folder
+cd cpuminer-gr-avx2
+
+#run the autogen script
+./autogen.sh
+
+#Configure to build for native
+CFLAGS="-O3 -march=native -Wall -mtune=native" ./configure --with-curl
+
+#Build
+make
+
+# Now if everything went fine, you should take a look in the folder with "ls" command and you should have a "cpuminer" executable.
+
+# To make life easier you should create a start script: 
+nano start.sh
+
+# Copy this and change pool address and your wallet address. 
+./cpuminer -a gr -o stratum+tcp://pool_address_goes_here  -u your_wallet_address_goes_here.Worker_name -p x
+
+#CTRL+X to Save
+#Y to approve
+#Enter to write and close 
+#give execution rights to your script:
+chmod +x start.sh
+
+#execute your script and happy mining:
+sudo ./start.sh
+```
+
+:::info
+
+Running the miner on the available platform with `--help` will give you the available parameters/options that you can use. Additional information can be found about the usage examples in the Readme files that can be found next to the source code in the above mentioned repositories.
+
+:::
+
+## Basic Usage After Compiling
+
+- If you download the pre-built miner binaries you will see that there are multiple executable files. Each executable file can mine the same algorithm with different instruction set.
+- You can check your processor manufacturer page to see what instruction set is supported by your CPU and use that executable for mining.
+- Test all the executable to see which miner grants you the highest hash rate (note that takes a few minutes until your hash rate stabilizes and hash rate may fluctuate).
+
+*Basic usage examples:*
+
+```bash
+# This is the most basic setup that will get your miner up in running.
+# Windows
+.\cpuminer-zen.exe -a gr -o stratum+tcp://pool_address_goes_here  -u your_wallet_address_goes_here.Worker_name 
+
+# Linux
+./cpuminer -a gr -o stratum+tcp://pool_address_goes_here  -u your_wallet_address_goes_here.Worker_name 
+
+# -a Specifies the algorithm.
+# -o specifies the pool connection.
+# -u specifies your wallet. 
+# Run the binary with --help for more information.
+```
+
+*Benchmark & Tuning*
+
+```bash
+# This first part shows how to use the benchmark
+# Ubuntu:
+sudo ./cpuminer_name -a gr --benchmark
+# Wait 30 seconds or more to get an avg result / thread (use CTRL+C to cancel)
+
+# Windows:
+# On windows start a command line with administrator rights and navigate to the folder with your executable files.
+cpuminer_name -a gr --benchmark 
+
+# Wait 30 seconds or more to get an avg result / thread (use CTRL+C to cancel)
+
+# This second part shows how to use the tuning tool. (note that you should be using tuning method together with --benchmark instead of tuning the miner during mining on a pool to avoid fluctuation in hash rate and get more accurate results.)
+# Note that it should take about 30 minutes to finish the tuning process. (if using the --benchmark it will stop automatically)
+# Ubuntu:
+./cpuminer_name -a gr --benchmark --tune
+
+# Windows:
+# On windows start a command line with administrator rights and navigate to the folder with your executable files
+./cpuminer-INST -o stratum+tcp://pool_address_goes_here  -u your_wallet_address_goes_here.Worker_name --tune-config tune_config
+
+cpuminer_name -a gr --benchmark --tune
+cpuminer_name -a gr -o stratum+tcp://pool_address_goes_here  -u your_wallet_address_goes_here.Worker_name --tune-config tune_config
+```
+
