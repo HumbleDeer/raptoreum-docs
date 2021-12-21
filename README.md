@@ -31,7 +31,7 @@ This will make the applications accessible on port 3005 (via port 3000 inside co
 
 ✅ Compiling guides for Win/Linux/Mac
 
- □ Finish .webm's for rest of CLI commands
+✅ Finish .webm's for rest of CLI commands
 
  □ Re-work listed miners
 
