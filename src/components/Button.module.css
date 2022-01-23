@@ -3,8 +3,27 @@
  * and scoped locally.
  */
 
+ .svg_wrap_light {
+  height: 4.5rem;
+  width: 4.5rem;
+}
+
+.svg_wrap_dark {
+  height: 4.5rem;
+  width: 4.5rem;
+}
+
+html[data-theme='dark'] .button_header {
+  color: #000000;
+}
+
 .nounderline {
   text-decoration: none;
+  color: #000000;
+}
+
+.dark_mode_light_text {
+  color: #FFFFFF;
 }
 
 a:hover, a:visited, a:link, a:active

@@ -11,7 +11,7 @@
   width: 100vw;
   position: relative;
   overflow: hidden;
-  background-color: #242526;
+  /* background-color: #242526; */
   color: #FFFFFF;
   display:inline-block;
 }
@@ -29,7 +29,23 @@
   justify-content: center;
 }
 
-
 .container {
-  padding-bottom: 4rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.padding_bottom {
+  padding-bottom: 2rem;
+}
+
+.primaryHeader {
+  display: flex;
+  flex-direction: column;
+  flex: auto;
+  align-content: center;
+  justify-content: center;
+  /* border: 4px; */
 }
