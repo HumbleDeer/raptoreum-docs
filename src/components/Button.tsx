@@ -22,13 +22,11 @@ const Button = (props: any) => {
     unclick: {
       y: [0, 3, 0],
       scale: [1, 1.1, 1],
-      // rotate: [0, 2, -2, 0],
       transition: { duration: 0.2 },
     },
     enlarge: {
       scale: [1, 1.04],
       transition: { duration: 0.1 },
-      color: ['#FFFFFF', '#000000', '#FFFFFF'],
     },
     delarge: { scale: [1, 1.1] },
   };
@@ -119,7 +117,7 @@ const Button = (props: any) => {
         whileTap={{ scale: 0.98, transition: { duration: 0.15 } }}
         key="keytest"
       >
-        <Link to={buttonURL} className={styles.nounderline}>
+        <Link to={buttonURL}>
           <div className="card">
             <div className="card__image">
               <button className="button button--block button--primary shadow--sm">
@@ -142,14 +140,17 @@ const Button = (props: any) => {
             </div>
             <div className="card__header shadow--lg">
               <motion.div
-                initial={false}
+                initial
                 variants={variants}
                 animate="visible"
-                className="col"
+                // className={isDarkTheme ? styles.white_text : styles.black_text}
                 whileHover={{
                   scale: 1.2,
-                  // rotate: [0, Math.random() * (15 - 10) + 10, 0],
                   y: [0, -1, 1, 0],
+                  transition: { duration: 0.1 },
+                  color: !isDarkTheme
+                    ? ['#0892d0', '#000000']
+                    : ['#0892d0', '#FFFFFF'],
                 }}
                 whileTap={
                   // eslint-disable-next-line no-constant-condition
@@ -164,9 +165,7 @@ const Button = (props: any) => {
             </div>
             <div
               className={`card__body ${
-                !isDarkTheme
-                  ? styles.button_header
-                  : styles.dark_mode_light_text
+                isDarkTheme ? styles.white_text : styles.black_text
               }`}
             >
               {description}

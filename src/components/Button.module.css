@@ -22,7 +22,11 @@ html[data-theme='dark'] .button_header {
   color: #000000;
 }
 
-.dark_mode_light_text {
+.black_text {
+  color: #000000;
+}
+
+.white_text {
   color: #FFFFFF;
 }
 
