@@ -119,8 +119,7 @@ const Button = (props: any) => {
         whileTap={{ scale: 0.98, transition: { duration: 0.15 } }}
         key="keytest"
       >
-        {/* to={buttonURL} */}
-        <Link to="#" className={styles.nounderline}>
+        <Link to={buttonURL} className={styles.nounderline}>
           <div className="card">
             <div className="card__image">
               <button className="button button--block button--primary shadow--sm">
