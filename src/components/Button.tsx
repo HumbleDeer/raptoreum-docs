@@ -4,37 +4,62 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
 import { motion } from 'framer-motion';
+import {
+  CubeTransparentIcon,
+  CreditCardIcon,
+  DocumentTextIcon,
+  ChipIcon,
+} from '@heroicons/react/outline';
+import useThemeContext from '@theme/hooks/useThemeContext';
 import styles from './Button.module.css';
-
-const variants: any = {
-  click: { y: [0, 3, 0], scale: [1, 1.25, 1], transition: { duration: 0.2 } },
-  unclick: {
-    y: [0, 3, 0],
-    scale: [1, 1.1, 1],
-    // rotate: [0, 2, -2, 0],
-    transition: { duration: 0.2 },
-  },
-  enlarge: { scale: [1, 1.04], transition: { duration: 0.15 } },
-  delarge: { scale: [1, 1.1] },
-};
 
 const Button = (props: any) => {
   const { type } = props;
+  const { isDarkTheme } = useThemeContext();
+
+  const variants: any = {
+    click: { y: [0, 3, 0], scale: [1, 1.25, 1], transition: { duration: 0.2 } },
+    unclick: {
+      y: [0, 3, 0],
+      scale: [1, 1.1, 1],
+      transition: { duration: 0.2 },
+    },
+    enlarge: {
+      scale: [1, 1.04],
+      transition: { duration: 0.1 },
+    },
+    delarge: { scale: [1, 1.1] },
+  };
 
   let buttonText: string = '';
   let buttonURL: string = '';
-  let emoji: string = '';
+  let description: string = '';
+  let emoji: any = '';
 
   switch (type) {
     case 'mining':
       buttonText = 'Mining';
-      emoji = '⛏️';
+      emoji = (
+        <ChipIcon
+          className={`${
+            isDarkTheme ? styles.svg_wrap_dark : styles.svg_wrap_light
+          }`}
+        />
+      );
       buttonURL = '/docs/mining/intro/';
+      description = 'Topics around mining Raptoreum';
       break;
     case 'wallet':
       buttonText = 'Wallet';
-      emoji = '🪙';
+      emoji = (
+        <CreditCardIcon
+          className={`${
+            isDarkTheme ? styles.svg_wrap_dark : styles.svg_wrap_light
+          }`}
+        />
+      );
       buttonURL = '/docs/wallet/intro/';
+      description = 'Find a wallet - Learn about the CLI Wallet';
       break;
     case 'network':
       buttonText = 'Network';
@@ -42,17 +67,39 @@ const Button = (props: any) => {
       break;
     case 'community':
       buttonText = 'Community';
-      emoji = '📱';
+      emoji = (
+        <CubeTransparentIcon
+          className={`${
+            isDarkTheme ? styles.svg_wrap_dark : styles.svg_wrap_light
+          }`}
+        />
+      );
+      description =
+        'This is a test description and it will describe how this is a test inside of the description.';
       break;
     case 'smartnodes':
       buttonText = 'Smartnodes';
-      emoji = '⚙';
+      emoji = (
+        <CubeTransparentIcon
+          className={`${
+            isDarkTheme ? styles.svg_wrap_dark : styles.svg_wrap_light
+          }`}
+        />
+      );
       buttonURL = '/docs/smartnodes/intro/';
+      description = 'Learn about Smartnodes, creation & maintenance.';
       break;
     case 'papers':
       buttonText = 'Papers';
-      emoji = '📜';
+      emoji = (
+        <DocumentTextIcon
+          className={`${
+            isDarkTheme ? styles.svg_wrap_dark : styles.svg_wrap_light
+          }`}
+        />
+      );
       buttonURL = '/docs/about-raptoreum/papers/raptoreumlightpaper';
+      description = 'Read proposals and developmental plans';
       break;
     default:
       break;
@@ -67,40 +114,63 @@ const Button = (props: any) => {
         animate=""
         className="col"
         whileHover="enlarge"
-        whileTap=""
+        whileTap={{ scale: 0.98, transition: { duration: 0.15 } }}
         key="keytest"
       >
-        <Link to={buttonURL} className={styles.nounderline}>
-          <button className="button button--block button--danger shadow--sm">
-            <div className="container">
-              <div className="row">
-                <div className="col col--4 ">{buttonText}</div>
-                <div className="col col--2 col--offset-4">
-                  <motion.div
-                    initial={false}
-                    variants={variants}
-                    animate="visible"
-                    className="col"
-                    whileHover={{
-                      scale: 1.2,
-                      // rotate: [0, Math.random() * (15 - 10) + 10, 0],
-                      y: [0, -1, 1, 0],
-                    }}
-                    whileTap={
-                      // add more later
-                      // eslint-disable-next-line no-constant-condition
-                      true
-                        ? { scale: 0.9, transition: { duration: 0.5 } }
-                        : { scale: 1.4, transition: { duration: 0.2 } }
-                    }
-                    key="keytest"
-                  >
-                    <div>{emoji}</div>
-                  </motion.div>
+        <Link to={buttonURL}>
+          <div className="card">
+            <div className="card__image">
+              <button className="button button--block button--primary shadow--sm">
+                <div className="container">
+                  <div className="row">
+                    <div className="col">
+                      <div
+                        className={`${
+                          isDarkTheme
+                            ? styles.button_header
+                            : styles.dark_mode_light_text
+                        }`}
+                      >
+                        {buttonText}
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              </button>
             </div>
-          </button>
+            <div className="card__header shadow--lg">
+              <motion.div
+                initial
+                variants={variants}
+                animate="visible"
+                // className={isDarkTheme ? styles.white_text : styles.black_text}
+                whileHover={{
+                  scale: 1.2,
+                  y: [0, -1, 1, 0],
+                  transition: { duration: 0.1 },
+                  color: !isDarkTheme
+                    ? ['#0892d0', '#000000']
+                    : ['#0892d0', '#FFFFFF'],
+                }}
+                whileTap={
+                  // eslint-disable-next-line no-constant-condition
+                  true
+                    ? { scale: 0.9, transition: { duration: 0.05 } }
+                    : { scale: 1.4, transition: { duration: 0.2 } }
+                }
+                key="keytest"
+              >
+                {emoji}
+              </motion.div>
+            </div>
+            <div
+              className={`card__body ${
+                isDarkTheme ? styles.white_text : styles.black_text
+              }`}
+            >
+              {description}
+            </div>
+          </div>
         </Link>
       </motion.div>
     </>

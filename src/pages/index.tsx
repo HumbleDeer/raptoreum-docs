@@ -24,40 +24,80 @@ const variants: any = {
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div>
-        {/* <p className="hero__subtitle">{siteConfig.tagline}</p> */}
+    <></>
+    // <header className={clsx('hero hero--primary', styles.heroBanner)}>
+    //   <div>
+    //     {/* <p className="hero__subtitle">{siteConfig.tagline}</p> */}
 
-        <div className={clsx('container', styles.container)}>
-          <img
-            src="img/raptoreum_logo.png"
-            height="128"
-            width="128"
-            alt="Raptoreum"
-          />
-          <h1 className="hero__title">Raptoreum</h1>
-          <div className="row padding-bottom--lg">
-            <div className="col col--3 padding-top--lg margin-top--sm">
-              <Button type="wallet" />
-            </div>
-            <div className="col col--3 padding-top--lg margin-top--sm">
-              <Button type="mining" />
-            </div>
-            <div className="col col--3 padding-top--lg margin-top--sm">
-              <Button type="papers" />
-            </div>
-            <div className="col col--3 padding-top--lg margin-top--sm">
-              <Button type="smartnodes" />
-            </div>
+    //     <div className={clsx('container', styles.container)}>
+    //       <img
+    //         src="img/raptoreum_logo.png"
+    //         height="128"
+    //         width="128"
+    //         alt="Raptoreum"
+    //       />
+    //       <h1 className="hero__title">Raptoreum</h1>
+    //       <div className="row padding-bottom--lg">
+    //         <div className="col col--3 padding-top--lg margin-top--sm">
+    //           <Button type="wallet" />
+    //         </div>
+    //         <div className="col col--3 padding-top--lg margin-top--sm">
+    //           <Button type="mining" />
+    //         </div>
+    //         <div className="col col--3 padding-top--lg margin-top--sm">
+    //           <Button type="papers" />
+    //         </div>
+    //         <div className="col col--3 padding-top--lg margin-top--sm">
+    //           <Button type="smartnodes" />
+    //         </div>
+    //       </div>
+    //     </div>
+    //   </div>
+    // </header>
+  );
+}
+
+function NavMenu() {
+  return (
+    <div>
+      <div
+        className={clsx('container', styles.container, styles.padding_bottom)}
+      >
+        <div className={styles.primaryHeader}>
+          <div className={styles.container}>
+            <img
+              src="img/raptoreum_logo.png"
+              height="128"
+              width="128"
+              alt="Raptoreum"
+            />
+          </div>
+          <div className={styles.container}>
+            <h1 className="hero__title">Raptoreum</h1>
+          </div>
+        </div>
+        <div className="row padding-bottom--lg">
+          <div className="col col--3 padding-top--lg margin-top--sm">
+            <Button type="wallet" />
+          </div>
+          <div className="col col--3 padding-top--lg margin-top--sm">
+            <Button type="mining" />
+          </div>
+          <div className="col col--3 padding-top--lg margin-top--sm">
+            <Button type="papers" />
+          </div>
+          <div className="col col--3 padding-top--lg margin-top--sm">
+            <Button type="smartnodes" />
           </div>
         </div>
       </div>
-    </header>
+    </div>
   );
 }
 
 export default function Home(): JSX.Element {
-  const { siteConfig } = useDocusaurusContext();
+  const { siteConfig, siteMetadata } = useDocusaurusContext();
+  console.log(siteConfig);
   return (
     <Layout
       title={`${siteConfig.title}`}
@@ -65,6 +105,7 @@ export default function Home(): JSX.Element {
     >
       <main>
         <HomepageHeader />
+        <NavMenu />
 
         {/* <HomepageFeatures /> */}
       </main>
