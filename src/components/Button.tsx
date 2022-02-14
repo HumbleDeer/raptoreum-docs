@@ -104,8 +104,6 @@ const Button = (props: any) => {
     default:
       break;
   }
-
-  console.log(type);
   return (
     <>
       <motion.div
