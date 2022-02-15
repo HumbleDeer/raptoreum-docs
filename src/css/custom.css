@@ -53,6 +53,8 @@ html[data-theme='dark'] {
 
 .footer {
   background-color: #242526;
+  /* max-height: 20vh; */
+  font-size: small;
 }
 
 .navbar__title:hover {

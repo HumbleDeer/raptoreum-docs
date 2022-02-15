@@ -10,12 +10,14 @@ import {
   DocumentTextIcon,
   ChipIcon,
 } from '@heroicons/react/outline';
-import useThemeContext from '@theme/hooks/useThemeContext';
+import Layout from '@theme/Layout';
+import { useColorMode } from '@docusaurus/theme-common';
 import styles from './Button.module.css';
 
 const Button = (props: any) => {
   const { type } = props;
-  const { isDarkTheme } = useThemeContext();
+  const { isDarkTheme } = useColorMode();
+  // const { isDarkTheme, colorMode } = useThemeConfig();
 
   const variants: any = {
     click: { y: [0, 3, 0], scale: [1, 1.25, 1], transition: { duration: 0.2 } },
