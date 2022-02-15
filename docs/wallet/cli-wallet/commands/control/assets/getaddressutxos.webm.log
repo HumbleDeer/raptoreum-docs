@@ -1,0 +1,4 @@
+Started render process: /usr/bin/melt-7 -progress /tmp/kdenlive-NbZEwH.mlt out=646
+mlt_repository_init: failed to dlopen /usr/lib/mlt-7/libmltopencv.so (libopencv_tracking.so.405: cannot open shared object file: No such file or directory)mlt_repository_init: failed to dlopen /usr/lib/mlt-7/libmltrtaudio.so (librtaudio.so.6: cannot open shared object file: No such file or directory)mlt_repository_init: failed to dlopen /usr/lib/mlt-7/libmltsox.so (libsox.so.3: cannot open shared object file: No such file or directory)mlt_repository_init: failed to dlopen /usr/lib/mlt-7/libmltmovit.so (libmovit.so.8: cannot open shared object file: No such file or directory)mlt_repository_init: failed to dlopen /usr/lib/mlt-7/libmltsdl.so (libSDL-1.2.so.0: cannot open shared object file: No such file or directory)1	52	8
+2	119	18
+Job aborted by user
