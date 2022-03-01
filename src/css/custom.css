@@ -53,6 +53,11 @@ html[data-theme='dark'] {
 
 .footer {
   background-color: #242526;
+  /* max-height: 20vh; */
+  padding-top: 32px;
+  padding-bottom: 16px;
+  margin-top: 32px;
+  font-size: small;
 }
 
 .navbar__title:hover {
@@ -66,3 +71,7 @@ html[data-theme='dark'] {
 .menu__link--active {
   color: #0892d0;
 }
+
+/* .welcome_sidebar {
+  background: rgb(223, 117, 20);
+} */

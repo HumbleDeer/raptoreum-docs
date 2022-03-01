@@ -1,11 +1,13 @@
+/* eslint-disable no-shadow */
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-undef */
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
-const path = require('path');
+// const path = require('path');
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
+// const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const lightCodeTheme = require('prism-react-renderer/themes/github');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -104,6 +106,7 @@ const config = {
         }
       },
       navbar: {
+        // style: 'dark',
         title: 'Raptoreum Documentation',
         logo: {
           alt: 'Raptoreum',
@@ -170,7 +173,8 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Raptoreum`,
+        // copyright: `Copyright © ${new Date().getFullYear()} Raptoreum`,
+
       },
       prism: {
         theme: lightCodeTheme,

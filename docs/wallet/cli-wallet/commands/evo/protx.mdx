@@ -3,51 +3,58 @@ sidebar_position: 2
 ---
 import ReactPlayer from 'react-player'
 
-# getinfo
+# protx
 
-*getinfo*
+*protx "command" ...*
 
-DEPRECATED. Returns an object containing various state info.
+Set of commands to execute ProTx related actions.
+To get help on individual commands, use "help protx command".
 
-`raptoreum-cli getinfo `
+```bash
+# Available commands:
+  register          - Create and send ProTx to network
+  register_fund     - Fund, create and send ProTx to network
+  register_prepare  - Create an unsigned ProTx
+  register_submit   - Sign and submit a ProTx
+  quick_setup       - register_prepare, signmessage and register_submit in one command
+  list              - List ProTxs
+  info              - Return information about a ProTx
+  update_service    - Create and send ProUpServTx to network
+  update_registrar  - Create and send ProUpRegTx to network
+  revoke            - Create and send ProUpRevTx to network
+  diff              - Calculate a diff and a proof between two smartnode lists
+```
 
-<!-- <ReactPlayer playing controls url={[
-    {src: `${require('./assets/placeholder.webm').default}`, type: 'video/webm'}]} /> -->
+<ReactPlayer playing controls url={[
+    {src: `${require('./assets/protx.webm').default}`, type: 'video/webm'}]} />
+
+
+## Arguments
+
+| Argument | Type | Description |
+|--|--|--|
+| "command" | (string) | The command to execute |
+
+```bash
+Arguments:
+1. "command"        (string, required) The command to execute
+```
 
 ## Output
 
 | Result | Type | Description |
 |--|--|--|
-| "deprecation-warning" | (string) | warning that the getinfo command is deprecated and will be removed in a future version |
+| ... | ... | ... |
 
 ```bash
 Result:
 {
-  "deprecation-warning": "..." (string) warning that the getinfo command is deprecated and will be removed in a future version
-  "version": xxxxx,           (numeric) the server version
-  "protocolversion": xxxxx,   (numeric) the protocol version
-  "walletversion": xxxxx,     (numeric) the wallet version
-  "balance": xxxxxxx,         (numeric) the total raptoreum balance of the wallet
-  "privatesend_balance": xxxxxx, (numeric) the PrivateSend balance in RTM
-  "blocks": xxxxxx,           (numeric) the current number of blocks processed in the server
-  "timeoffset": xxxxx,        (numeric) the time offset
-  "connections": xxxxx,       (numeric) the number of connections
-  "proxy": "host:port",       (string, optional) the proxy used by the server
-  "difficulty": xxxxxx,       (numeric) the current difficulty
-  "testnet": true|false,      (boolean) if the server is using testnet or not
-  "keypoololdest": xxxxxx,    (numeric) the timestamp (seconds since Unix epoch) of the oldest pre-generated key in the key pool
-  "keypoolsize": xxxx,        (numeric) how many new keys are pre-generated
-  "unlocked_until": ttt,      (numeric) the timestamp in seconds since epoch (midnight Jan 1 1970 GMT) that the wallet is unlocked for transfers, or 0 if the wallet is locked
-  "paytxfee": x.xxxx,         (numeric) the transaction fee set in RTM/kB
-  "relayfee": x.xxxx,         (numeric) minimum relay fee for transactions in RTM/kB
-  "errors": "..."             (string) any error messages
+  ...
 }
 ```
-
 
 ## Examples
 
 ```bash
-curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "protx", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
+curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "bls", "params": [raptoreum+net] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```
-

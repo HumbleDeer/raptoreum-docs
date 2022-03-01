@@ -3,6 +3,8 @@ sidebar_position: 1
 ---
 import ReactPlayer from 'react-player'
 import ReleaseWidget from '../../../src/components/ReleaseWidget';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Quick Start
 
@@ -11,14 +13,20 @@ Get started quickly with the Raptoreum Wallet CLI.
 <ReactPlayer playing controls url={[
     {src: `${require('./assets/cli-wallet.webm').default}`, type: 'video/webm'}]} />
 
+## Installation
 
-## Windows
+<Tabs>
+  <TabItem value="windows" label="Windows" default>
+    <ReleaseWidget releaseType="windows-cli" />
+  </TabItem>
+  <TabItem value="unixlinux" label="Unix / Linux">
+    <ReleaseWidget releaseType="ubuntu" />  
+  </TabItem>
+</Tabs>
 
-Download the Windows [Release](https://github.com/Raptor3um/raptoreum/releases)
+## Setup
 
-<ReleaseWidget releaseType="windows-cli" />
-
-#### Standalone Zip:
+### Standalone Zip
 
 - Extract the zip
 - Use the following per use case:
@@ -29,13 +37,7 @@ Download the Windows [Release](https://github.com/Raptor3um/raptoreum/releases)
 - Run Daemon and `./raptoreum-cli` for Wallet CLI
 - Allow Daemon to Sync (Use the [bootstrap](/docs/wallet/bootstrap))
 
-## Unix/Linux
-
-Download the Unix/Linux [Release](https://github.com/Raptor3um/raptoreum/releases)
-
-<ReleaseWidget releaseType="ubuntu" />
-
-#### Precompiled Binaries:
+### Precompiled Binaries
 
 - Download release for Ubuntu 18 or 20:
 - Extract contents:
