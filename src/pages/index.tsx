@@ -97,7 +97,7 @@ function NavMenu() {
 
 export default function Home(): JSX.Element {
   const { siteConfig, siteMetadata } = useDocusaurusContext();
-  console.log(siteConfig);
+  // console.log(siteConfig);
   return (
     <Layout
       title={`${siteConfig.title}`}

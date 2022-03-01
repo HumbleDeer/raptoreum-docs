@@ -18,7 +18,7 @@ export default function ReleaseWidget(props: any): JSX.Element {
   const { releaseType } = props;
 
   const getReleasesFromGithub = async () => {
-    console.log('getReleasesFromGithub');
+    // console.log('getReleasesFromGithub');
     const data = await axios.get(
       'https://api.github.com/repos/Raptor3um/raptoreum/releases/latest'
     );
@@ -26,11 +26,11 @@ export default function ReleaseWidget(props: any): JSX.Element {
   };
 
   useEffect(() => {
-    console.log(releaseData);
+    // console.log(releaseData);
     (async () => {
       if (!releaseData) {
         const data: any = await getReleasesFromGithub().then((result: any) => {
-          console.log(result.data);
+          // console.log(result.data);
           return result.data;
         });
         setReleaseData(data);
