@@ -95,16 +95,16 @@ const config = {
       //     lightIconStyle: {
       //       marginLeft: '1px',
       //     },
-      colorMode: {
-        switchConfig: {
-          darkIcon: '🌑',
-          darkIconStyle: {
-            marginLeft: '2px',
-            paddingRight: '2px',
-          },
-          lightIcon: '💡',
-        }
-      },
+      // colorMode: { DEPRECATED
+      //   switchConfig: {
+      //     darkIcon: '🌑',
+      //     darkIconStyle: {
+      //       marginLeft: '2px',
+      //       paddingRight: '2px',
+      //     },
+      //     lightIcon: '💡',
+      //   }
+      // },
       navbar: {
         // style: 'dark',
         title: 'Raptoreum Documentation',
