@@ -96,11 +96,17 @@ cat ~/.raptoreumcore/raptoreum.conf | grep bls
 
 After firing the protx update_service command you should see status change on your Smartnode list from PoSe_banned to ENABLED in anywhere from 1 minute to 6 minutes.
 
-3. Resolving resource related PoSe ban issues. Make sure raptoreumd always has access to a full CPU core. As an example you have a VPS with 4 cores and want to also use it to mine, make sure the miner only uses max 3 cores. If you find raptoreumd is sometimes not running this is often due to it being killed by OOM (Out Of Memory Killer) this is a process of the Linux kernel that will kill certain processes when the system is critically low on memory. Search your system logs to help diagnose the issue, as an example on ubuntu 18:
+3. Resolving resource related PoSe ban issues. Make sure raptoreumd always has access to at least 2 full CPU cores. We strongly recommend against mining on your Smartnodes. Mining on them will endup in performance issues and PoSe bans. If you find raptoreumd is sometimes not running this is often due to it being killed by OOM (Out Of Memory Killer) this is a process of the Linux kernel that will kill certain processes when the system is critically low on memory. Search your system logs to help diagnose the issue, as an example on ubuntu 18:
 
 ```bash
 grep -i 'killed process' /var/log/syslog
 ```
+
+:::note
+
+As an example, if you have a VPS with 4 cores and want to also use it to mine, make sure the miner only uses max 3 cores. (Replace with) We strongly recommend against mining on your Smartnodes. Mining on them will endup in performance issues and PoSe bans.
+
+:::
 
 ## Monitoring Your Smartnode
 
