@@ -25,7 +25,7 @@ sudo su
 
 ```bash
 apt update && apt upgrade -y
-apt install -y unzip
+apt install unzip fail2ban -y
 ```
 <sub>Unzip is required to unpack the bootstrap.</sub>
 
@@ -50,7 +50,7 @@ Swap:            0B          0B          0B
 Create SWAP and Activate:
 
 ```bash
-dd if=/dev/zero of=/swapfile bs=1k count=2048k
+dd if=/dev/zero of=/swapfile bs=1k count=4096k
 chmod 600 /swapfile
 mkswap /swapfile
 swapon /swapfile
@@ -76,15 +76,11 @@ ufw allow 10226/tcp
 ufw enable
 ```
 
-### 4. Install Fail2Ban
+### 4. Configure Fail2Ban
 
 As I am not bothering with setting up SSH login with keys rather then password based login need to keep something from the bots and kiddies brute forcing our SSH service.
 
-```bash
-apt install fail2ban -y
-```
-
-Now setup jail for bad guys hitting SSH, and set it to ban after three failed logins to SSH:
+Setup jail for bad guys hitting SSH, and set it to ban after three failed logins to SSH:
 
 ```bash
 nano /etc/fail2ban/jail.local
@@ -101,12 +97,6 @@ logpath = /var/log/auth.log
 maxretry = 3
 ```
 
-Restart fail2ban:
-
-```bash
-systemctl restart fail2ban
-```
-
 Reboot the server:
 
 ```bash
@@ -116,23 +106,23 @@ reboot
 Add a system user to run raptoreumd:
 
 ```bash
-adduser username
+adduser <username_here>
 ```
 
 Get Raptoreum wallet / daemon and bootstrap:
 
 ```bash
-mkdir rtm_latest
+mkdir -p rtm_latest
 cd rtm_latest
-wget https://github.com/Raptor3um/raptoreum/releases/download/1.2.15.2/raptoreum_1.2.15.2_ubuntu20_64.tar.gz
-tar -xvf raptoreum_1.2.15.2_ubuntu20_64.tar.gz
+wget https://github.com/Raptor3um/raptoreum/releases/download/1.2.15.3/raptoreum_1.2.15.3_ubuntu20_64.tar.gz
+tar -xvf raptoreum_1.2.15.3_ubuntu20_64.tar.gz
 cd ..
-wget https://github.com/Raptor3um/raptoreum/releases/download/1.2.15.2/bootstrap.zip
+wget https://github.com/Raptor3um/raptoreum/releases/download/1.2.15.3/bootstrap.zip
 unzip bootstrap.zip
-cd bootstrap
 mkdir ~/.raptoreumcore && touch ~/.raptoreumcore/raptoreum.conf
 cp -R blocks chainstate evodb llmq ~/.raptoreumcore
-~/rtm_latest/./raptoreumd --daemon
+echo "daemon=1" >> ~/.raptoreumcore/raptoreum.conf
+~/rtm_latest/./raptoreumd
 echo all done!
 ```
 
