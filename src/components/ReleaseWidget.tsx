@@ -48,7 +48,7 @@ export default function ReleaseWidget(props: any): JSX.Element {
       if (object?.tag_name?.includes(targetVersion)) {
         return true;
       }
-    });    
+    });
 
     return (
       <>

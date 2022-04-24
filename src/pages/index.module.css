@@ -35,6 +35,18 @@
   align-content: center;
   justify-content: center;
   text-align: center;
+  /* margin: auto; */
+  /* justify-content: center; */
+}
+
+.svgcontainer {
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  height: 15vh;
+  margin-top: -15vh;
+  /* margin: auto; */
+  /* justify-content: center; */
 }
 
 .padding_bottom {

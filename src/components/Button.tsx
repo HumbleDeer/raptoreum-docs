@@ -27,8 +27,8 @@ const Button = (props: any) => {
       transition: { duration: 0.2 },
     },
     enlarge: {
-      scale: [1, 1.04],
-      transition: { duration: 0.1 },
+      scale: [1, 1.05],
+      transition: { duration: 0.08 },
     },
     delarge: { scale: [1, 1.1] },
   };
@@ -118,7 +118,7 @@ const Button = (props: any) => {
         key="keytest"
       >
         <Link to={buttonURL}>
-          <div className="card">
+          <div className="card ">
             <div className="card__image">
               <button className="button button--block button--primary shadow--sm">
                 <div className="container">
@@ -159,6 +159,12 @@ const Button = (props: any) => {
                     : { scale: 1.4, transition: { duration: 0.2 } }
                 }
                 key="keytest"
+                style={{
+                  display: 'flex',
+                  margin: 'auto',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}
               >
                 {emoji}
               </motion.div>
@@ -167,6 +173,13 @@ const Button = (props: any) => {
               className={`card__body ${
                 isDarkTheme ? styles.white_text : styles.black_text
               }`}
+              style={{
+                display: 'flex',
+                margin: 'auto',
+                justifyContent: 'center',
+                alignItems: 'center',
+                textAlign: 'center',
+              }}
             >
               {description}
             </div>

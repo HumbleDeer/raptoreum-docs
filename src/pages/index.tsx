@@ -10,6 +10,8 @@ import styles from './index.module.css';
 import Button from '../components/Button';
 
 import HomepageFeatures from '../components/HomepageFeatures';
+import RaptoreumLogo from '../components/RaptoreumLogo';
+import RaptoreumTextLogo from '../components/RaptoreumTextLogo';
 
 const variants: any = {
   click: { y: [0, 3, 0], scale: [1, 1.25, 1], transition: { duration: 0.5 } },
@@ -38,16 +40,16 @@ function HomepageHeader() {
     //       />
     //       <h1 className="hero__title">Raptoreum</h1>
     //       <div className="row padding-bottom--lg">
-    //         <div className="col col--3 padding-top--lg margin-top--sm">
+    //         <div className="col col--2 padding-top--lg margin-top--sm">
     //           <Button type="wallet" />
     //         </div>
-    //         <div className="col col--3 padding-top--lg margin-top--sm">
+    //         <div className="col col--2 padding-top--lg margin-top--sm">
     //           <Button type="mining" />
     //         </div>
-    //         <div className="col col--3 padding-top--lg margin-top--sm">
+    //         <div className="col col--2 padding-top--lg margin-top--sm">
     //           <Button type="papers" />
     //         </div>
-    //         <div className="col col--3 padding-top--lg margin-top--sm">
+    //         <div className="col col--2 padding-top--lg margin-top--sm">
     //           <Button type="smartnodes" />
     //         </div>
     //       </div>
@@ -59,39 +61,45 @@ function HomepageHeader() {
 
 function NavMenu() {
   return (
-    <div>
-      <div
-        className={clsx('container', styles.container, styles.padding_bottom)}
-      >
-        <div className={styles.primaryHeader}>
-          <div className={styles.container}>
-            <img
+    <>
+      <div>
+        <div
+          className={clsx('container', styles.container, styles.padding_bottom)}
+        >
+          <div className={styles.primaryHeader}>
+            <div className={styles.container}>
+              {/* <img
               src="img/raptoreum_logo.png"
               height="128"
               width="128"
               alt="Raptoreum"
-            />
+            /> */}
+              <RaptoreumLogo />
+            </div>
           </div>
-          <div className={styles.container}>
-            <h1 className="hero__title">Raptoreum</h1>
+          <div className={styles.svgcontainer}>
+            <RaptoreumTextLogo />
+            {/* <h1 className="hero__title">Raptoreum</h1> */}
           </div>
         </div>
-        <div className="row padding-bottom--lg">
-          <div className="col col--3 padding-top--lg margin-top--sm">
+        <div className="row padding-bottom--lg padding-top--lg">
+          <div className="col col--2 padding-top--lg margin-top--sm" />
+          <div className="col col--2 padding-top--lg margin-top--sm">
             <Button type="wallet" />
           </div>
-          <div className="col col--3 padding-top--lg margin-top--sm">
+          <div className="col col--2 padding-top--lg margin-top--sm">
             <Button type="mining" />
           </div>
-          <div className="col col--3 padding-top--lg margin-top--sm">
+          <div className="col col--2 padding-top--lg margin-top--sm">
             <Button type="papers" />
           </div>
-          <div className="col col--3 padding-top--lg margin-top--sm">
+          <div className="col col--2 padding-top--lg margin-top--sm">
             <Button type="smartnodes" />
           </div>
         </div>
+        <div className="col col--2 padding-top--lg margin-top--sm" />
       </div>
-    </div>
+    </>
   );
 }
 
