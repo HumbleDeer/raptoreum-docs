@@ -26,6 +26,8 @@ export default function ReleaseWidget(props: any): JSX.Element {
     return data;
   };
 
+  const targetVersion: string = '1.2.15.3';
+
   useEffect(() => {
     // console.log(releaseData);
     (async () => {
@@ -35,152 +37,216 @@ export default function ReleaseWidget(props: any): JSX.Element {
           return result.data;
         });
         // CHANGE THIS LATER AFTER RELEASE FIX
-        setReleaseData(data[1]);
+        setReleaseData(data);
       }
     })();
   }, [releaseData]);
 
   const VersionNumberWidget = () => {
     if (!releaseData) return;
-    const result: string = releaseData?.tag_name;
+    const result = _.find(releaseData, (object: any) => {
+      if (object?.tag_name?.includes(targetVersion)) {
+        return true;
+      }
+    });    
 
     return (
       <>
-        <span className="badge badge--secondary">{result}</span>
+        <span className="badge badge--secondary">{result?.tag_name}</span>
       </>
     );
   };
 
   const getWindowsZipRelease = () => {
     if (!releaseData) return;
-    const result = _.find(releaseData.assets, (object: any) => {
+    const result = _.find(releaseData, (object: any) => {
+      if (object?.tag_name?.includes(targetVersion)) {
+        return true;
+      }
+    });
+    const subResult = _.find(result.assets, (object: any) => {
       if (object?.name?.includes('windows_64.zip')) {
         return true;
       }
     });
 
-    return <>{result.name}</>;
+    return <>{subResult.name}</>;
   };
 
   const getWindowsZipReleaseDownloadLink = (): any => {
     if (!releaseData) return;
-    const result = _.find(releaseData.assets, (object: any) => {
+    const result = _.find(releaseData, (object: any) => {
+      if (object?.tag_name?.includes(targetVersion)) {
+        return true;
+      }
+    });
+    const subResult = _.find(result.assets, (object: any) => {
       if (object?.name?.includes('windows_64.zip')) {
         return true;
       }
     });
 
-    return result.browser_download_url;
+    return subResult.browser_download_url;
   };
 
   const getWindowsInstallerRelease = () => {
     if (!releaseData) return;
-    const result = _.find(releaseData.assets, (object: any) => {
+    const result = _.find(releaseData, (object: any) => {
+      if (object?.tag_name?.includes(targetVersion)) {
+        return true;
+      }
+    });
+    const subResult = _.find(result.assets, (object: any) => {
       if (object?.name?.includes('windows_64_setup.exe')) {
         return true;
       }
     });
 
-    return <>{result.name}</>;
+    return <>{subResult.name}</>;
   };
 
   const getWindowsInstallerDownloadLink = () => {
     if (!releaseData) return;
-    const result = _.find(releaseData.assets, (object: any) => {
+    const result = _.find(releaseData, (object: any) => {
+      if (object?.tag_name?.includes(targetVersion)) {
+        return true;
+      }
+    });
+    const subResult = _.find(result.assets, (object: any) => {
       if (object?.name?.includes('windows_64_setup.exe')) {
         return true;
       }
     });
 
-    return result.browser_download_url;
+    return subResult.browser_download_url;
   };
 
   const getUbuntu18Release = () => {
     if (!releaseData) return;
-    const result = _.find(releaseData.assets, (object: any) => {
+    const result = _.find(releaseData, (object: any) => {
+      if (object?.tag_name?.includes(targetVersion)) {
+        return true;
+      }
+    });
+    const subResult = _.find(result.assets, (object: any) => {
       if (object?.name?.includes('ubuntu18')) {
         return true;
       }
     });
 
-    return <>{result.name}</>;
+    return <>{subResult.name}</>;
   };
 
   const getUbuntu18ReleaseDownloadLink = (): any => {
     if (!releaseData) return;
-    const result = _.find(releaseData.assets, (object: any) => {
+    const result = _.find(releaseData, (object: any) => {
+      if (object?.tag_name?.includes(targetVersion)) {
+        return true;
+      }
+    });
+    const subResult = _.find(result.assets, (object: any) => {
       if (object?.name?.includes('ubuntu18')) {
         return true;
       }
     });
 
-    return result.browser_download_url;
+    return subResult.browser_download_url;
   };
 
   const getUbuntu20Release = () => {
     if (!releaseData) return;
-    const result = _.find(releaseData.assets, (object: any) => {
+    const result = _.find(releaseData, (object: any) => {
+      if (object?.tag_name?.includes(targetVersion)) {
+        return true;
+      }
+    });
+    const subResult = _.find(result.assets, (object: any) => {
       if (object?.name?.includes('ubuntu20')) {
         return true;
       }
     });
 
-    return <>{result.name}</>;
+    return <>{subResult.name}</>;
   };
 
   const getUbuntu20ReleaseDownloadLink = (): any => {
     if (!releaseData) return;
-    const result = _.find(releaseData.assets, (object: any) => {
+    const result = _.find(releaseData, (object: any) => {
+      if (object?.tag_name?.includes(targetVersion)) {
+        return true;
+      }
+    });
+    const subResult = _.find(result.assets, (object: any) => {
       if (object?.name?.includes('ubuntu20')) {
         return true;
       }
     });
 
-    return result.browser_download_url;
+    return subResult.browser_download_url;
   };
 
   const getMacRelease = () => {
     if (!releaseData) return;
-    const result = _.find(releaseData.assets, (object: any) => {
+    const result = _.find(releaseData, (object: any) => {
+      if (object?.tag_name?.includes(targetVersion)) {
+        return true;
+      }
+    });
+    const subResult = _.find(result.assets, (object: any) => {
       if (object?.name?.includes('MAC')) {
         return true;
       }
     });
 
-    return <>{result.name}</>;
+    return <>{subResult.name}</>;
   };
 
   const getMacReleaseDownloadLink = (): any => {
     if (!releaseData) return;
-    const result = _.find(releaseData.assets, (object: any) => {
+    const result = _.find(releaseData, (object: any) => {
+      if (object?.tag_name?.includes(targetVersion)) {
+        return true;
+      }
+    });
+    const subResult = _.find(result.assets, (object: any) => {
       if (object?.name?.includes('MAC')) {
         return true;
       }
     });
 
-    return result.browser_download_url;
+    return subResult.browser_download_url;
   };
 
   const getBootstrapRelease = () => {
     if (!releaseData) return;
-    const result = _.find(releaseData.assets, (object: any) => {
+    const result = _.find(releaseData, (object: any) => {
+      if (object?.tag_name?.includes(targetVersion)) {
+        return true;
+      }
+    });
+    const subResult = _.find(result.assets, (object: any) => {
       if (object?.name?.includes('bootstrap')) {
         return true;
       }
     });
 
-    return <>{result.name}</>;
+    return <>{subResult.name}</>;
   };
 
   const getBootstrapReleaseDownloadLink = (): any => {
     if (!releaseData) return;
-    const result = _.find(releaseData.assets, (object: any) => {
+    const result = _.find(releaseData, (object: any) => {
+      if (object?.tag_name?.includes(targetVersion)) {
+        return true;
+      }
+    });
+    const subResult = _.find(result.assets, (object: any) => {
       if (object?.name?.includes('bootstrap')) {
         return true;
       }
     });
 
-    return result.browser_download_url;
+    return subResult.browser_download_url;
   };
 
   const WindowsReleaseWidget = () => {

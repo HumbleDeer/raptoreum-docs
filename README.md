@@ -38,7 +38,7 @@ sudo docker rmi -f 4b2bcf907ae4
 
 # delete old repo, get new repo, build
 cd /home/
-rm -fr /docs/
+rm -fr docs/
 git clone https://github.com/Raptor3um/docs.git
 cd /docs/
 docker build .
