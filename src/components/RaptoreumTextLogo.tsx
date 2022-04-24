@@ -4,7 +4,7 @@ import { motion, useMotionValue, useTransform } from 'framer-motion';
 // yoyo: Infinity,
 const transition = { duration: 5.5, ease: 'easeInOut' };
 const raptoreumTextTransition = { duration: 3.5, ease: 'easeInOut' };
-const divTransition = { duration: 0.5, ease: 'easeInOut' };
+const divTransition = { duration: 6.5, ease: 'easeInOut' };
 const singleLetterTransition = { duration: 3.5, ease: 'easeInOut' };
 
 const RaptoreumTextLogo = (): any => {

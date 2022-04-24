@@ -16,7 +16,7 @@ import styles from './Button.module.css';
 
 const Button = (props: any) => {
   const { type } = props;
-  const { isDarkTheme } = useColorMode();
+  const isDarkTheme = useColorMode().colorMode === 'dark';
   // const { isDarkTheme, colorMode } = useThemeConfig();
 
   const variants: any = {
