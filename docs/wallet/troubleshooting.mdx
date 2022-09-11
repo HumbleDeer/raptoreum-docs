@@ -6,7 +6,7 @@ sidebar_position: 7
 
 Raptoreumcore Troubleshooting
 
-### Raptoreumcore Fails To Synchronize
+## Raptoreumcore Fails To Synchronize
 
 Raptoreumcore can fail to synchronize for a few different reasons, the most common ones being:
 
@@ -15,19 +15,21 @@ Raptoreumcore can fail to synchronize for a few different reasons, the most comm
 - Errors related to .dat files, most commonly mncache.dat and sporks.dat.
 
 To fix the first two issues it is best to resynchronize the wallet either from scratch or from bootstrap. Using the bootstrap is much faster. Either option starts with removing the following folders from Raptoreumcore data directory:
-```
+
+```text
 blocks
 chainstate
 evodb
 llmq
 ```
+
 If you want to resynchronize from scratch start the wallet now. If you want to use the bootstrap:
 
-- Download bootstrap.zip listed on our latest release: https://github.com/Raptor3um/raptoreum/releases/
+- Download bootstrap.zip listed on our latest release: <https://github.com/Raptor3um/raptoreum/releases/>
 - Unzip the bootstrap and copy the folders into Raptoreumcore data directory.
 - Start the wallet.
 
-### Fixing .dat Related Errors
+## Fixing .dat Related Errors
 
 In most cases stopping the wallet and removing the mentioned .dat file is enough. If after starting the wallet you receive further .dat errors or the same .dat error then remove all .dat files except for any wallet.dat files, and start the wallet.
 
@@ -37,7 +39,7 @@ The first time starting Raptoreumcore progress will seem quite slow, this does n
 
 :::
 
-### Raptoreumcore is Showing Incorrect Balance
+## Raptoreumcore is Showing Incorrect Balance
 
 Go to `Tools > Wallet Repair > Rescan` blockchain files. Using CLI you can do this by using the `-rescan` flag when starting raptoreumd:
 
@@ -45,24 +47,26 @@ Go to `Tools > Wallet Repair > Rescan` blockchain files. Using CLI you can do th
 ./raptoreumd -rescan
 ```
 
-### Fixing Long Synchronization Times
+## Fixing Long Synchronization Times
 
 The first time you synchronize RaptoreumCore it can take up to a day to fully synchronize. You can reduce this time in most cases to less than one hour by using a bootstrap. We provide a bootstrap with our releases on Github for this reason, it is updated once per month. You can use the bootstrap like so:
 
-1. Download: <https://github.com/Raptor3um/raptoreum/releases/ (look for bootstrap.zip in latest release)
+1. Download: <https://github.com/Raptor3um/raptoreum/releases/> (look for bootstrap.zip in latest release)
 2. Stop wallet or daemon
 
-In your wallets data directory delete folders:
-```
-blocks
-chainstate
-evodb
-llmq
-```
+    In your wallets data directory delete folders:
+
+    ```text
+    blocks
+    chainstate
+    evodb
+    llmq
+    ```
+
 3. Unzip bootstrap and copy folder into your data directory
 4. Start wallet
 
-### Miscellaneous
+## Miscellaneous
 
 If you are experiencing errors or having a hard time synchronizing the wallet and do not see your specific issue above removing all files in your Raptoreumcore data directory except:
 
