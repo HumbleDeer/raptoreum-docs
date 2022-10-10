@@ -1,4 +1,4 @@
-# Raptorium Docs
+# Raptoreum Docs
 
 - Search will not create indexes until `yarn build` is ran
 
