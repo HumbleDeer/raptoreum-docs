@@ -1,44 +1,53 @@
 ---
 sidebar_position: 43
 ---
-import ReactPlayer from 'react-player'
 
 # sendtoaddress
 
-*sendtoaddress "address" amount ( "comment" "comment_to" subtractfeefromamount use_is use_ps conf_target "estimate_mode")*
+Send an amount of Raptoreum to a given address
 
-Send an amount to a given address.
+## Basic syntax
 
-```bash
-raptoreum-cli sendtoaddress "XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG" 0.1
-raptoreum-cli sendtoaddress "XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG" 0.1 "donation" "seans outpost"
-raptoreum-cli sendtoaddress "XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG" 0.1 "" "" true
-```
-
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/sendtoaddress.webm').default}`, type: 'video/webm'}]} />
+`sendtoaddress <address> <amount> [<own_note> <recipient_note>]`
 
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
-| "address" | (string) | The raptoreum address to send to. |
+### Required arguments
 
-```bash
+| Argument               | Type   | Description                                                    |              |
+| ---------------------- | ------ | -------------------------------------------------------------- | ------------ |
+| address                | string | Destination address                                            | **Required** |
+| amount                 | number | Desired amount in Raptoreum                                    | **Required** |
+|                        |        |                                                                |              |
+| **future:**            | {json} | _'{"future_maturity": n, "future_locktime": n}'_               | Optional     |
+| _↳ future_maturity: n_ | number | number of confirmation for this future to mature.              |              |
+| _↳ future_locktime: n_ | number | time in seconds from first confirmation for future to mature   |              |
+|                        |        |                                                                |              |
+| comment                | string | A comment about the transaction (private)                      | Optional     |
+| comment_to             | string | A comment about the receiving person or organization (private) | Optional     |
+
+### `raptoreum-cli help sendtoaddress` output:
+
+```text
 Arguments:
-1. "address"            (string, required) The raptoreum address to send to.
-2. "amount"             (numeric or string, required) The amount in RTM to send. eg 0.1
-3. "comment"            (string, optional) A comment used to store what the transaction is for. 
-                             This is not part of the transaction, just kept in your wallet.
-4. "comment_to"         (string, optional) A comment to store the name of the person or organization 
-                             to which you're sending the transaction. This is not part of the 
-                             transaction, just kept in your wallet.
-5. subtractfeefromamount  (boolean, optional, default=false) The fee will be deducted from the amount being sent.
-                             The recipient will receive less amount of Raptoreum than you enter in the amount field.
-6. "use_is"             (bool, optional, default=false) Deprecated and ignored
-7. "use_ps"             (bool, optional, default=false) Use PrivateSend funds only
-8. conf_target            (numeric, optional) Confirmation target (in blocks)
-9. "estimate_mode"      (string, optional, default=UNSET) The fee estimate mode, must be one of:
+1. "address"                    (string, required) The raptoreum address to send to.
+2. "amount"                     (numeric or string, required) The amount in RTM to send. eg 0.1
+3. "future"                     (string, optional) future transaction is mature when it has enough confirmation                                                      or locktime in seconds has past from its first confirm
+      {
+         "future_maturity":n,   (numeric, required) number of confirmation for this future to mature.
+         "future_locktime":n    (numeric, required) total time in seconds from its first confirmation for this future to mature
+      }
+4. "comment"                    (string, optional)  A comment used to store what the transaction is for.
+                                                    This is not part of the transaction, just kept in your wallet.
+5. "comment_to"                 (string, optional)  A comment to store the name of the person or organization
+                                                    to which you're sending the transaction. This is not part of the
+                                                    transaction, just kept in your wallet.
+6. subtractfeefromamount        (boolean, optional, default=false) The fee will be deducted from the amount being sent.
+                                                    The recipient will receive less amount of Raptoreum than you enter in the amount field.
+7. "use_is"                     (bool, optional, default=false) Deprecated and ignored
+8. "use_cj"                     (bool, optional, default=false) Use CoinJoin funds only
+9. conf_target                  (numeric, optional) Confirmation target (in blocks)
+10. "estimate_mode"             (string, optional, default=UNSET) The fee estimate mode, must be one of:
        "UNSET"
        "ECONOMICAL"
        "CONSERVATIVE"
@@ -46,18 +55,28 @@ Arguments:
 
 ## Output
 
-| Result | Type | Description |
-|--|--|--|
-| true|false | (boolean) | Whether the command was successful or not |
-
-```bash
-Result:
-"txid"                  (string) The transaction id.
-```
+| Result | Type   | Description                                     |
+| ------ | ------ | ----------------------------------------------- |
+| txid   | string | The transaction id of the submitted transaction |
 
 ## Examples
 
-```bash
-curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "sendtoaddress", "params": ["XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG", 0.1, "donation", "seans outpost"] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
-```
+### Using the Raptoreum-CLI:
 
+#### Sending a simple 100 RTM transaction to a friend, with a note:
+
+`raptorium-cli sendtoaddress <address> <amount> <"own_note"> <"recipient_note">`
+
+`raptorium-cli sendtoaddress XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG 100 "donation to you" "friend from club"`
+
+#### Sending a 50 RTM Futures transaction with a note, set to release after 100 block verifications and after 7 days (60s x 60m x 24h x 7d = 604800s):
+
+`raptorium-cli sendtoaddress <address> <amount> '{"future_maturity": unlock_time_blocks, "future_locktime": unlock_time_seconds}' <"own_note">`
+
+`raptorium-cli sendtoaddress XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG 100 '{"future_maturity":100, "future_locktime": 604800}' "This will unlock in 7 days"`
+
+---
+
+### Using the RPC API:
+
+`curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "sendtoaddress", "params": ["XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG", 0.1, "donation", "seans outpost"] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/`
