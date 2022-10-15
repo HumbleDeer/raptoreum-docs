@@ -14,7 +14,7 @@ If this is the first time running the RTM wallet,it may take several minutes to 
 
 :::note
 
-The wallet must sync fully to the current network block height before you can see your current balance or send funds from it! You can always check the network's current block height at: <u>https://explorer.raptoreum.com/</u>
+The wallet must sync fully to the current network block height before you can see your current balance or send funds from it! You can always check the network's current block height at: __<https://explorer.raptoreum.com/>__
 
 ![Raptoreum Explorer](./assets/setup4.jpg)
 
