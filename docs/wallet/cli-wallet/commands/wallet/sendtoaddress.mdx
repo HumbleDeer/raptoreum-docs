@@ -12,8 +12,22 @@ Send an amount of Raptoreum to a given address
 
 ## Arguments
 
+### Required arguments
+
+| Argument               | Type   | Description                                                    |              |
+| ---------------------- | ------ | -------------------------------------------------------------- | ------------ |
+| address                | string | Destination address                                            | **Required** |
+| amount                 | number | Desired amount in Raptoreum                                    | **Required** |
+|                        |        |                                                                |              |
+| **future:**            | {json} | _'{"future_maturity": n, "future_locktime": n}'_               | Optional     |
+| _↳ future_maturity: n_ | number | number of confirmation for this future to mature.              |              |
+| _↳ future_locktime: n_ | number | time in seconds from first confirmation for future to mature   |              |
+|                        |        |                                                                |              |
+| comment                | string | A comment about the transaction (private)                      | Optional     |
+| comment_to             | string | A comment about the receiving person or organization (private) | Optional     |
 
 ### `raptoreum-cli help sendtoaddress` output:
+
 ```text
 Arguments:
 1. "address"                    (string, required) The raptoreum address to send to.
@@ -26,8 +40,8 @@ Arguments:
 4. "comment"                    (string, optional)  A comment used to store what the transaction is for.
                                                     This is not part of the transaction, just kept in your wallet.
 5. "comment_to"                 (string, optional)  A comment to store the name of the person or organization
-                                          to which you're sending the transaction. This is not part of the
-                                          transaction, just kept in your wallet.
+                                                    to which you're sending the transaction. This is not part of the
+                                                    transaction, just kept in your wallet.
 6. subtractfeefromamount        (boolean, optional, default=false) The fee will be deducted from the amount being sent.
                                                     The recipient will receive less amount of Raptoreum than you enter in the amount field.
 7. "use_is"                     (bool, optional, default=false) Deprecated and ignored
@@ -62,6 +76,7 @@ Arguments:
 `raptorium-cli sendtoaddress XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG 100 '{"future_maturity":100, "future_locktime": 604800}' "This will unlock in 7 days"`
 
 ---
+
 ### Using the RPC API:
 
 `curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "sendtoaddress", "params": ["XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG", 0.1, "donation", "seans outpost"] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/`
