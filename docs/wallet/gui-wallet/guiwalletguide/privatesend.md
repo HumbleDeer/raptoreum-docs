@@ -14,7 +14,7 @@ To start you must have automatic backups enabled (on by default) and your wallet
 
 Go to `Settings > Options`, and set PrivateSend Rounds to use and Target PrivateSend balance. The default amount of rounds is 4, increasing that increases privacy but also mixing time. PrivateSend balance is the balance mixing will stop at AKA your amount of private coins.
 
-![](/img/wallets/gui/privatesend/privatesend1.png)
+![PrivateSend Options menu](/img/wallets/gui/privatesend/privatesend_options.png)
 
 There are a few other options in the above screenshot which you can enable or disable as you like.
 
@@ -28,13 +28,13 @@ To begin the process click the "Start Mixing" button. Mixing transactions are at
 
 In the `Receive` section of your wallet in the bottom right hand corner you will see a box that needs to be marked in order for you to send PrivateSend RTM. When you mark it, the balance will change to show you your current PrivateSend balance.
 
-![](/img/wallets/gui/privatesend/privatesend2.png)
+![PrivateSend show balance](/img/wallets/gui/privatesend/privatesend_balance.png)
 
 Once that box is marked you may send mixed Raptoreum for increased privacy. If you run into an error when sending mixed RTM which mentions not enough inputs selecting the `Subtract fee from amount` box on the sending screen will usually resolve it. PrivateSend transactions must spend all inputs completely so PrivateSend transaction amount will be rounded up to accommodate. PrivateSend transaction size is generally larger then a regular transaction and require a slightly larger fee.
 
 You can see all available PrivateSend inputs in your wallets Coin Control section, the `PS` column shows the amount of mixing rounds.
 
-![](/img/wallets/gui/privatesend/privatesend3.png)
+![PrivateSend Coin Selection](/img/wallets/gui/privatesend/privatesend_coin_selection.png)
 
 Making your PrivateSend transactions can slightly increase your privacy, you can do so by selecting the most efficient (least) amount of inputs from Coin Control when sending.
 

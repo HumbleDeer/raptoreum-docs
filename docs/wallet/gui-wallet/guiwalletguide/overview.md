@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Overview
 
-![Syncing Bar](img/wallets/gui/overview.png)
+![Syncing Bar](/img/wallets/gui/overview.png)
 
 ## Balances
 
