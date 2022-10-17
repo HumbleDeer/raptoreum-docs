@@ -5,14 +5,15 @@ FROM node:16
 WORKDIR /usr/src/app
 
 # Install app dependencies
-# Copy both package & package-lock
+# Copy both package & package-lock / yarn-lock
 COPY package*.json ./
+COPY yarn*.lock ./
 
 # Install dependencies
 RUN yarn install
 
 # Bundle application source
-COPY . .
+COPY . ./
 
 # Runs on 3000
 EXPOSE 3000

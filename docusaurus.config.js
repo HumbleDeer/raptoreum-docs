@@ -32,13 +32,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          // editUrl: 'https://github.com/',
-        },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/',
+          editUrl: 'https://github.com/Raptor3um/docs',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -47,14 +41,13 @@ const config = {
     ],
   ],
   plugins: [
-    '@aldridged/docusaurus-plugin-lunr',
     require.resolve('docusaurus-lunr-search'),
     // @ts-ignore
     function customPlugin(context, options) {
       return {
         name: 'custom-plugin',
         configureWebpack(config, isServer, utils) {
-          const {getCacheLoader} = utils;
+          const { getCacheLoader } = utils;
           return {
             module: {
               rules: [
@@ -80,34 +73,13 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // colorMode: {
-      //   defaultMode: 'light',
-      //   disableSwitch: false,
-      //   respectPrefersColorScheme: false,
-      //   switchConfig: {
-      //     darkIcon: '🌙',
-      //     darkIconStyle: {
-      //       marginLeft: '2px',
-      //     },
-      //     // Unicode icons such as '\u2600' will work
-      //     // Unicode with 5 chars require brackets: '\u{1F602}'
-      //     lightIcon: '\u{1F602}',
-      //     lightIconStyle: {
-      //       marginLeft: '1px',
-      //     },
-      // colorMode: { DEPRECATED
-      //   switchConfig: {
-      //     darkIcon: '🌑',
-      //     darkIconStyle: {
-      //       marginLeft: '2px',
-      //       paddingRight: '2px',
-      //     },
-      //     lightIcon: '💡',
-      //   }
-      // },
+      colorMode: {
+        defaultMode: 'dark',
+        disableSwitch: false,
+        respectPrefersColorScheme: true,
+      },
       navbar: {
-        // style: 'dark',
-        title: 'Raptoreum Documentation',
+        title: 'Raptoreum Docs',
         logo: {
           alt: 'Raptoreum',
           src: 'img/raptoreum_logo.png',
@@ -129,7 +101,7 @@ const config = {
           //   position: 'right',
           // },
         ],
-      },  
+      },
       footer: {
         style: 'dark',
         links: [
@@ -147,7 +119,7 @@ const config = {
             items: [
               {
                 label: 'Discord',
-                href: 'https://discord.gg/2T8xG7e',
+                href: 'https://discord.gg/raptoreum',
               },
               {
                 label: 'Telegram',
@@ -164,16 +136,20 @@ const config = {
             ],
           },
           {
-            title: 'More',
+            title: 'GitHub',
             items: [
               {
-                label: 'GitHub',
+                label: 'RaptoreumCore',
                 href: 'https://github.com/Raptor3um/raptoreum',
+              },
+              {
+                label: 'Raptoreum Docs',
+                href: 'https://github.com/Raptor3um/docs',
               },
             ],
           },
         ],
-        // copyright: `Copyright © ${new Date().getFullYear()} Raptoreum`,
+        copyright: `Copyright © ${new Date().getFullYear()} Raptoreum team`,
 
       },
       prism: {
