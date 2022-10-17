@@ -4,7 +4,7 @@ sidebar_position: 6
 
 # Receive
 
-![Receive Window](./assets/receive.png)
+![Receive Window](/img/wallets/gui/receive.png)
 
 1. Label the Receiving Request
 2. AMOUNT of REQUEST
@@ -14,4 +14,4 @@ sidebar_position: 6
 6. List of Past Requests
 7. Click on a Request in the list and then → Show: Brings up the Old Request w/ QR code Remove: Deletes the Request from the list
 
-![Receive Window QR Code](./assets/receive2.png)
+![Receive Window QR Code](/img/wallets/gui/receive_qr.png)

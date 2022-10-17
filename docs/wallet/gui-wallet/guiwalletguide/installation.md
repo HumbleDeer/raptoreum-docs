@@ -11,8 +11,8 @@ Visit: <https://github.com/Raptor3um/raptoreum/releases>
 3. Run: `raptoreum-qt.exe`
 4. Choose a data path to install the wallet or use the default path
 
-    ![Welcome Prompt](./assets/setup1.png)
+    ![Receive Window](/img/wallets/gui/setup/setup_welcome.png)
 
 5. The wallet will startup and begin to Sync
 
-![Launch Screen](./assets/setup2.png)
+    ![Launch Screen](/img/wallets/gui/setup/startup_splash.png)

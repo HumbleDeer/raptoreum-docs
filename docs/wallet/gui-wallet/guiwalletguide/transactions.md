@@ -4,7 +4,7 @@ sidebar_position: 7
 
 # Transactions
 
-![Send Window](./assets/transactions.png)
+![Send Window](/img/wallets/gui/transactions.png)
 
 1. Status  Unconfirmed |  Confirmed
 2. Date/Time of TX

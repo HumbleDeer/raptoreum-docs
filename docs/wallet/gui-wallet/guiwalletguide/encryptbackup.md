@@ -14,7 +14,7 @@ Encrypting and backing up your wallet is highly recommended. Encrypting your wal
 
 Private keys are stored in your wallet. When you first load the wallet there is no password and it is NOT encrypted. To encrypt the wallet, go to the `Settings` menu dropdown and select `Encrypt Wallet`
 
-![Encrypt Menu Item](./assets/encrypt.png)
+![Encrypt Menu Item](img/wallets/gui/menu/encrypt.png)
 
 :::caution
 

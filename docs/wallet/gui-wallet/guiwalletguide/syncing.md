@@ -8,7 +8,7 @@ sidebar_position: 2
 
 If this is the first time running the RTM wallet,it may take several minutes to an hour to sync. Sync status will appear in the bottom left of the window.
 
-![Syncing Bar](./assets/setup3.png)
+![Syncing Bar](/img/wallets/gui/setup/sync_progress.png)
 
 :::
 
@@ -16,14 +16,14 @@ If this is the first time running the RTM wallet,it may take several minutes to 
 
 The wallet must sync fully to the current network block height before you can see your current balance or send funds from it! You can always check the network's current block height at: __<https://explorer.raptoreum.com/>__
 
-![Raptoreum Explorer](./assets/setup4.jpg)
+![Raptoreum Explorer](/img/wallets/gui/setup/explorer_height.png)
 
 :::
 
 You will see the status if you hover your mouse icon over the the bottom right corner of the wallet:
 
-![Syncing Info](./assets/setup5.png)
+![Syncing Info](/img/wallets/gui/setup/catching_up.png)
 
 When fully synced, you will see:
 
-![Fully Synced](./assets/setup6.png)
+![Fully Synced](/img/wallets/gui/setup/sync_complete.png)
