@@ -1,11 +1,12 @@
 ---
 sidebar_position: 12
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # getmempoolancestors
 
-*getmempoolancestors txid (verbose)*
+_getmempoolancestors txid (verbose)_
 
 If txid is in the mempool, returns all in-mempool ancestors.
 
@@ -14,13 +15,12 @@ If txid is in the mempool, returns all in-mempool ancestors.
 <!-- <ReactPlayer playing controls url={[
     {src: `${require('./assets/placeholder.webm').default}`, type: 'video/webm'}]} /> -->
 
-
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
-| "txid" | (string) | The transaction id (must be in mempool) |
-| verbose | (boolean) | True for a json object, false for array of transaction ids |
+| Argument | Type      | Description                                                |
+| -------- | --------- | ---------------------------------------------------------- |
+| "txid"   | (string)  | The transaction id (must be in mempool)                    |
+| verbose  | (boolean) | True for a json object, false for array of transaction ids |
 
 ```bash
 Arguments:
@@ -30,8 +30,8 @@ Arguments:
 
 ## Output
 
-| Result | Type | Description |
-|--|--|--|
+| Result          | Type     | Description                                              |
+| --------------- | -------- | -------------------------------------------------------- |
 | "transactionid" | (string) | The transaction id of an in-mempool ancestor transaction |
 
 ```bash
@@ -62,7 +62,6 @@ Result (for verbose=true):
   }, ...
 }
 ```
-
 
 ## Examples
 

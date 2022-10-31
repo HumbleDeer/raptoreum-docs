@@ -1,25 +1,33 @@
 ---
 sidebar_position: 14
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # getmempoolentry
 
-*getmempoolentry txid*
+_getmempoolentry txid_
 
 Returns mempool data for given transaction
 
 `raptoreum-cli getmempoolentry "mytxid"`
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/getmempoolentry.webm').default}`, type: 'video/webm'}]} />
-
+<ReactPlayer
+  playing
+  controls
+  url={[
+    {
+      src: `${require('./assets/getmempoolentry.webm').default}`,
+      type: 'video/webm',
+    },
+  ]}
+/>
 
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
-| "txid" | (string) | The transaction id (must be in mempool) |
+| Argument | Type     | Description                             |
+| -------- | -------- | --------------------------------------- |
+| "txid"   | (string) | The transaction id (must be in mempool) |
 
 ```bash
 Arguments:
@@ -28,8 +36,8 @@ Arguments:
 
 ## Output
 
-| Result | Type | Description |
-|--|--|--|
+| Result          | Type     | Description                                              |
+| --------------- | -------- | -------------------------------------------------------- |
 | "transactionid" | (string) | The transaction id of an in-mempool ancestor transaction |
 
 ```bash
@@ -52,7 +60,6 @@ Result:
     "instantlock" : true|false  (boolean) True if this transaction was locked via InstantSend
 }
 ```
-
 
 ## Examples
 

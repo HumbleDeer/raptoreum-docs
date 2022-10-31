@@ -1,11 +1,12 @@
 ---
 sidebar_position: 2
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # generatetoaddress
 
-*generatetoaddress nblocks address (maxtries)*
+_generatetoaddress nblocks address (maxtries)_
 
 Mine blocks immediately to a specified address (before the RPC call returns)
 
@@ -17,14 +18,13 @@ raptoreum-cli generatetoaddress 11 "myaddress"
 <!-- <ReactPlayer playing controls url={[
     {src: `${require('./assets/placeholder.webm').default}`, type: 'video/webm'}]} /> -->
 
-
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
-| nblocks | (numeric) | How many blocks are generated immediately. |
-| address | (string) | The address to send the newly generated Raptoreum to. |
-| maxtries | (numeric) | How many iterations to try (default = 1000000). |
+| Argument | Type      | Description                                           |
+| -------- | --------- | ----------------------------------------------------- |
+| nblocks  | (numeric) | How many blocks are generated immediately.            |
+| address  | (string)  | The address to send the newly generated Raptoreum to. |
+| maxtries | (numeric) | How many iterations to try (default = 1000000).       |
 
 ```bash
 Arguments:
@@ -35,8 +35,8 @@ Arguments:
 
 ## Output
 
-| Result | Type | Description |
-|--|--|--|
+| Result        | Type    | Description                |
+| ------------- | ------- | -------------------------- |
 | "blockhashes" | (array) | hashes of blocks generated |
 
 ```bash
@@ -44,10 +44,8 @@ Result:
 [ blockhashes ]     (array) hashes of blocks generated
 ```
 
-
 ## Examples
 
 ```bash
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "generatetoaddress", "params": [11, "address"] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```
-

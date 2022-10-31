@@ -1,27 +1,35 @@
 ---
 sidebar_position: 8
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # getblockheader
 
-*getblockheader "hash" ( verbose )*
+_getblockheader "hash" ( verbose )_
 
 If verbose is false, returns a string that is serialized, hex-encoded data for blockheader 'hash'.
 If verbose is true, returns an Object with information about blockheader hash.
 
 `raptoreum-cli getblockheader "00000000c937983704a73af28acdec37b049d214adbda81d7e2a3dd146f6ed09"`
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/getblockheader.webm').default}`, type: 'video/webm'}]} />
-
+<ReactPlayer
+  playing
+  controls
+  url={[
+    {
+      src: `${require('./assets/getblockheader.webm').default}`,
+      type: 'video/webm',
+    },
+  ]}
+/>
 
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
-| "hash" | (string) | The block hash |
-| verbose | (boolean) | (default) true for a json object, false for the hex encoded data |
+| Argument | Type      | Description                                                      |
+| -------- | --------- | ---------------------------------------------------------------- |
+| "hash"   | (string)  | The block hash                                                   |
+| verbose  | (boolean) | (default) true for a json object, false for the hex encoded data |
 
 ```bash
 Arguments:
@@ -31,8 +39,8 @@ Arguments:
 
 ## Output
 
-| Result | Type | Description |
-|--|--|--|
+| Result | Type     | Description    |
+| ------ | -------- | -------------- |
 | "hash" | (string) | The block hash |
 
 ```bash
@@ -57,7 +65,6 @@ Result (for verbose = true):
 Result (for verbose=false):
 "data"             (string) A string that is serialized, hex-encoded data for block 'hash'.
 ```
-
 
 ## Examples
 

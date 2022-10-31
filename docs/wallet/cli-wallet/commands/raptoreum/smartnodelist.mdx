@@ -1,11 +1,12 @@
 ---
 sidebar_position: 9
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # smartnodelist
 
-*smartnodelist ( "mode" "filter" )*
+_smartnodelist ( "mode" "filter" )_
 
 Get a list of smartnodes in different modes. This call is identical to 'smartnode list' call.
 
@@ -30,14 +31,22 @@ Get a list of smartnodes in different modes. This call is identical to 'smartnod
 
 `raptoreum-cli smartnodelist`
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/smartnodelist.webm').default}`, type: 'video/webm'}]} />
+<ReactPlayer
+  playing
+  controls
+  url={[
+    {
+      src: `${require('./assets/smartnodelist.webm').default}`,
+      type: 'video/webm',
+    },
+  ]}
+/>
 
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
-| "mode" | (string) | The mode to run list in |
+| Argument | Type     | Description                                                                                                            |
+| -------- | -------- | ---------------------------------------------------------------------------------------------------------------------- |
+| "mode"   | (string) | The mode to run list in                                                                                                |
 | "filter" | (string) | Filter results. Partial match by outpoint by default in all modes, additional matches in some modes are also available |
 
 ```bash
@@ -47,12 +56,11 @@ Arguments:
                                     additional matches in some modes are also available
 ```
 
-
 ## Output
 
 | Result | Type | Description |
-|--|--|--|
-| ... | ... | ... |
+| ------ | ---- | ----------- |
+| ...    | ...  | ...         |
 
 ```bash
 Result:
@@ -65,4 +73,3 @@ Result:
 ```bash
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "smartnodelist", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```
-

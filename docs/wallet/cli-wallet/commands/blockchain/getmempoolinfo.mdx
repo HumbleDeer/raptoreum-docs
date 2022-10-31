@@ -1,7 +1,8 @@
 ---
 sidebar_position: 15
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # getmempoolinfo
 
@@ -9,13 +10,21 @@ Returns details on the active state of the TX memory pool.
 
 `raptoreum-cli getmempoolinfo`
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/getmempoolinfo.webm').default}`, type: 'video/webm'}]} />
+<ReactPlayer
+  playing
+  controls
+  url={[
+    {
+      src: `${require('./assets/getmempoolinfo.webm').default}`,
+      type: 'video/webm',
+    },
+  ]}
+/>
 
 ## Output
 
-| Result | Type | Description |
-|--|--|--|
+| Result | Type      | Description      |
+| ------ | --------- | ---------------- |
 | "size" | (numeric) | Current tx count |
 
 ```bash
@@ -29,7 +38,6 @@ Result:
   "instantsendlocks": xxxxx,   (numeric) Number of unconfirmed instant send locks
 }
 ```
-
 
 ## Examples
 

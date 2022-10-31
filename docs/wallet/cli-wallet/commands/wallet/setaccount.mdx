@@ -1,11 +1,12 @@
 ---
 sidebar_position: 44
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # setaccount
 
-*setaccount "address" "account"*
+_setaccount "address" "account"_
 
 DEPRECATED. Sets the account associated with the given address.
 
@@ -13,13 +14,21 @@ DEPRECATED. Sets the account associated with the given address.
 raptoreum-cli setaccount "XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG" "tabby"
 ```
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/setaccount.webm').default}`, type: 'video/webm'}]} />
+<ReactPlayer
+  playing
+  controls
+  url={[
+    {
+      src: `${require('./assets/setaccount.webm').default}`,
+      type: 'video/webm',
+    },
+  ]}
+/>
 
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
+| Argument  | Type     | Description                       |
+| --------- | -------- | --------------------------------- |
 | "address" | (string) | The raptoreum address to send to. |
 
 ```bash
@@ -32,8 +41,8 @@ Arguments:
 ## Output
 
 | Result | Type | Description |
-|--|--|--|
-| ... | ... | ... |
+| ------ | ---- | ----------- |
+| ...    | ...  | ...         |
 
 ```bash
 Result:
@@ -47,4 +56,3 @@ Result:
 ```bash
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "setaccount", "params": ["XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG", "tabby"] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```
-

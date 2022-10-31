@@ -1,11 +1,12 @@
 ---
 sidebar_position: 42
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # sendmany
 
-*sendmany "fromaccount" {"address":amount,...} ( minconf addlocked "comment" ["address",...] subtractfeefrom use_is use_ps conf_target "estimate_mode")*
+_sendmany "fromaccount" {"address":amount,...} ( minconf addlocked "comment" ["address",...] subtractfeefrom use_is use_ps conf_target "estimate_mode")_
 
 Send multiple times. Amounts are double-precision floating point numbers.
 
@@ -17,13 +18,18 @@ raptoreum-cli sendmany "tabby" "{\"XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG\":0.01,\"X
 raptoreum-cli sendmany "tabby" "{\"XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG\":0.01,\"XuQQkwA4FYkq2XERzMY2CiAZhJTEDAbtcG\":0.02}" 6 false "testing"
 ```
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/sendmany.webm').default}`, type: 'video/webm'}]} />
+<ReactPlayer
+  playing
+  controls
+  url={[
+    { src: `${require('./assets/sendmany.webm').default}`, type: 'video/webm' },
+  ]}
+/>
 
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
+| Argument      | Type     | Description                                                                      |
+| ------------- | -------- | -------------------------------------------------------------------------------- |
 | "fromaccount" | (string) | The name of the account to send funds from. May be the default account using "". |
 
 ```bash
@@ -56,9 +62,9 @@ Arguments:
 
 ## Output
 
-| Result | Type | Description |
-|--|--|--|
-| true|false | (boolean) | Whether the command was successful or not |
+| Result | Type  | Description |
+| ------ | ----- | ----------- | ----------------------------------------- |
+| true   | false | (boolean)   | Whether the command was successful or not |
 
 ```bash
 Result:
@@ -70,4 +76,3 @@ Result:
 ```bash
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "sendmany", "params": ["tabby", "{\"XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG\":0.01,\"XuQQkwA4FYkq2XERzMY2CiAZhJTEDAbtcG\":0.02}", 6, false, "testing"] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```
-

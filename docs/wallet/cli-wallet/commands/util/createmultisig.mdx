@@ -1,11 +1,12 @@
 ---
 sidebar_position: 1
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # createmultisig
 
-*createmultisig nrequired ["key",...]*
+_createmultisig nrequired ["key",...]_
 
 Creates a multi-signature address with n signature of m keys required.
 It returns a json object with the address and redeemScript.
@@ -18,11 +19,10 @@ raptoreum-cli createmultisig 2 "[\"Xt4qk9uKvQYAonVGSZNXqxeDmtjaEWgfrs\",\"XoSoWQ
 <!-- <ReactPlayer playing controls url={[
     {src: `${require('./assets/placeholder.webm').default}`, type: 'video/webm'}]} /> -->
 
-
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
+| Argument  | Type     | Description                     |
+| --------- | -------- | ------------------------------- |
 | "address" | (string) | The base58check encoded address |
 
 ```bash
@@ -38,8 +38,8 @@ Arguments:
 ## Output
 
 | Result | Type | Description |
-|--|--|--|
-| ... | ... | ... |
+| ------ | ---- | ----------- |
+| ...    | ...  | ...         |
 
 ```bash
 Result:
@@ -49,10 +49,8 @@ Result:
 }
 ```
 
-
 ## Examples
 
 ```bash
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "createmultisig", "params": [2, "[\"Xt4qk9uKvQYAonVGSZNXqxeDmtjaEWgfrs\",\"XoSoWQkpgLpppPoyyzbUFh1fq2RBvW6UK1\"]"] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```
-

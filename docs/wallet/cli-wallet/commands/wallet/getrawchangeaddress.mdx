@@ -1,26 +1,34 @@
 ---
 sidebar_position: 14
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # getrawchangeaddress
 
-*getrawchangeaddress*
+_getrawchangeaddress_
 
 Returns a new Raptoreum address, for receiving change.
 This is for use with raw transactions, NOT normal use.
 
 `raptoreum-cli getrawchangeaddress `
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/getrawchangeaddress.webm').default}`, type: 'video/webm'}]} />
+<ReactPlayer
+  playing
+  controls
+  url={[
+    {
+      src: `${require('./assets/getrawchangeaddress.webm').default}`,
+      type: 'video/webm',
+    },
+  ]}
+/>
 
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
-| "account" | (string) | The account name for the address to be linked to. If not provided, the default account "" is used. It can also be set to the empty string "" to represent the default account. The account does not need to exist, it will be created if there is no account by the given name.  |
-
+| Argument  | Type     | Description                                                                                                                                                                                                                                                                     |
+| --------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| "account" | (string) | The account name for the address to be linked to. If not provided, the default account "" is used. It can also be set to the empty string "" to represent the default account. The account does not need to exist, it will be created if there is no account by the given name. |
 
 ```bash
 Arguments:
@@ -29,8 +37,8 @@ Arguments:
 
 ## Output
 
-| Result | Type | Description |
-|--|--|--|
+| Result    | Type     | Description |
+| --------- | -------- | ----------- |
 | "address" | (string) | The address |
 
 ```bash
@@ -43,4 +51,3 @@ Result:
 ```bash
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getrawchangeaddress", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```
-

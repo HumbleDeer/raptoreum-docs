@@ -1,11 +1,12 @@
 ---
 sidebar_position: 20
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # gettxoutproof
 
-*gettxoutproof ["txid",...] ( blockhash )*
+_gettxoutproof ["txid",...] ( blockhash )_
 
 Returns a hex-encoded proof that "txid" was included in a block.
 
@@ -23,12 +24,11 @@ raptoreum-cli gettxoutproof '["mytxid",...]' "blockhash"
 <!-- <ReactPlayer playing controls url={[
     {src: `${require('./assets/placeholder.webm').default}`, type: 'video/webm'}]} /> -->
 
-
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
-| "txids" | (string) | A json array of txids to filter |
+| Argument    | Type     | Description                                              |
+| ----------- | -------- | -------------------------------------------------------- |
+| "txids"     | (string) | A json array of txids to filter                          |
 | "blockhash" | (string) | If specified, looks for txid in the block with this hash |
 
 ```bash
@@ -43,15 +43,14 @@ Arguments:
 
 ## Output
 
-| Result | Type | Description |
-|--|--|--|
+| Result | Type     | Description                                                    |
+| ------ | -------- | -------------------------------------------------------------- |
 | "data" | (string) | A string that is a serialized, hex-encoded data for the proof. |
 
 ```bash
 Result:
 "data"           (string) A string that is a serialized, hex-encoded data for the proof.
 ```
-
 
 ## Examples
 

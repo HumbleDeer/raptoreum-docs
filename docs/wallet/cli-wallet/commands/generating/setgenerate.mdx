@@ -1,11 +1,12 @@
 ---
 sidebar_position: 4
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # setgenerate
 
-*setgenerate generate ( genproclimit )*
+_setgenerate generate ( genproclimit )_
 
 Set 'generate' true or false to turn generation on or off.
 Generation is limited to 'genproclimit' processors, -1 is unlimited.
@@ -16,24 +17,21 @@ See the getgenerate call for the current setting.
 raptoreum-cli setgenerate true 1
 
 # Check the setting
-raptoreum-cli getgenerate 
+raptoreum-cli getgenerate
 
 # Turn off generation
 raptoreum-cli setgenerate false
 ```
 
-
-
 <!-- <ReactPlayer playing controls url={[
     {src: `${require('./assets/placeholder.webm').default}`, type: 'video/webm'}]} /> -->
 
-
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
-| generate | (boolean) | Set to true to turn on generation, false to turn off. |
-| genproclimit | (number) | Set the processor limit for when generation is on. Can be -1 for unlimited. |
+| Argument     | Type      | Description                                                                 |
+| ------------ | --------- | --------------------------------------------------------------------------- |
+| generate     | (boolean) | Set to true to turn on generation, false to turn off.                       |
+| genproclimit | (number)  | Set the processor limit for when generation is on. Can be -1 for unlimited. |
 
 ```bash
 Arguments:
@@ -44,8 +42,8 @@ Arguments:
 ## Output
 
 | Result | Type | Description |
-|--|--|--|
-| ... | ... | ... |
+| ------ | ---- | ----------- |
+| ...    | ...  | ...         |
 
 ```bash
 Result:
@@ -54,10 +52,8 @@ Result:
 }
 ```
 
-
 ## Examples
 
 ```bash
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "setgenerate", "params": [true, 1] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```
-

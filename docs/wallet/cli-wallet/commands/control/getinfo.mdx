@@ -1,23 +1,29 @@
 ---
 sidebar_position: 1
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # getinfo
 
-*getinfo*
+_getinfo_
 
 DEPRECATED. Returns an object containing various state info.
 
 `raptoreum-cli getinfo `
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/getinfo.webm').default}`, type: 'video/webm'}]} />
+<ReactPlayer
+  playing
+  controls
+  url={[
+    { src: `${require('./assets/getinfo.webm').default}`, type: 'video/webm' },
+  ]}
+/>
 
 ## Output
 
-| Result | Type | Description |
-|--|--|--|
+| Result                | Type     | Description                                                                            |
+| --------------------- | -------- | -------------------------------------------------------------------------------------- |
 | "deprecation-warning" | (string) | warning that the getinfo command is deprecated and will be removed in a future version |
 
 ```bash
@@ -44,10 +50,8 @@ Result:
 }
 ```
 
-
 ## Examples
 
 ```bash
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```
-

@@ -1,24 +1,32 @@
 ---
 sidebar_position: 7
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # getnetworkinfo
 
-*getnetworkinfo*
+_getnetworkinfo_
 
 Returns an object containing various state info regarding P2P networking.
 
 `raptoreum-cli getnetworkinfo `
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/getnetworkinfo.webm').default}`, type: 'video/webm'}]} />
-
+<ReactPlayer
+  playing
+  controls
+  url={[
+    {
+      src: `${require('./assets/getnetworkinfo.webm').default}`,
+      type: 'video/webm',
+    },
+  ]}
+/>
 
 ## Output
 
-| Result | Type | Description |
-|--|--|--|
+| Result    | Type     | Description        |
+| --------- | -------- | ------------------ |
 | "version" | (number) | the server version |
 
 ```bash
@@ -56,10 +64,8 @@ Result:
 }
 ```
 
-
 ## Examples
 
 ```bash
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getnetworkinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```
-

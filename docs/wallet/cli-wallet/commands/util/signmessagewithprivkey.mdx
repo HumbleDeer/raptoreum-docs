@@ -1,11 +1,12 @@
 ---
 sidebar_position: 4
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # signmessagewithprivkey
 
-*signmessagewithprivkey "privkey" "message"*
+_signmessagewithprivkey "privkey" "message"_
 
 Sign a message with the private key of an address
 
@@ -20,11 +21,10 @@ raptoreum-cli verifymessage "XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG" "signature" "my
 <!-- <ReactPlayer playing controls url={[
     {src: `${require('./assets/placeholder.webm').default}`, type: 'video/webm'}]} /> -->
 
-
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
+| Argument  | Type     | Description                     |
+| --------- | -------- | ------------------------------- |
 | "address" | (string) | The base58check encoded address |
 
 ```bash
@@ -36,18 +36,16 @@ Arguments:
 ## Output
 
 | Result | Type | Description |
-|--|--|--|
-| ... | ... | ... |
+| ------ | ---- | ----------- |
+| ...    | ...  | ...         |
 
 ```bash
 Result:
 "signature"          (string) The signature of the message encoded in base 64
 ```
 
-
 ## Examples
 
 ```bash
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "signmessagewithprivkey", "params": ["privkey", "my message"] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```
-

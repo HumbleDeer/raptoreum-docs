@@ -1,21 +1,20 @@
 ---
 sidebar_position: 24
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # reconsiderblock
 
 Removes invalidity status of a block and its descendants, reconsider them for activation.
 This can be used to undo the effects of invalidateblock.
 
-
 `raptoreum-cli reconsiderblock "00000000000fd08c2fb661d2fcb0d49abb3a91e5f27082ce64feed3b4dede2e2"`
-
 
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
+| Argument    | Type     | Description    |
+| ----------- | -------- | -------------- |
 | "blockhash" | (string) | The block hash |
 
 ```bash
@@ -25,10 +24,10 @@ Arguments:
 }
 ```
 
-```
+````
 
 ## Examples
 
 ```bash
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "reconsiderblock", "params": ["blockhash"] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
-```
+````

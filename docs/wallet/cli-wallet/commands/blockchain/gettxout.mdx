@@ -1,33 +1,38 @@
 ---
 sidebar_position: 19
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # gettxout
 
-*gettxout "txid" n ( include_mempool )*
+_gettxout "txid" n ( include_mempool )_
 
 Returns details about an unspent transaction output.
 
 ```bash
 # Get unspent transactions
-raptoreum-cli listunspent 
+raptoreum-cli listunspent
 
 # View the details
 raptoreum-cli gettxout "txid" 1
 ```
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/gettxout.webm').default}`, type: 'video/webm'}]} />
-
+<ReactPlayer
+  playing
+  controls
+  url={[
+    { src: `${require('./assets/gettxout.webm').default}`, type: 'video/webm' },
+  ]}
+/>
 
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
-| "txid" | (string) | The transaction id |
-| "n" | (numeric) | vout number |
-| "include_mempool" | (boolean) | Whether to include the mempool. Default: true.     Note that an unspent output that is spent in the mempool won't appear. |
+| Argument          | Type      | Description                                                                                                           |
+| ----------------- | --------- | --------------------------------------------------------------------------------------------------------------------- |
+| "txid"            | (string)  | The transaction id                                                                                                    |
+| "n"               | (numeric) | vout number                                                                                                           |
+| "include_mempool" | (boolean) | Whether to include the mempool. Default: true. Note that an unspent output that is spent in the mempool won't appear. |
 
 ```bash
 Arguments:
@@ -38,8 +43,8 @@ Arguments:
 
 ## Output
 
-| Result | Type | Description |
-|--|--|--|
+| Result      | Type     | Description    |
+| ----------- | -------- | -------------- |
 | "bestblock" | (string) | the block hash |
 
 ```bash
@@ -49,8 +54,8 @@ Result:
   "confirmations" : n,       (numeric) The number of confirmations
   "value" : x.xxx,           (numeric) The transaction value in RTM
   "scriptPubKey" : {         (json object)
-     "asm" : "code",       (string) 
-     "hex" : "hex",        (string) 
+     "asm" : "code",       (string)
+     "hex" : "hex",        (string)
      "reqSigs" : n,          (numeric) Number of required signatures
      "type" : "pubkeyhash", (string) The type, eg pubkeyhash
      "addresses" : [          (array of string) array of raptoreum addresses
@@ -61,7 +66,6 @@ Result:
   "coinbase" : true|false   (boolean) Coinbase or not
 }
 ```
-
 
 ## Examples
 

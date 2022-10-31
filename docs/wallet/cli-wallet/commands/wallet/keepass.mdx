@@ -1,24 +1,30 @@
 ---
 sidebar_position: 27
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # keepass
 
-*keepass genkey|init|setpassphrase*
+_keepass genkey|init|setpassphrase_
 
 Keepass command
 
 `keepass genkey|init|setpassphrase`
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/keepass.webm').default}`, type: 'video/webm'}]} />
+<ReactPlayer
+  playing
+  controls
+  url={[
+    { src: `${require('./assets/keepass.webm').default}`, type: 'video/webm' },
+  ]}
+/>
 
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
-| "argument" | (string) | Keepass argument  |
+| Argument   | Type     | Description      |
+| ---------- | -------- | ---------------- |
+| "argument" | (string) | Keepass argument |
 
 ```bash
 Arguments:
@@ -28,8 +34,8 @@ Arguments:
 ## Output
 
 | Result | Type | Description |
-|--|--|--|
-| ... | ... | ... |
+| ------ | ---- | ----------- |
+| ...    | ...  | ...         |
 
 ```bash
 Result:
@@ -43,4 +49,3 @@ Result:
 ```bash
 ...
 ```
-

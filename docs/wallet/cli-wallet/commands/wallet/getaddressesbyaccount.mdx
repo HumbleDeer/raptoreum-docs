@@ -1,25 +1,33 @@
 ---
 sidebar_position: 11
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # getaddressesbyaccount
 
-*getaddressesbyaccount "account"*
+_getaddressesbyaccount "account"_
 
 DEPRECATED. Returns the list of addresses for the given account.
 
 `raptoreum-cli getaddressesbyaccount "tabby"`
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/getaddressesbyaccount.webm').default}`, type: 'video/webm'}]} />
-
+<ReactPlayer
+  playing
+  controls
+  url={[
+    {
+      src: `${require('./assets/getaddressesbyaccount.webm').default}`,
+      type: 'video/webm',
+    },
+  ]}
+/>
 
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
-| "account" | (string) | The account name.  |
+| Argument  | Type     | Description       |
+| --------- | -------- | ----------------- |
+| "account" | (string) | The account name. |
 
 ```bash
 
@@ -29,8 +37,8 @@ Arguments:
 
 ## Output
 
-| Result | Type | Description |
-|--|--|--|
+| Result    | Type     | Description                                           |
+| --------- | -------- | ----------------------------------------------------- |
 | "address" | (string) | a raptoreum address associated with the given account |
 
 ```bash
@@ -41,10 +49,8 @@ Result:
 ]
 ```
 
-
 ## Examples
 
 ```bash
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getaddressesbyaccount", "params": ["tabby"] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```
-

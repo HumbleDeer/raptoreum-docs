@@ -1,11 +1,12 @@
 ---
 sidebar_position: 17
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # gettransaction
 
-*gettransaction "txid" ( include_watchonly )*
+_gettransaction "txid" ( include_watchonly )_
 
 Get detailed information about in-wallet transaction txid
 
@@ -14,16 +15,23 @@ raptoreum-cli gettransaction "1075db55d416d3ca199f55b6084e2115b9345e16c5cf302fc8
 raptoreum-cli gettransaction "1075db55d416d3ca199f55b6084e2115b9345e16c5cf302fc80e9d5fbf5d48d" true
 ```
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/gettransaction.webm').default}`, type: 'video/webm'}]} />
+<ReactPlayer
+  playing
+  controls
+  url={[
+    {
+      src: `${require('./assets/gettransaction.webm').default}`,
+      type: 'video/webm',
+    },
+  ]}
+/>
 
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
-| "txid" | (string) | The transaction id  |
-| "include_watchonly" | (bool) | Whether to include watch-only addresses in balance calculation and details[]  |
-
+| Argument            | Type     | Description                                                                  |
+| ------------------- | -------- | ---------------------------------------------------------------------------- |
+| "txid"              | (string) | The transaction id                                                           |
+| "include_watchonly" | (bool)   | Whether to include watch-only addresses in balance calculation and details[] |
 
 ```bash
 Arguments:
@@ -33,15 +41,15 @@ Arguments:
 
 ## Output
 
-| Result | Type | Description |
-|--|--|--|
+| Result   | Type      | Description                   |
+| -------- | --------- | ----------------------------- |
 | "amount" | (numeric) | The transaction amount in RTM |
 
 ```bash
 Result:
 {
   "amount" : x.xxx,        (numeric) The transaction amount in RTM
-  "fee": x.xxx,            (numeric) The amount of the fee in RTM. This is negative and only available for the 
+  "fee": x.xxx,            (numeric) The amount of the fee in RTM. This is negative and only available for the
                               'send' category of transactions.
   "instantlock" : true|false, (bool) Current transaction lock state
   "instantlock_internal" : true|false, (bool) Current internal transaction lock state
@@ -61,9 +69,9 @@ Result:
       "amount" : x.xxx,               (numeric) The amount in RTM
       "label" : "label",              (string) A comment for the address/transaction, if any
       "vout" : n,                     (numeric) the vout value
-      "fee": x.xxx,                     (numeric) The amount of the fee in RTM. This is negative and only available for the 
+      "fee": x.xxx,                     (numeric) The amount of the fee in RTM. This is negative and only available for the
                                            'send' category of transactions.
-      "abandoned": xxx                  (bool) 'true' if the transaction has been abandoned (inputs are respendable). Only available for the 
+      "abandoned": xxx                  (bool) 'true' if the transaction has been abandoned (inputs are respendable). Only available for the
                                            'send' category of transactions.
     }
     ,...
@@ -78,4 +86,3 @@ Result:
 ```bash
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "gettransaction", "params": ["1075db55d416d3ca199f55b6084e2115b9345e16c5cf302fc80e9d5fbf5d48d"] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```
-

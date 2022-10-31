@@ -1,11 +1,12 @@
 ---
 sidebar_position: 1
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # generate
 
-*generate nblocks ( maxtries )*
+_generate nblocks ( maxtries )_
 
 Mine up to nblocks blocks immediately (before the RPC call returns) to an address in the wallet.
 
@@ -17,12 +18,11 @@ raptoreum-cli generate 11
 <!-- <ReactPlayer playing controls url={[
     {src: `${require('./assets/placeholder.webm').default}`, type: 'video/webm'}]} /> -->
 
-
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
-| nblocks | (numeric) | How many blocks are generated immediately. |
+| Argument | Type      | Description                                     |
+| -------- | --------- | ----------------------------------------------- |
+| nblocks  | (numeric) | How many blocks are generated immediately.      |
 | maxtries | (numeric) | How many iterations to try (default = 1000000). |
 
 ```bash
@@ -33,8 +33,8 @@ Arguments:
 
 ## Output
 
-| Result | Type | Description |
-|--|--|--|
+| Result      | Type    | Description                |
+| ----------- | ------- | -------------------------- |
 | blockhashes | (array) | hashes of blocks generated |
 
 ```bash
@@ -42,10 +42,8 @@ Result:
 [ blockhashes ]     (array) hashes of blocks generated
 ```
 
-
 ## Examples
 
 ```bash
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "generate", "params": ["11"] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```
-

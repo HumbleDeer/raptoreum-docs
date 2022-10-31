@@ -1,25 +1,33 @@
 ---
 sidebar_position: 4
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # backupwallet
 
-*backupwallet "destination"*
+_backupwallet "destination"_
 
 Safely copies current wallet file to destination, which can be a directory or a path with filename.
 
 `raptoreum-cli backupwallet "backup.dat"`
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/backupwallet.webm').default}`, type: 'video/webm'}]} />
-
+<ReactPlayer
+  playing
+  controls
+  url={[
+    {
+      src: `${require('./assets/backupwallet.webm').default}`,
+      type: 'video/webm',
+    },
+  ]}
+/>
 
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
-| "destination" | (string) | The destination directory or file  |
+| Argument      | Type     | Description                       |
+| ------------- | -------- | --------------------------------- |
+| "destination" | (string) | The destination directory or file |
 
 ```bash
 Arguments:
@@ -29,8 +37,8 @@ Arguments:
 ## Output
 
 | Result | Type | Description |
-|--|--|--|
-| ... | ... | ... |
+| ------ | ---- | ----------- |
+| ...    | ...  | ...         |
 
 ```bash
 Result:
@@ -39,10 +47,8 @@ Result:
 }
 ```
 
-
 ## Examples
 
 ```bash
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "backupwallet", "params": ["backup.dat"] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```
-
