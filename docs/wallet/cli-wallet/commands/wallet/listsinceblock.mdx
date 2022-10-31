@@ -1,32 +1,41 @@
 ---
 sidebar_position: 35
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # listsinceblock
 
-*listsinceblock ( "blockhash" target_confirmations include_watchonly include_removed )*
+_listsinceblock ( "blockhash" target_confirmations include_watchonly include_removed )_
 
 Get all transactions in blocks since block [blockhash], or all transactions if omitted.
 If "blockhash" is no longer a part of the main chain, transactions from the fork point onward are included.
 Additionally, if include_removed is set, transactions affecting the wallet which were removed are returned in the "removed" array.
 
 ```bash
-raptoreum-cli listsinceblock 
+raptoreum-cli listsinceblock
 raptoreum-cli listsinceblock "000000000000000bacf66f7497b7dc45ef753ee9a7d38571037cdb1a57f663ad" 6
 ```
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/listsinceblock.webm').default}`, type: 'video/webm'}]} />
+<ReactPlayer
+  playing
+  controls
+  url={[
+    {
+      src: `${require('./assets/listsinceblock.webm').default}`,
+      type: 'video/webm',
+    },
+  ]}
+/>
 
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
-| "blockhash" | (string) | The block hash to list transactions since  |
-| target_confirmations | (numeric) | Whether to include transactions locked via InstantSend.  |
-| include_watchonly | (bool) | Include balances in watch-only addresses (see 'importaddress')  |
-| include_removed | (bool) | Show transactions that were removed due to a reorg in the "removed" array  |
+| Argument             | Type      | Description                                                               |
+| -------------------- | --------- | ------------------------------------------------------------------------- |
+| "blockhash"          | (string)  | The block hash to list transactions since                                 |
+| target_confirmations | (numeric) | Whether to include transactions locked via InstantSend.                   |
+| include_watchonly    | (bool)    | Include balances in watch-only addresses (see 'importaddress')            |
+| include_removed      | (bool)    | Show transactions that were removed due to a reorg in the "removed" array |
 
 ```bash
 Arguments:
@@ -39,9 +48,9 @@ Arguments:
 
 ## Output
 
-| Result | Type | Description |
-|--|--|--|
-| "transactions" | (array) | [] |
+| Result         | Type    | Description |
+| -------------- | ------- | ----------- |
+| "transactions" | (array) | []          |
 
 ```bash
 Result:
@@ -50,7 +59,7 @@ Result:
     "account":"accountname",  (string) DEPRECATED. The account name associated with the transaction. Will be "" for the default account.
     "address":"address",    (string) The raptoreum address of the transaction. Not present for move transactions (category = move).
     "category":"send|receive",  (string) The transaction category. 'send' has negative amounts, 'receive' has positive amounts.
-    "amount": x.xxx,          (numeric) The amount in RTM. This is negative for the 'send' category, and for the 'move' category for moves 
+    "amount": x.xxx,          (numeric) The amount in RTM. This is negative for the 'send' category, and for the 'move' category for moves
                                           outbound. It is positive for the 'receive' category, and for the 'move' category for inbound funds.
     "vout" : n,               (numeric) the vout value
     "fee": x.xxx,             (numeric) The amount of the fee in RTM. This is negative and only available for the 'send' category of transactions.
@@ -83,4 +92,3 @@ Result:
 ```bash
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listsinceblock", "params": ["000000000000000bacf66f7497b7dc45ef753ee9a7d38571037cdb1a57f663ad", 6] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```
-

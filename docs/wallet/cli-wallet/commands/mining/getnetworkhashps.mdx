@@ -1,11 +1,12 @@
 ---
 sidebar_position: 3
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # getnetworkhashps
 
-*getnetworkhashps ( nblocks height )*
+_getnetworkhashps ( nblocks height )_
 
 Returns the estimated network hashes per second based on the last n blocks.
 Pass in blocks to override # of blocks, -1 specifies since last difficulty change.
@@ -13,16 +14,23 @@ Pass in height to estimate the network speed at the time when a certain block wa
 
 `raptoreum-cli getnetworkhashps`
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/getnetworkhashps.webm').default}`, type: 'video/webm'}]} />
-
+<ReactPlayer
+  playing
+  controls
+  url={[
+    {
+      src: `${require('./assets/getnetworkhashps.webm').default}`,
+      type: 'video/webm',
+    },
+  ]}
+/>
 
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
-| nblocks | (numeric) | The number of blocks, or -1 for blocks since last difficulty change. |
-| height | (numeric) | To estimate at the time of the given height. |
+| Argument | Type      | Description                                                          |
+| -------- | --------- | -------------------------------------------------------------------- |
+| nblocks  | (numeric) | The number of blocks, or -1 for blocks since last difficulty change. |
+| height   | (numeric) | To estimate at the time of the given height.                         |
 
 ```bash
 
@@ -33,19 +41,17 @@ Arguments:
 
 ## Output
 
-| Result | Type | Description |
-|--|--|--|
-| x | (numeric) | Hashes per second estimated |
+| Result | Type      | Description                 |
+| ------ | --------- | --------------------------- |
+| x      | (numeric) | Hashes per second estimated |
 
 ```bash
 Result:
 x             (numeric) Hashes per second estimated
 ```
 
-
 ## Examples
 
 ```bash
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getnetworkhashps", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```
-

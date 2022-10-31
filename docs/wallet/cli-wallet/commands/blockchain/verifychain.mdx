@@ -1,26 +1,34 @@
 ---
 sidebar_position: 25
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # verifychain
 
-*verifychain ( checklevel nblocks )*
+_verifychain ( checklevel nblocks )_
 
 Verifies blockchain database.
 
 `raptoreum-cli verifychain `
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/verifychain.webm').default}`, type: 'video/webm'}]} />
-
+<ReactPlayer
+  playing
+  controls
+  url={[
+    {
+      src: `${require('./assets/verifychain.webm').default}`,
+      type: 'video/webm',
+    },
+  ]}
+/>
 
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
+| Argument   | Type      | Description                             |
+| ---------- | --------- | --------------------------------------- |
 | checklevel | (numeric) | How thorough the block verification is. |
-| nblocks | (numeric) | The number of blocks to check. |
+| nblocks    | (numeric) | The number of blocks to check.          |
 
 ```bash
 Arguments:
@@ -30,19 +38,17 @@ Arguments:
 
 ## Output
 
-| Result | Type | Description |
-|--|--|--|
-| true|false | (boolean) | Verified or not |
+| Result | Type  | Description |
+| ------ | ----- | ----------- | --------------- |
+| true   | false | (boolean)   | Verified or not |
 
 ```bash
 Result:
 true|false       (boolean) Verified or not
 ```
 
-
 ## Examples
 
 ```bash
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "verifychain", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```
-

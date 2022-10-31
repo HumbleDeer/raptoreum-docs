@@ -1,11 +1,12 @@
 ---
 sidebar_position: 22
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # preciousblock
 
-*preciousblock "blockhash"*
+_preciousblock "blockhash"_
 
 Treats a block as if it were received before others with the same work.
 
@@ -18,12 +19,10 @@ The effects of preciousblock are not retained across restarts.
 <!-- <ReactPlayer playing controls url={[
     {src: `${require('./assets/placeholder.webm').default}`, type: 'video/webm'}]} /> -->
 
-
-
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
+| Argument    | Type     | Description                               |
+| ----------- | -------- | ----------------------------------------- |
 | "blockhash" | (string) | the hash of the block to mark as precious |
 
 ```bash
@@ -33,9 +32,9 @@ Arguments:
 
 ## Output
 
-| Result | Type | Description |
-|--|--|--|
-| ... | (...) | ... |
+| Result | Type  | Description |
+| ------ | ----- | ----------- |
+| ...    | (...) | ...         |
 
 ```bash
 Result:
@@ -43,7 +42,6 @@ Result:
   ...
 }
 ```
-
 
 ## Examples
 

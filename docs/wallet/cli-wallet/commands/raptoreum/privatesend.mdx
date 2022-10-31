@@ -1,11 +1,12 @@
 ---
 sidebar_position: 7
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # privatesend
 
-*privatesend "command"*
+_privatesend "command"_
 
 ```bash
 # Available commands:
@@ -16,13 +17,21 @@ import ReactPlayer from 'react-player'
 
 `raptoreum-cli privatesend start`
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/privatesend.webm').default}`, type: 'video/webm'}]} />
+<ReactPlayer
+  playing
+  controls
+  url={[
+    {
+      src: `${require('./assets/privatesend.webm').default}`,
+      type: 'video/webm',
+    },
+  ]}
+/>
 
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
+| Argument  | Type     | Description            |
+| --------- | -------- | ---------------------- |
 | "command" | (string) | The command to execute |
 
 ```bash
@@ -33,8 +42,8 @@ Arguments:
 ## Output
 
 | Result | Type | Description |
-|--|--|--|
-| ... | ... | ... |
+| ------ | ---- | ----------- |
+| ...    | ...  | ...         |
 
 ```bash
 Result:
@@ -42,10 +51,8 @@ Result:
 }
 ```
 
-
 ## Examples
 
 ```bash
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "privatesend", "params": ["start"] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```
-

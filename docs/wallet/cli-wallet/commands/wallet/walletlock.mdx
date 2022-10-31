@@ -1,11 +1,12 @@
 ---
 sidebar_position: 49
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # walletlock
 
-*walletlock*
+_walletlock_
 
 Removes the wallet encryption key from memory, locking the wallet.
 After calling this method, you will need to call walletpassphrase again
@@ -19,16 +20,24 @@ raptoreum-cli walletpassphrase "my pass phrase" 120
 raptoreum-cli sendtoaddress "XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG" 1.0
 
 # Clear the passphrase since we are done before 2 minutes is up
-raptoreum-cli walletlock 
+raptoreum-cli walletlock
 ```
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/walletlock.webm').default}`, type: 'video/webm'}]} />
+<ReactPlayer
+  playing
+  controls
+  url={[
+    {
+      src: `${require('./assets/walletlock.webm').default}`,
+      type: 'video/webm',
+    },
+  ]}
+/>
 
 ## Output
 
-| Result | Type | Description |
-|--|--|--|
+| Result      | Type     | Description                                     |
+| ----------- | -------- | ----------------------------------------------- |
 | "signature" | (string) | The signature of the message encoded in base 64 |
 
 ```bash
@@ -41,5 +50,3 @@ Result:
 ```bash
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "walletlock", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```
-
-

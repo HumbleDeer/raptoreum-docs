@@ -1,7 +1,8 @@
 ---
 sidebar_position: 4
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # getblockchaininfo
 
@@ -9,13 +10,21 @@ Returns the txids for an address(es) (requires addressindex to be enabled).
 
 `raptoreum-cli getblockchaininfo `
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/getblockchaininfo.webm').default}`, type: 'video/webm'}]} />
+<ReactPlayer
+  playing
+  controls
+  url={[
+    {
+      src: `${require('./assets/getblockchaininfo.webm').default}`,
+      type: 'video/webm',
+    },
+  ]}
+/>
 
 ## Output
 
-| Result | Type | Description |
-|--|--|--|
+| Result  | Type     | Description                                                    |
+| ------- | -------- | -------------------------------------------------------------- |
 | "chain" | (string) | current network name as defined in BIP70 (main, test, regtest) |
 
 ```bash
@@ -48,21 +57,19 @@ Result:
         "timeout": xx,         (numeric) the median time past of a block at which the deployment is considered failed if not yet locked in
         "since": xx,           (numeric) height of the first block to which the status applies
         "statistics": {        (object) numeric statistics about BIP9 signalling for a softfork (only for "started" status)
-           "period": xx,       (numeric) the length in blocks of the BIP9 signalling period 
-           "threshold": xx,    (numeric) the number of blocks with the version bit set required to activate the feature 
-           "elapsed": xx,      (numeric) the number of blocks elapsed since the beginning of the current period 
-           "count": xx,        (numeric) the number of blocks with the version bit set in the current period 
-           "possible": xx      (boolean) returns false if there are not enough blocks left in this period to pass activation threshold 
+           "period": xx,       (numeric) the length in blocks of the BIP9 signalling period
+           "threshold": xx,    (numeric) the number of blocks with the version bit set required to activate the feature
+           "elapsed": xx,      (numeric) the number of blocks elapsed since the beginning of the current period
+           "count": xx,        (numeric) the number of blocks with the version bit set in the current period
+           "possible": xx      (boolean) returns false if there are not enough blocks left in this period to pass activation threshold
         }
      }
   }
 }
 ```
 
-
 ## Examples
 
 ```bash
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblockchaininfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```
-

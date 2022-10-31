@@ -1,11 +1,12 @@
 ---
 sidebar_position: 25
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # importpubkey
 
-*importpubkey "pubkey" ( "label" rescan )*
+_importpubkey "pubkey" ( "label" rescan )_
 
 Adds a public key (in hex) that can be watched as if it were in your wallet but cannot be used to spend. Requires a new wallet backup.
 
@@ -21,12 +22,11 @@ raptoreum-cli importpubkey "mypubkey" "testing" false
 
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
-| "privkey" | (string) | TThe private key (see dumpprivkey)  |
-| "label" | (string) | An optional label  |
-| rescan | (boolean) | Rescan the wallet for transactions |
-
+| Argument  | Type      | Description                        |
+| --------- | --------- | ---------------------------------- |
+| "privkey" | (string)  | TThe private key (see dumpprivkey) |
+| "label"   | (string)  | An optional label                  |
+| rescan    | (boolean) | Rescan the wallet for transactions |
 
 ```bash
 Arguments:
@@ -38,8 +38,8 @@ Arguments:
 ## Output
 
 | Result | Type | Description |
-|--|--|--|
-| ... | ... | ... |
+| ------ | ---- | ----------- |
+| ...    | ...  | ...         |
 
 ```bash
 Result:
@@ -53,4 +53,3 @@ Result:
 ```bash
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "importpubkey", "params": ["mypubkey", "testing", false] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```
-

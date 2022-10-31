@@ -1,25 +1,33 @@
 ---
 sidebar_position: 6
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # getnettotals
 
-*getnettotals*
+_getnettotals_
 
 Returns information about network traffic, including bytes in, bytes out,
 and current time.
 
 `raptoreum-cli getnettotals`
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/getnettotals.webm').default}`, type: 'video/webm'}]} />
-
+<ReactPlayer
+  playing
+  controls
+  url={[
+    {
+      src: `${require('./assets/getnettotals.webm').default}`,
+      type: 'video/webm',
+    },
+  ]}
+/>
 
 ## Output
 
-| Result | Type | Description |
-|--|--|--|
+| Result           | Type     | Description          |
+| ---------------- | -------- | -------------------- |
 | "totalbytesrecv" | (number) | Total bytes received |
 
 ```bash
@@ -40,10 +48,8 @@ Result:
 }
 ```
 
-
 ## Examples
 
 ```bash
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getnettotals", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```
-

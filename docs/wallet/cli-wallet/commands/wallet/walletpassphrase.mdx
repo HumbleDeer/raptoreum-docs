@@ -1,11 +1,12 @@
 ---
 sidebar_position: 50
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # walletpassphrase
 
-*walletpassphrase "passphrase" timeout ( mixingonly )*
+_walletpassphrase "passphrase" timeout ( mixingonly )_
 
 Stores the wallet decryption key in memory for 'timeout' seconds.
 This is needed prior to performing transactions related to private keys such as sending raptoreums
@@ -22,19 +23,27 @@ raptoreum-cli walletpassphrase "my pass phrase" 60
 raptoreum-cli walletpassphrase "my pass phrase" 60 true
 
 # Lock the wallet again (before 60 seconds)
-raptoreum-cli walletlock 
+raptoreum-cli walletlock
 ```
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/walletlock.webm').default}`, type: 'video/webm'}]} />
+<ReactPlayer
+  playing
+  controls
+  url={[
+    {
+      src: `${require('./assets/walletlock.webm').default}`,
+      type: 'video/webm',
+    },
+  ]}
+/>
 
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
-| "passphrase" | (string) | The wallet passphrase |
-| timeout | (numeric) | The time to keep the decryption key in seconds. |
-| mixingonly | (boolean) | If is true sending functions are disabled |
+| Argument     | Type      | Description                                     |
+| ------------ | --------- | ----------------------------------------------- |
+| "passphrase" | (string)  | The wallet passphrase                           |
+| timeout      | (numeric) | The time to keep the decryption key in seconds. |
+| mixingonly   | (boolean) | If is true sending functions are disabled       |
 
 ```bash
 Arguments:
@@ -46,8 +55,8 @@ Arguments:
 ## Output
 
 | Result | Type | Description |
-|--|--|--|
-| ... | ... | ... |
+| ------ | ---- | ----------- |
+| ...    | ...  | ...         |
 
 ```bash
 Result:
@@ -61,6 +70,3 @@ Result:
 ```bash
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "walletpassphrase", "params": ["my pass phrase", 60] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```
-
-
-

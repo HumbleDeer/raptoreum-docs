@@ -1,11 +1,12 @@
 ---
 sidebar_position: 5
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # fundrawtransaction
 
-*fundrawtransaction "hexstring" ( options )*
+_fundrawtransaction "hexstring" ( options )_
 
 Add inputs to a transaction until it has enough in value to meet its out value.
 This will not modify existing inputs, and will add at most one change output to the outputs.
@@ -32,14 +33,21 @@ raptoreum-cli signrawtransaction "fundedtransactionhex"
 raptoreum-cli sendrawtransaction "signedtransactionhex"
 ```
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/fundrawtransaction.webm').default}`, type: 'video/webm'}]} />
-
+<ReactPlayer
+  playing
+  controls
+  url={[
+    {
+      src: `${require('./assets/fundrawtransaction.webm').default}`,
+      type: 'video/webm',
+    },
+  ]}
+/>
 
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
+| Argument    | Type     | Description                           |
+| ----------- | -------- | ------------------------------------- |
 | "hexstring" | (string) | The hex string of the raw transaction |
 
 ```bash
@@ -69,11 +77,11 @@ Arguments:
 
 ## Output
 
-| Result | Type | Description |
-|--|--|--|
-| "hex" | (string) | The resulting raw transaction (hex-encoded string) |
-| "fee" | (numeric) | Fee in RTM the resulting transaction pays |
-| "changepos" | (numeric) | The position of the added change output, or -1 |
+| Result      | Type      | Description                                        |
+| ----------- | --------- | -------------------------------------------------- |
+| "hex"       | (string)  | The resulting raw transaction (hex-encoded string) |
+| "fee"       | (numeric) | Fee in RTM the resulting transaction pays          |
+| "changepos" | (numeric) | The position of the added change output, or -1     |
 
 ```bash
 Result:
@@ -84,10 +92,8 @@ Result:
 }
 ```
 
-
 ## Examples
 
 ```bash
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getaddressbalance", "params": [{"addresses": ["XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg"]}] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```
-

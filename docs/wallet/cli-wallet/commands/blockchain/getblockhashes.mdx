@@ -1,7 +1,8 @@
 ---
 sidebar_position: 7
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # getblockhashes
 
@@ -9,16 +10,23 @@ Returns array of hashes of blocks within the timestamp range provided.
 
 `raptoreum-cli getblockhashes 1231614698 1231024505`
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/getblockhashes.webm').default}`, type: 'video/webm'}]} />
-
+<ReactPlayer
+  playing
+  controls
+  url={[
+    {
+      src: `${require('./assets/getblockhashes.webm').default}`,
+      type: 'video/webm',
+    },
+  ]}
+/>
 
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
-| "high" | (numeric) | The newer block timestamp |
-| "low" | (numeric) | The older block timestamp |
+| Argument | Type      | Description               |
+| -------- | --------- | ------------------------- |
+| "high"   | (numeric) | The newer block timestamp |
+| "low"    | (numeric) | The older block timestamp |
 
 ```bash
 Arguments:
@@ -28,8 +36,8 @@ Arguments:
 
 ## Output
 
-| Result | Type | Description |
-|--|--|--|
+| Result | Type     | Description    |
+| ------ | -------- | -------------- |
 | "hash" | (string) | The block hash |
 
 ```bash
@@ -38,7 +46,6 @@ Result:
   "hash"         (string) The block hash
 ]
 ```
-
 
 ## Examples
 

@@ -1,25 +1,30 @@
 ---
 sidebar_position: 9
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # listbanned
 
-*listbanned*
+_listbanned_
 
 List all banned IPs/Subnets.
 
 `raptoreum-cli listbanned`
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/setban.webm').default}`, type: 'video/webm'}]} />
-
+<ReactPlayer
+  playing
+  controls
+  url={[
+    { src: `${require('./assets/setban.webm').default}`, type: 'video/webm' },
+  ]}
+/>
 
 ## Output
 
 | Result | Type | Description |
-|--|--|--|
-| ... | ... | ... |
+| ------ | ---- | ----------- |
+| ...    | ...  | ...         |
 
 ```bash
 Result:
@@ -32,4 +37,3 @@ Result:
 ```bash
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listbanned", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```
-

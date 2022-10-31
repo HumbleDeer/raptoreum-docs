@@ -1,7 +1,8 @@
 ---
 sidebar_position: 12
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # getdifficulty
 
@@ -9,20 +10,27 @@ Returns the proof-of-work difficulty as a multiple of the minimum difficulty.
 
 `raptoreum-cli getdifficulty`
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/getdifficulty.webm').default}`, type: 'video/webm'}]} />
+<ReactPlayer
+  playing
+  controls
+  url={[
+    {
+      src: `${require('./assets/getdifficulty.webm').default}`,
+      type: 'video/webm',
+    },
+  ]}
+/>
 
 ## Output
 
-| Result | Type | Description |
-|--|--|--|
+| Result  | Type      | Description                                                           |
+| ------- | --------- | --------------------------------------------------------------------- |
 | "n.nnn" | (numeric) | the proof-of-work difficulty as a multiple of the minimum difficulty. |
 
 ```bash
 Result:
 n.nnn       (numeric) the proof-of-work difficulty as a multiple of the minimum difficulty.
 ```
-
 
 ## Examples
 

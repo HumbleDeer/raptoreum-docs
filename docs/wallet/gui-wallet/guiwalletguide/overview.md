@@ -8,7 +8,7 @@ sidebar_position: 4
 
 ## Balances
 
-`Available`:  Total of All Mature Inputs
+`Available`: Total of All Mature Inputs
 
 `Pending`: Pending TX totals
 

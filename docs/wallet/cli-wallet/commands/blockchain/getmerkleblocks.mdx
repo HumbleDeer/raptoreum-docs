@@ -1,11 +1,12 @@
 ---
 sidebar_position: 16
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # getmerkleblocks
 
-*getmerkleblocks "filter" "hash" ( count )*
+_getmerkleblocks "filter" "hash" ( count )_
 
 Returns an array of hex-encoded merkleblocks for count blocks starting from hash which match filter.
 
@@ -16,14 +17,13 @@ raptoreum-cli getmerkleblocks "2303028005802040100040000008008400048141010000f84
 <!-- <ReactPlayer playing controls url={[
     {src: `${require('./assets/placeholder.webm').default}`, type: 'video/webm'}]} /> -->
 
-
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
-| "filter" | (string) | The hex encoded bloom filter |
-| "hash" | (string) | The block hash |
-| count | (numeric) | (optional, default/max=2000) |
+| Argument | Type      | Description                  |
+| -------- | --------- | ---------------------------- |
+| "filter" | (string)  | The hex encoded bloom filter |
+| "hash"   | (string)  | The block hash               |
+| count    | (numeric) | (optional, default/max=2000) |
 
 ```bash
 Arguments:
@@ -34,8 +34,8 @@ Arguments:
 
 ## Output
 
-| Result | Type | Description |
-|--|--|--|
+| Result | Type     | Description                                              |
+| ------ | -------- | -------------------------------------------------------- |
 | "data" | (string) | The transaction id of an in-mempool ancestor transaction |
 
 ```bash
@@ -45,7 +45,6 @@ Result:
   ...
 ]
 ```
-
 
 ## Examples
 

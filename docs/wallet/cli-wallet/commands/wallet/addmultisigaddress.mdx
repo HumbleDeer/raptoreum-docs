@@ -1,11 +1,12 @@
 ---
 sidebar_position: 3
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # addmultisigaddress
 
-*addmultisigaddress nrequired ["key",...] ( "account" )*
+_addmultisigaddress nrequired ["key",...] ( "account" )_
 
 Add a nrequired-to-sign multisignature address to the wallet. Requires a new wallet backup.
 Each key is a Raptoreum address or hex-encoded public key.
@@ -16,17 +17,24 @@ If 'account' is specified (DEPRECATED), assign address to that account.
 raptoreum-cli addmultisigaddress 2 "[\"Xt4qk9uKvQYAonVGSZNXqxeDmtjaEWgfrS\",\"XoSoWQkpgLpppPoyyzbUFh1fq2RBvW6UK2\"]"
 ```
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/addmultisigaddress.webm').default}`, type: 'video/webm'}]} />
-
+<ReactPlayer
+  playing
+  controls
+  url={[
+    {
+      src: `${require('./assets/addmultisigaddress.webm').default}`,
+      type: 'video/webm',
+    },
+  ]}
+/>
 
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
-| nrequired | (number) | The number of required signatures out of the n keys or  |
-| "keys" | (string) | A json array of raptoreum addresses or hex-encoded public keys  |
-| "account" | (string) | DEPRECATED. An account to assign the addresses to.  |
+| Argument  | Type     | Description                                                    |
+| --------- | -------- | -------------------------------------------------------------- |
+| nrequired | (number) | The number of required signatures out of the n keys or         |
+| "keys"    | (string) | A json array of raptoreum addresses or hex-encoded public keys |
+| "account" | (string) | DEPRECATED. An account to assign the addresses to.             |
 
 ```bash
 Arguments:
@@ -41,9 +49,9 @@ Arguments:
 
 ## Output
 
-| Result | Type | Description |
-|--|--|--|
-| "address"| (string) | A raptoreum address associated with the keys. |
+| Result    | Type     | Description                                   |
+| --------- | -------- | --------------------------------------------- |
+| "address" | (string) | A raptoreum address associated with the keys. |
 
 ```bash
 
@@ -51,10 +59,8 @@ Result:
 "address"         (string) A raptoreum address associated with the keys.
 ```
 
-
 ## Examples
 
 ```bash
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "addmultisigaddress", "params": [2, "[\"Xt4qk9uKvQYAonVGSZNXqxeDmtjaEWgfrS\",\"XoSoWQkpgLpppPoyyzbUFh1fq2RBvW6UK2\"]"] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```
-

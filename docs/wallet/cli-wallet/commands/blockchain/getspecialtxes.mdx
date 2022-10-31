@@ -1,11 +1,12 @@
 ---
 sidebar_position: 18
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # getspecialtxes
 
-*getspecialtxes "blockhash" ( type count skip verbosity ) *
+_getspecialtxes "blockhash" ( type count skip verbosity ) _
 
 Returns an array of special transactions found in the specified block
 
@@ -15,19 +16,26 @@ If verbosity is 2, returns an Object with information for each transaction.
 
 `raptoreum-cli getspecialtxes "00000000000fd08c2fb661d2fcb0d49abb3a91e5f27082ce64feed3b4dede2e2"`
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/getspecialtxes.webm').default}`, type: 'video/webm'}]} />
-
+<ReactPlayer
+  playing
+  controls
+  url={[
+    {
+      src: `${require('./assets/getspecialtxes.webm').default}`,
+      type: 'video/webm',
+    },
+  ]}
+/>
 
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
-| "blockhash" | (string) | The block hash |
-| type | (numeric) | Filter special txes by type, -1 means all  |
-| count | (numeric) | The number of transactions to return |
-| skip | (numeric) | The number of transactions to skip |
-| verbosity | (numeric) | 0 for hashes, 1 for hex-encoded data, and 2  |
+| Argument    | Type      | Description                                 |
+| ----------- | --------- | ------------------------------------------- |
+| "blockhash" | (string)  | The block hash                              |
+| type        | (numeric) | Filter special txes by type, -1 means all   |
+| count       | (numeric) | The number of transactions to return        |
+| skip        | (numeric) | The number of transactions to skip          |
+| verbosity   | (numeric) | 0 for hashes, 1 for hex-encoded data, and 2 |
 
 ```bash
 Arguments:
@@ -40,8 +48,8 @@ Arguments:
 
 ## Output
 
-| Result | Type | Description |
-|--|--|--|
+| Result | Type     | Description        |
+| ------ | -------- | ------------------ |
 | "txid" | (string) | The transaction id |
 
 ```bash
@@ -60,7 +68,6 @@ Result (for verbosity = 2):
   ...,
 ]
 ```
-
 
 ## Examples
 

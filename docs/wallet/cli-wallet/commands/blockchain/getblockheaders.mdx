@@ -1,11 +1,12 @@
 ---
 sidebar_position: 9
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # getblockheaders
 
-*getblockheaders "hash" ( count verbose )*
+_getblockheaders "hash" ( count verbose )_
 
 Returns an array of items with information about count blockheaders starting from hash.
 
@@ -14,16 +15,23 @@ If verbose is true, each item is an Object with information about a single block
 
 `raptoreum-cli getblockheaders "00000000c937983704a73af28acdec37b049d214adbda81d7e2a3dd146f6ed09" 2000`
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/getblockheaders.webm').default}`, type: 'video/webm'}]} />
-
+<ReactPlayer
+  playing
+  controls
+  url={[
+    {
+      src: `${require('./assets/getblockheaders.webm').default}`,
+      type: 'video/webm',
+    },
+  ]}
+/>
 
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
-| "hash" | (string) | The block hash |
-| verbose | (boolean) | (default) true for a json object, false for the hex encoded data |
+| Argument | Type      | Description                                                      |
+| -------- | --------- | ---------------------------------------------------------------- |
+| "hash"   | (string)  | The block hash                                                   |
+| verbose  | (boolean) | (default) true for a json object, false for the hex encoded data |
 
 ```bash
 Arguments:
@@ -34,8 +42,8 @@ Arguments:
 
 ## Output
 
-| Result | Type | Description |
-|--|--|--|
+| Result | Type     | Description    |
+| ------ | -------- | -------------- |
 | "hash" | (string) | The block hash |
 
 ```bash
@@ -66,7 +74,6 @@ Result (for verbose=false):
   ...
 ]
 ```
-
 
 ## Examples
 

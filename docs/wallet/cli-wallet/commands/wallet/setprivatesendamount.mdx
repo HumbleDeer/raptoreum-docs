@@ -1,24 +1,33 @@
 ---
 sidebar_position: 45
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # setprivatesendamount
 
-*setprivatesendamount amount*
+_setprivatesendamount amount_
 
 Set the goal amount in RTM for PrivateSend mixing.
 
 `raptoreum-cli setprivatesendamount 500`
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/setprivatesendamount.webm').default}`, type: 'video/webm'}]} />
+<ReactPlayer
+  playing
+  controls
+  url={[
+    {
+      src: `${require('./assets/setprivatesendamount.webm').default}`,
+      type: 'video/webm',
+    },
+  ]}
+/>
 
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
-| amount | (numeric) | The default amount is 1000 Cannot be more than 21000000 nor less than 2 |
+| Argument | Type      | Description                                                             |
+| -------- | --------- | ----------------------------------------------------------------------- |
+| amount   | (numeric) | The default amount is 1000 Cannot be more than 21000000 nor less than 2 |
 
 ```bash
 Arguments:
@@ -28,8 +37,8 @@ Arguments:
 ## Output
 
 | Result | Type | Description |
-|--|--|--|
-| ... | ... | ... |
+| ------ | ---- | ----------- |
+| ...    | ...  | ...         |
 
 ```bash
 Result:
@@ -43,4 +52,3 @@ Result:
 ```bash
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "setprivatesendamount", "params": [208] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```
-

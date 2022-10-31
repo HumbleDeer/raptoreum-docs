@@ -1,11 +1,12 @@
 ---
 sidebar_position: 17
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # getrawmempool
 
-*getrawmempool ( verbose )*
+_getrawmempool ( verbose )_
 
 Returns all transaction ids in memory pool as a json array of string transaction ids.
 
@@ -13,15 +14,22 @@ Hint: use getmempoolentry to fetch a specific transaction from the mempool.
 
 `raptoreum-cli getrawmempool true`
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/getrawmempool.webm').default}`, type: 'video/webm'}]} />
-
+<ReactPlayer
+  playing
+  controls
+  url={[
+    {
+      src: `${require('./assets/getrawmempool.webm').default}`,
+      type: 'video/webm',
+    },
+  ]}
+/>
 
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
-| verbose | (boolean) | True for a json object, false for array of transaction ids |
+| Argument | Type      | Description                                                |
+| -------- | --------- | ---------------------------------------------------------- |
+| verbose  | (boolean) | True for a json object, false for array of transaction ids |
 
 ```bash
 Arguments:
@@ -30,8 +38,8 @@ Arguments:
 
 ## Output
 
-| Result | Type | Description |
-|--|--|--|
+| Result          | Type     | Description        |
+| --------------- | -------- | ------------------ |
 | "transactionid" | (string) | The transaction id |
 
 ```bash
@@ -62,7 +70,6 @@ Result: (for verbose = true):
   }, ...
 }
 ```
-
 
 ## Examples
 

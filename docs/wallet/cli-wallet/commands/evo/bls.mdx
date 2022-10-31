@@ -1,11 +1,12 @@
 ---
 sidebar_position: 1
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # bls
 
-*bls "command" ...*
+_bls "command" ..._
 
 Set of commands to execute BLS related actions.
 
@@ -18,16 +19,16 @@ Set of commands to execute BLS related actions.
 
 `raptoreum-cli bls generate`
 
-
-
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/bls.webm').default}`, type: 'video/webm'}]} />
-
+<ReactPlayer
+  playing
+  controls
+  url={[{ src: `${require('./assets/bls.webm').default}`, type: 'video/webm' }]}
+/>
 
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
+| Argument  | Type     | Description            |
+| --------- | -------- | ---------------------- |
 | "command" | (string) | The command to execute |
 
 ```bash
@@ -38,8 +39,8 @@ Arguments:
 ## Output
 
 | Result | Type | Description |
-|--|--|--|
-| ... | ... | ... |
+| ------ | ---- | ----------- |
+| ...    | ...  | ...         |
 
 ```bash
 Result:
@@ -53,4 +54,3 @@ Result:
 ```bash
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "bls", "params": [raptoreum+net] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```
-

@@ -18,7 +18,7 @@ Private keys are stored in your wallet. When you first load the wallet there is 
 
 :::caution
 
-**SAVE THIS PASSWORD** - Losing this password means you lose access to all of your Raptoreum funds! 
+**SAVE THIS PASSWORD** - Losing this password means you lose access to all of your Raptoreum funds!
 
 :::
 
@@ -35,7 +35,7 @@ Backup the following items:
 Single Address Private Key:
 
 ```bash
-dumpprivkey ADDRESS 
+dumpprivkey ADDRESS
 ```
 
 Entire Wallet All Keys
