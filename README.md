@@ -1,60 +1,46 @@
 # Raptoreum Docs
 
-- Search will not create indexes until `yarn build` is ran
+This repository holds the Docusaurus instance that hosts the Raptoreum Docs (https://docs.raptoreum.com). Development is also done here.
 
-## Install:
+## Contributors
 
-1. yarn
+Contributors are always welcome to help us out with anything they can. If you're not proficient in using code or development software, bring us a visit on Discord! (discord.gg/raptoreum). You can help us in other ways that don't require coding skills. :)
 
-### Dev:
+## Notes for developers
 
-1. yarn start
+### Commands used for Docusaurus building & local deployment
 
-## Deploy:
+- Build local files: `yarn build` (equivalent to `yarn docusaurus build`)
+  Builds the current instance and leaves the built files in `/build/`
+- Host local files: `yarn serve` (equivalent to `yarn docusaurus serve`)
+  Opens a webserver on port 3000
 
-1. yarn build
-2. yarn serve
+Search will not create indexes until `yarn build` is ran.
 
-## Docker:
+A **Docker image** can be built directly from this repository's source. When doing so, the above commands are executed automatically. Note this may take some time to finish.
 
-Build the container:
+### Requirements:
 
-```sudo docker build . -t raptor/docs```
+1. NodeJS
+2. Yarn (Package Manager)
+3. Visual Studio Code
+4. Docker / Docker Desktop (optional, dev containers)
 
-Run the container:
+## Docker image building
 
-```sudo docker run -p 3005:3000 -d raptor/docs```
+1. To build the Docker image, start off by cloning this repository to a directory of your choosing:
 
-This will make the applications accessible on port 3005 (via port 3000 inside container).
+   `sudo git clone https://github.com/Raptor3um/docs`
 
-## Deploy Commands
+2. Navigate to the cloned repository's root directory.
+3. Build the container:
 
-```bash
-# stop/remove old container (replace id)
-sudo docker ps
-sudo docker stop 4b2bcf907ae4
-sudo docker images
-sudo docker rmi -f 4b2bcf907ae4
+   `sudo docker build . -t raptor/docs`
 
-# delete old repo, get new repo, build
-cd /home/
-rm -fr docs/
-git clone https://github.com/Raptor3um/docs.git
-cd /docs/
-docker build .
+4. Run the container:
 
-# restart container (replace id)
-sudo docker run -p 3005:3000 -d f351bb5184ef
-```
+   `sudo docker run -p -d raptor/docs`
+   - -p opens the ports specified in the Dockerfile
+   - -d specifies detatched 
 
-
-## To Do:
-
-✅ Compiling guides for Win/Linux/Mac
-
- □ Finish .webm's for rest of CLI commands
-
- □ Re-work listed miners
-
- □ Add mining pool information
-
+This will make the applications accessible on port 3000 (localhost or otherwise)
