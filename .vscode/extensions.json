@@ -1,5 +1,7 @@
 {
-    "recommendations": [
-        "unifiedjs.vscode-mdx"
-    ]
+  "recommendations": [
+    "unifiedjs.vscode-mdx",
+    "gamunu.vscode-yarn",
+    "carlosjs23.vscode-yarn-script"
+  ]
 }
