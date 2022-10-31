@@ -1,11 +1,12 @@
 ---
 sidebar_position: 21
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # gettxoutsetinfo
 
-*gettxoutsetinfo*
+_gettxoutsetinfo_
 
 Returns statistics about the unspent transaction output set.
 Note this call may take some time.
@@ -18,13 +19,21 @@ raptoreum-cli gettxoutproof '["mytxid",...]'
 raptoreum-cli gettxoutproof '["mytxid",...]' "blockhash"
 ```
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/gettxoutsetinfo.webm').default}`, type: 'video/webm'}]} />
+<ReactPlayer
+  playing
+  controls
+  url={[
+    {
+      src: `${require('./assets/gettxoutsetinfo.webm').default}`,
+      type: 'video/webm',
+    },
+  ]}
+/>
 
 ## Output
 
-| Result | Type | Description |
-|--|--|--|
+| Result | Type      | Description                                |
+| ------ | --------- | ------------------------------------------ |
 | height | (numeric) | (numeric) The current block height (index) |
 
 ```bash
@@ -40,7 +49,6 @@ Result:
   "total_amount": x.xxx          (numeric) The total amount
 }
 ```
-
 
 ## Examples
 

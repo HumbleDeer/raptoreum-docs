@@ -1,11 +1,12 @@
 ---
 sidebar_position: 3
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # prioritisetransaction
 
-*prioritisetransaction txid fee delta*
+_prioritisetransaction txid fee delta_
 
 Accepts the transaction into mined blocks at a higher (or lower) priority
 
@@ -14,12 +15,11 @@ Accepts the transaction into mined blocks at a higher (or lower) priority
 <!-- <ReactPlayer playing controls url={[
     {src: `${require('./assets/placeholder.webm').default}`, type: 'video/webm'}]} /> -->
 
-
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
-| "txid" | (string) | The transaction id. |
+| Argument  | Type     | Description                                                                                                                                                                                                                   |
+| --------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| "txid"    | (string) | The transaction id.                                                                                                                                                                                                           |
 | fee_delta | (string) | The fee value (in duffs) to add (or subtract, if negative). The fee is not actually paid, only the algorithm for selecting transactions into a block considers the transaction as it would have paid a higher (or lower) fee. |
 
 ```bash
@@ -32,19 +32,17 @@ Arguments:
 
 ## Output
 
-| Result | Type | Description |
-|--|--|--|
-| true | (boolean) | Returns true |
+| Result | Type      | Description  |
+| ------ | --------- | ------------ |
+| true   | (boolean) | Returns true |
 
 ```bash
 Result:
 true              (boolean) Returns true
 ```
 
-
 ## Examples
 
 ```bash
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "prioritisetransaction", "params": ["txid", 10000] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```
-

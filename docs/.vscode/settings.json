@@ -1,0 +1,8 @@
+{
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "modificationsIfAvailable",
+  "editor.minimap.autohide": true,
+  "editor.minimap.renderCharacters": false,
+  "files.autoGuessEncoding": true
+}

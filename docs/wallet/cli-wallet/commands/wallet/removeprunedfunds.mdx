@@ -1,11 +1,12 @@
 ---
 sidebar_position: 40
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # removeprunedfunds
 
-*removeprunedfunds "txid"*
+_removeprunedfunds "txid"_
 
 Deletes the specified transaction from the wallet. Meant for use with pruned wallets and as a companion to importprunedfunds. This will affect wallet balances.
 
@@ -15,9 +16,9 @@ raptoreum-cli removeprunedfunds "a8d0c0184dde994a09ec054286f1ce581bebf46446a5121
 
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
-| "txid" | (string) | The hex-encoded id of the transaction you are deleting |
+| Argument | Type     | Description                                            |
+| -------- | -------- | ------------------------------------------------------ |
+| "txid"   | (string) | The hex-encoded id of the transaction you are deleting |
 
 ```bash
 Arguments:
@@ -26,9 +27,9 @@ Arguments:
 
 ## Output
 
-| Result | Type | Description |
-|--|--|--|
-| true|false | (boolean) | Whether the command was successful or not |
+| Result | Type  | Description |
+| ------ | ----- | ----------- | ----------------------------------------- |
+| true   | false | (boolean)   | Whether the command was successful or not |
 
 ```bash
 Result:
@@ -40,4 +41,3 @@ true|false          (boolean) true if successful.
 ```bash
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "removeprunedfunds", "params": ["a8d0c0184dde994a09ec054286f1ce581bebf46446a512166eae7628734ea0a5"] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```
-

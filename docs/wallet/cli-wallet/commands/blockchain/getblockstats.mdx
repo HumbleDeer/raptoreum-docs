@@ -1,11 +1,12 @@
 ---
 sidebar_position: 10
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # getblockstats
 
-*getblockstats hash_or_height ( stats )*
+_getblockstats hash_or_height ( stats )_
 
 Compute per block statistics for a given window. All amounts are in duffs.
 It won't work for some heights with pruning.
@@ -13,18 +14,26 @@ It won't work without -txindex for utxo_size_inc, *fee or *feerate stats.
 
 `raptoreum-cli getblockstats 1000 '["minfeerate","avgfeerate"]'`
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/getblockstats.webm').default}`, type: 'video/webm'}]} />
-
+<ReactPlayer
+  playing
+  controls
+  url={[
+    {
+      src: `${require('./assets/getblockstats.webm').default}`,
+      type: 'video/webm',
+    },
+  ]}
+/>
 
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
-| "hash_or_height" | (string or numeric) | The block hash or height of the target block |
-| "stats" | (array) | Values to plot, by default all values (see result below)
+| Argument         | Type                | Description                                              |
+| ---------------- | ------------------- | -------------------------------------------------------- |
+| "hash_or_height" | (string or numeric) | The block hash or height of the target block             |
+| "stats"          | (array)             | Values to plot, by default all values (see result below) |
+
 - test
- |
+  |
 
 ```bash
 Arguments:
@@ -39,8 +48,8 @@ Arguments:
 
 ## Output
 
-| Result | Type | Description |
-|--|--|--|
+| Result | Type     | Description    |
+| ------ | -------- | -------------- |
 | "hash" | (string) | The block hash |
 
 ```bash
@@ -73,7 +82,6 @@ Result:
   "utxo_size_inc": xxxxx,   (numeric) The increase/decrease in size for the utxo index (not discounting op_return and similar)
 }
 ```
-
 
 ## Examples
 

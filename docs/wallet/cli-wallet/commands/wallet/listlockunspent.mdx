@@ -1,36 +1,45 @@
 ---
 sidebar_position: 32
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # listlockunspent
 
-*listlockunspent*
+_listlockunspent_
 
 Returns list of temporarily unspendable outputs.
 See the lockunspent call to lock and unlock transactions for spending.
 
 ```bash
 # List the unspent transactions
-raptoreum-cli listunspent 
+raptoreum-cli listunspent
 
 # Lock an unspent transaction
 raptoreum-cli lockunspent false "[{\"txid\":\"a08e6907dbbd3d809776dbfc5d82e371b764ed838b5655e72f463568df1aadf0\",\"vout\":1}]"
 
 # List the locked transactions
-raptoreum-cli listlockunspent 
+raptoreum-cli listlockunspent
 
 # Unlock the transaction again
 raptoreum-cli lockunspent true "[{\"txid\":\"a08e6907dbbd3d809776dbfc5d82e371b764ed838b5655e72f463568df1aadf0\",\"vout\":1}]"
 ```
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/listlockunspent.webm').default}`, type: 'video/webm'}]} />
+<ReactPlayer
+  playing
+  controls
+  url={[
+    {
+      src: `${require('./assets/listlockunspent.webm').default}`,
+      type: 'video/webm',
+    },
+  ]}
+/>
 
 ## Output
 
-| Result | Type | Description |
-|--|--|--|
+| Result | Type     | Description               |
+| ------ | -------- | ------------------------- |
 | "txid" | (string) | The transaction id locked |
 
 ```bash
@@ -49,4 +58,3 @@ Result:
 ```bash
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listlockunspent", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```
-

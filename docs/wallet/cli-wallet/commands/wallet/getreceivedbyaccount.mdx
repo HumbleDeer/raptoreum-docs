@@ -1,11 +1,12 @@
 ---
 sidebar_position: 15
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # getreceivedbyaccount
 
-*getreceivedbyaccount "account" ( minconf addlocked )*
+_getreceivedbyaccount "account" ( minconf addlocked )_
 
 DEPRECATED. Returns the total amount received by addresses with account in transactions with specified minimum number of confirmations.
 
@@ -20,17 +21,24 @@ raptoreum-cli getreceivedbyaccount "tabby" 0
 raptoreum-cli getreceivedbyaccount "tabby" 6
 ```
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/getreceivedbyaccount.webm').default}`, type: 'video/webm'}]} />
+<ReactPlayer
+  playing
+  controls
+  url={[
+    {
+      src: `${require('./assets/getreceivedbyaccount.webm').default}`,
+      type: 'video/webm',
+    },
+  ]}
+/>
 
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
-| "account" | (string) | The selected account, may be the default account using "".  |
-| minconf | (numeric) | Only include transactions confirmed at least this many times.  |
-| addlocked | (boolean) | Whether to include transactions locked via InstantSend.  |
-
+| Argument  | Type      | Description                                                   |
+| --------- | --------- | ------------------------------------------------------------- |
+| "account" | (string)  | The selected account, may be the default account using "".    |
+| minconf   | (numeric) | Only include transactions confirmed at least this many times. |
+| addlocked | (boolean) | Whether to include transactions locked via InstantSend.       |
 
 ```bash
 Arguments:
@@ -41,8 +49,8 @@ Arguments:
 
 ## Output
 
-| Result | Type | Description |
-|--|--|--|
+| Result | Type      | Description                                        |
+| ------ | --------- | -------------------------------------------------- |
 | amount | (numeric) | The total amount in RTM received for this account. |
 
 ```bash
@@ -55,4 +63,3 @@ amount            (numeric) The total amount in RTM received for this account.
 ```bash
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getreceivedbyaccount", "params": ["tabby", 6] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```
-

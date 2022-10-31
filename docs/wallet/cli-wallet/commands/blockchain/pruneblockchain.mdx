@@ -1,22 +1,22 @@
 ---
 sidebar_position: 23
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # pruneblockchain
 
-*pruneblockchain*
+_pruneblockchain_
 
 `raptoreum-cli pruneblockchain 1000`
 
 <!-- <ReactPlayer playing controls url={[
     {src: `${require('./assets/placeholder.webm').default}`, type: 'video/webm'}]} /> -->
 
-
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
+| Argument | Type     | Description                                                                                                                                                                   |
+| -------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | "height" | (string) | The block height to prune up to. May be set to a discrete height, or a unix timestamp to prune blocks whose block time is at least 2 hours older than the provided timestamp. |
 
 ```bash
@@ -27,15 +27,14 @@ Arguments:
 
 ## Output
 
-| Result | Type | Description |
-|--|--|--|
-| n | (numeric) | Height of the last block pruned. |
+| Result | Type      | Description                      |
+| ------ | --------- | -------------------------------- |
+| n      | (numeric) | Height of the last block pruned. |
 
 ```bash
 Result:
 n    (numeric) Height of the last block pruned.
 ```
-
 
 ## Examples
 

@@ -1,11 +1,12 @@
 ---
 sidebar_position: 39
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # move
 
-*move "fromaccount" "toaccount" amount ( minconf "comment" )*
+_move "fromaccount" "toaccount" amount ( minconf "comment" )_
 
 DEPRECATED. Move a specified amount from one account in your wallet to another.
 
@@ -17,19 +18,23 @@ raptoreum-cli move "" "tabby" 0.01
 raptoreum-cli move "timotei" "akiko" 0.01 6 "happy birthday!"
 ```
 
-
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/move.webm').default}`, type: 'video/webm'}]} />
+<ReactPlayer
+  playing
+  controls
+  url={[
+    { src: `${require('./assets/move.webm').default}`, type: 'video/webm' },
+  ]}
+/>
 
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
-| "fromaccount" | (string) | The name of the account to move funds from. May be the default account using "". |
-| "toaccount" | (string) | The name of the account to move funds to. May be the default account using "". |
-| amount | (numeric) | Quantity of RTM to move between accounts. |
-| dummy | (numeric) | Ignored. Remains for backward compatibility. |
-| "comment" | (string) | An optional comment, stored in the wallet only. |
+| Argument      | Type      | Description                                                                      |
+| ------------- | --------- | -------------------------------------------------------------------------------- |
+| "fromaccount" | (string)  | The name of the account to move funds from. May be the default account using "". |
+| "toaccount"   | (string)  | The name of the account to move funds to. May be the default account using "".   |
+| amount        | (numeric) | Quantity of RTM to move between accounts.                                        |
+| dummy         | (numeric) | Ignored. Remains for backward compatibility.                                     |
+| "comment"     | (string)  | An optional comment, stored in the wallet only.                                  |
 
 ```bash
 Arguments:
@@ -42,9 +47,9 @@ Arguments:
 
 ## Output
 
-| Result | Type | Description |
-|--|--|--|
-| true|false | (boolean) | Whether the command was successful or not |
+| Result | Type  | Description |
+| ------ | ----- | ----------- | ----------------------------------------- |
+| true   | false | (boolean)   | Whether the command was successful or not |
 
 ```bash
 Result:
@@ -56,4 +61,3 @@ true|false          (boolean) true if successful.
 ```bash
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "move", "params": ["timotei", "akiko", 0.01, 6, "happy birthday!"] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```
-

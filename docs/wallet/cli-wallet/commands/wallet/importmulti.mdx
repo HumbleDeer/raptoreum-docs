@@ -1,11 +1,12 @@
 ---
 sidebar_position: 22
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # importmulti
 
-*importmulti "requests" ( "options" )*
+_importmulti "requests" ( "options" )_
 
 Import addresses/scripts (with private or public keys, redeem script (P2SH)), rescanning all addresses in one-shot-only (rescan can be disabled via options). Requires a new wallet backup.
 
@@ -14,15 +15,22 @@ raptoreum-cli importmulti '[{ "scriptPubKey": { "address": "<my address>" }, "ti
 raptoreum-cli importmulti '[{ "scriptPubKey": { "address": "<my address>" }, "timestamp":1455191478 }]' '{ "rescan": false}'
 ```
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/importmulti.webm').default}`, type: 'video/webm'}]} />
+<ReactPlayer
+  playing
+  controls
+  url={[
+    {
+      src: `${require('./assets/importmulti.webm').default}`,
+      type: 'video/webm',
+    },
+  ]}
+/>
 
 ## Arguments
 
 | Argument | Type | Description |
-|--|--|--|
-| ... | ... | ... |
-
+| -------- | ---- | ----------- |
+| ...      | ...  | ...         |
 
 ```bash
 Arguments:
@@ -54,8 +62,8 @@ Arguments:
 ## Output
 
 | Result | Type | Description |
-|--|--|--|
-| ... | ... | ... |
+| ------ | ---- | ----------- |
+| ...    | ...  | ...         |
 
 ```bash
 # Response is an array with the same size as the input that has the execution result :
@@ -69,4 +77,3 @@ Arguments:
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "importelectrumwallet", "params": ["test.csv"] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "importelectrumwallet", "params": ["test.json"] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```
-

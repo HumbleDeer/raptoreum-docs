@@ -1,40 +1,47 @@
 ---
 sidebar_position: 5
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # dumphdinfo
 
-*dumphdinfo*
+_dumphdinfo_
 
 Returns an object containing sensitive private info about this HD wallet.
 
 `raptoreum-cli dumphdinfo`
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/dumphdinfo.webm').default}`, type: 'video/webm'}]} />
+<ReactPlayer
+  playing
+  controls
+  url={[
+    {
+      src: `${require('./assets/dumphdinfo.webm').default}`,
+      type: 'video/webm',
+    },
+  ]}
+/>
 
 ## Output
 
-| Result | Type | Description |
-|--|--|--|
-| "hdseed" | (string) | The HD seed (bip32, in hex) |
-| "mnemonic" | (string) | The mnemonic for this HD wallet (bip39, english  |
+| Result               | Type     | Description                                        |
+| -------------------- | -------- | -------------------------------------------------- |
+| "hdseed"             | (string) | The HD seed (bip32, in hex)                        |
+| "mnemonic"           | (string) | The mnemonic for this HD wallet (bip39, english    |
 | "mnemonicpassphrase" | (string) | The mnemonic passphrase for this HD wallet (bip39) |
 
 ```bash
 Result:
 {
   "hdseed": "seed",                    (string) The HD seed (bip32, in hex)
-  "mnemonic": "words",                 (string) The mnemonic for this HD wallet (bip39, english words) 
+  "mnemonic": "words",                 (string) The mnemonic for this HD wallet (bip39, english words)
   "mnemonicpassphrase": "passphrase",  (string) The mnemonic passphrase for this HD wallet (bip39)
 }
 ```
-
 
 ## Examples
 
 ```bash
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "dumphdinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```
-

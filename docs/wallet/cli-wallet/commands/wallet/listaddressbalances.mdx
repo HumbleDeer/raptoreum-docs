@@ -1,27 +1,36 @@
 ---
 sidebar_position: 30
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # listaddressbalances
 
-*listaddressbalances ( minamount )*
+_listaddressbalances ( minamount )_
 
 Lists addresses of this wallet and their balances
 
 ```bash
-raptoreum-cli listaddressbalances 
+raptoreum-cli listaddressbalances
 raptoreum-cli listaddressbalances 10
 ```
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/listaddressbalances.webm').default}`, type: 'video/webm'}]} />
+<ReactPlayer
+  playing
+  controls
+  url={[
+    {
+      src: `${require('./assets/listaddressbalances.webm').default}`,
+      type: 'video/webm',
+    },
+  ]}
+/>
 
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
-| minamount | (numeric) | Minimum balance in RTM an address should have to be shown in the list  |
+| Argument  | Type      | Description                                                           |
+| --------- | --------- | --------------------------------------------------------------------- |
+| minamount | (numeric) | Minimum balance in RTM an address should have to be shown in the list |
 
 ```bash
 Arguments:
@@ -30,8 +39,8 @@ Arguments:
 
 ## Output
 
-| Result | Type | Description |
-|--|--|--|
+| Result    | Type     | Description                                 |
+| --------- | -------- | ------------------------------------------- |
 | "address" | (string) | The raptoreum address and the amount in RTM |
 
 ```bash
@@ -48,4 +57,3 @@ Result:
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listaddressbalances", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listaddressbalances", "params": [10] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```
-

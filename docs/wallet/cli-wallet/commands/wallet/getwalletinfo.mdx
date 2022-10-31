@@ -1,23 +1,32 @@
 ---
 sidebar_position: 19
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # getwalletinfo
 
-*getwalletinfo*
+_getwalletinfo_
 
 Returns an object containing various wallet state info.
 
 `raptoreum-cli getwalletinfo `
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/getwalletinfo.webm').default}`, type: 'video/webm'}]} />
+<ReactPlayer
+  playing
+  controls
+  url={[
+    {
+      src: `${require('./assets/getwalletinfo.webm').default}`,
+      type: 'video/webm',
+    },
+  ]}
+/>
 
 ## Output
 
-| Result | Type | Description |
-|--|--|--|
+| Result       | Type     | Description     |
+| ------------ | -------- | --------------- |
 | "walletname" | (string) | the wallet name |
 
 ```bash

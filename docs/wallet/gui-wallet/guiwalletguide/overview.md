@@ -4,11 +4,11 @@ sidebar_position: 4
 
 # Overview
 
-![Syncing Bar](./assets/overview.png)
+![Syncing Bar](/img/wallets/gui/overview.png)
 
 ## Balances
 
-`Available`:  Total of All Mature Inputs
+`Available`: Total of All Mature Inputs
 
 `Pending`: Pending TX totals
 

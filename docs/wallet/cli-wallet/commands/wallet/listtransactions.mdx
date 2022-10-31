@@ -1,33 +1,42 @@
 ---
 sidebar_position: 36
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # listtransactions
 
-*listtransactions ( "account" count skip include_watchonly)*
+_listtransactions ( "account" count skip include_watchonly)_
 
 Returns up to 'count' most recent transactions skipping the first 'from' transactions for account 'account'.
 
 ```bash
 # List the most recent 10 transactions in the systems
-raptoreum-cli listtransactions 
+raptoreum-cli listtransactions
 
 # List transactions 100 to 120
 raptoreum-cli listtransactions "*" 20 100
 ```
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/listtransactions.webm').default}`, type: 'video/webm'}]} />
+<ReactPlayer
+  playing
+  controls
+  url={[
+    {
+      src: `${require('./assets/listtransactions.webm').default}`,
+      type: 'video/webm',
+    },
+  ]}
+/>
 
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
-| "account" | (string) | DEPRECATED. The account name. Should be "*". |
-| count | (numeric) | The number of transactions to return |
-| skip | (numeric) | The number of transactions to skip |
-| include_watchonly | (bool) | Include balances in watch-only addresses (see 'importaddress') |
+| Argument          | Type      | Description                                                    |
+| ----------------- | --------- | -------------------------------------------------------------- |
+| "account"         | (string)  | DEPRECATED. The account name. Should be "\*".                  |
+| count             | (numeric) | The number of transactions to return                           |
+| skip              | (numeric) | The number of transactions to skip                             |
+| include_watchonly | (bool)    | Include balances in watch-only addresses (see 'importaddress') |
 
 ```bash
 Arguments:
@@ -39,30 +48,30 @@ Arguments:
 
 ## Output
 
-| Result | Type | Description |
-|--|--|--|
+| Result    | Type     | Description                                                                                          |
+| --------- | -------- | ---------------------------------------------------------------------------------------------------- |
 | "account" | (string) | DEPRECATED. The account name associated with the transaction. It will be "" for the default account. |
 
 ```bash
 Result:
 [
   {
-    "account":"accountname",  (string) DEPRECATED. The account name associated with the transaction. 
+    "account":"accountname",  (string) DEPRECATED. The account name associated with the transaction.
                                                 It will be "" for the default account.
-    "address":"address",    (string) The raptoreum address of the transaction. Not present for 
+    "address":"address",    (string) The raptoreum address of the transaction. Not present for
                                                 move transactions (category = move).
     "category":"send|receive|move", (string) The transaction category. 'move' is a local (off blockchain)
                                                 transaction between accounts, and not associated with an address,
-                                                transaction id or block. 'send' and 'receive' transactions are 
+                                                transaction id or block. 'send' and 'receive' transactions are
                                                 associated with an address, transaction id and block details
     "amount": x.xxx,          (numeric) The amount in RTM. This is negative for the 'send' category, and for the
                                          'move' category for moves outbound. It is positive for the 'receive' category,
                                          and for the 'move' category for inbound funds.
     "label": "label",       (string) A comment for the address/transaction, if any
     "vout": n,                (numeric) the vout value
-    "fee": x.xxx,             (numeric) The amount of the fee in RTM. This is negative and only available for the 
+    "fee": x.xxx,             (numeric) The amount of the fee in RTM. This is negative and only available for the
                                          'send' category of transactions.
-    "confirmations": n,       (numeric) The number of blockchain confirmations for the transaction. Available for 'send' and 
+    "confirmations": n,       (numeric) The number of blockchain confirmations for the transaction. Available for 'send' and
                                          'receive' category of transactions. Negative confirmations indicate the
                                          transation conflicts with the block chain
     "instantlock" : true|false, (bool) Current transaction lock state. Available for 'send' and 'receive' category of transactions.
@@ -76,13 +85,13 @@ Result:
     "blocktime": xxx,         (numeric) The block time in seconds since epoch (1 Jan 1970 GMT).
     "txid": "transactionid",  (string) The transaction id. Available for 'send' and 'receive' category of transactions.
     "time": xxx,              (numeric) The transaction time in seconds since epoch (midnight Jan 1 1970 GMT).
-    "timereceived": xxx,      (numeric) The time received in seconds since epoch (midnight Jan 1 1970 GMT). Available 
+    "timereceived": xxx,      (numeric) The time received in seconds since epoch (midnight Jan 1 1970 GMT). Available
                                           for 'send' and 'receive' category of transactions.
     "comment": "...",         (string) If a comment is associated with the transaction.
-    "otheraccount": "accountname",  (string) DEPRECATED. For the 'move' category of transactions, the account the funds came 
+    "otheraccount": "accountname",  (string) DEPRECATED. For the 'move' category of transactions, the account the funds came
                                           from (for receiving funds, positive amounts), or went to (for sending funds,
                                           negative amounts).
-    "abandoned": xxx          (bool) 'true' if the transaction has been abandoned (inputs are respendable). Only available for the 
+    "abandoned": xxx          (bool) 'true' if the transaction has been abandoned (inputs are respendable). Only available for the
                                          'send' category of transactions.
   }
 ]
@@ -93,4 +102,3 @@ Result:
 ```bash
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "listtransactions", "params": ["*", 20, 100] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```
-

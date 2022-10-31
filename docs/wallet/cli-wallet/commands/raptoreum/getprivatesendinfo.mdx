@@ -1,24 +1,33 @@
 ---
 sidebar_position: 3
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # getprivatesendinfo
 
-*getprivatesendinfo*
+_getprivatesendinfo_
 
 Returns an object containing an information about PrivateSend settings and state.
 
 `raptoreum-cli getprivatesendinfo `
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/getprivatesendinfo.webm').default}`, type: 'video/webm'}]} />
+<ReactPlayer
+  playing
+  controls
+  url={[
+    {
+      src: `${require('./assets/getprivatesendinfo.webm').default}`,
+      type: 'video/webm',
+    },
+  ]}
+/>
 
 ## Output
 
 | Result | Type | Description |
-|--|--|--|
-| ... | ... | ... |
+| ------ | ---- | ----------- |
+| ...    | ...  | ...         |
 
 ```bash
 Result (for regular nodes):
@@ -56,10 +65,8 @@ Result (for smartnodes):
 }
 ```
 
-
 ## Examples
 
 ```bash
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getprivatesendinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```
-

@@ -1,26 +1,34 @@
 ---
 sidebar_position: 1
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # combinerawtransaction
 
-*combinerawtransaction ["hexstring",...]*
+_combinerawtransaction ["hexstring",...]_
 
 Combine multiple partially signed transactions into one transaction.
-The combined transaction may be another partially signed transaction or a 
+The combined transaction may be another partially signed transaction or a
 fully signed transaction.
 
 `raptoreum-cli combinerawtransaction '["myhex1", "myhex2", "myhex3"]'`
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/combinerawtransaction.webm').default}`, type: 'video/webm'}]} />
-
+<ReactPlayer
+  playing
+  controls
+  url={[
+    {
+      src: `${require('./assets/combinerawtransaction.webm').default}`,
+      type: 'video/webm',
+    },
+  ]}
+/>
 
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
+| Argument  | Type     | Description                     |
+| --------- | -------- | ------------------------------- |
 | "address" | (string) | The base58check encoded address |
 
 ```bash
@@ -34,8 +42,8 @@ Arguments:
 
 ## Output
 
-| Argument | Type | Description |
-|--|--|--|
+| Argument    | Type     | Description                                       |
+| ----------- | -------- | ------------------------------------------------- |
 | "hexstring" | (string) | The hex-encoded raw transaction with signature(s) |
 
 ```bash
@@ -43,10 +51,8 @@ Result:
 "hex"            (string) The hex-encoded raw transaction with signature(s)
 ```
 
-
 ## Examples
 
 ```bash
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "combinerawtransaction", "params": ["hex1", "hex2"] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```
-

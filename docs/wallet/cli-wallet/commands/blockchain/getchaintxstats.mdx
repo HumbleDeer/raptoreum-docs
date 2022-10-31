@@ -1,26 +1,34 @@
 ---
 sidebar_position: 11
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # getchaintxstats
 
-*getchaintxstats ( nblocks blockhash )*
+_getchaintxstats ( nblocks blockhash )_
 
 Compute statistics about the total number and rate of transactions in the chain.
 
 `raptoreum-cli getchaintxstats `
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/getchaintxstats.webm').default}`, type: 'video/webm'}]} />
-
+<ReactPlayer
+  playing
+  controls
+  url={[
+    {
+      src: `${require('./assets/getchaintxstats.webm').default}`,
+      type: 'video/webm',
+    },
+  ]}
+/>
 
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
-| nblocks | (numeric) | Size of the window in number of blocks (default: one month). |
-| "blockhash" | (string) | The hash of the block that ends the window. |
+| Argument    | Type      | Description                                                  |
+| ----------- | --------- | ------------------------------------------------------------ |
+| nblocks     | (numeric) | Size of the window in number of blocks (default: one month). |
+| "blockhash" | (string)  | The hash of the block that ends the window.                  |
 
 ```bash
 Arguments:
@@ -30,11 +38,11 @@ Arguments:
 
 ## Output
 
-| Result | Type | Description |
-|--|--|--|
-| "time" | (numeric) | The timestamp for the statistics in UNIX format. |
+| Result    | Type      | Description                                                     |
+| --------- | --------- | --------------------------------------------------------------- |
+| "time"    | (numeric) | The timestamp for the statistics in UNIX format.                |
 | "txcount" | (numeric) | The total number of transactions in the chain up to that point. |
-| "txrate" | (numeric) | The average rate of transactions per second in the window. |
+| "txrate"  | (numeric) | The average rate of transactions per second in the window.      |
 
 ```bash
 Result:
@@ -44,7 +52,6 @@ Result:
   "txrate": x.xx,       (numeric) The average rate of transactions per second in the window.
 }
 ```
-
 
 ## Examples
 

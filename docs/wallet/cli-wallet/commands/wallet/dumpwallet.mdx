@@ -1,11 +1,12 @@
 ---
 sidebar_position: 7
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # dumpwallet
 
-*dumpwallet "filename"*
+_dumpwallet "filename"_
 
 Dumps all wallet keys in a human-readable format to a server-side file. This does not allow overwriting existing files.
 Imported scripts are not currently included in wallet dumps, these must be backed up separately.
@@ -14,15 +15,22 @@ only backing up the seed itself, and must be backed up too (e.g. ensure you back
 
 `raptoreum-cli dumpwallet "test"`
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/dumpwallet.webm').default}`, type: 'video/webm'}]} />
-
+<ReactPlayer
+  playing
+  controls
+  url={[
+    {
+      src: `${require('./assets/dumpwallet.webm').default}`,
+      type: 'video/webm',
+    },
+  ]}
+/>
 
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
-| "filename" | (string) | The filename  |
+| Argument   | Type     | Description  |
+| ---------- | -------- | ------------ |
+| "filename" | (string) | The filename |
 
 ```bash
 Arguments:
@@ -32,8 +40,8 @@ Arguments:
 ## Output
 
 | Result | Type | Description |
-|--|--|--|
-| ... | ... | ... |
+| ------ | ---- | ----------- |
+| ...    | ...  | ...         |
 
 ```bash
 Result:
@@ -42,10 +50,8 @@ Result:
 }
 ```
 
-
 ## Examples
 
 ```bash
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "dumpwallet", "params": ["test"] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```
-

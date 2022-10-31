@@ -1,35 +1,41 @@
 ---
 sidebar_position: 5
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # getconnectioncount
 
-*getconnectioncount*
+_getconnectioncount_
 
 Returns the number of connections to other nodes.
 
 `raptoreum-cli getconnectioncount `
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/getconnectioncount.webm').default}`, type: 'video/webm'}]} />
-
+<ReactPlayer
+  playing
+  controls
+  url={[
+    {
+      src: `${require('./assets/getconnectioncount.webm').default}`,
+      type: 'video/webm',
+    },
+  ]}
+/>
 
 ## Output
 
-| Result | Type | Description |
-|--|--|--|
-| n | (number) | The connection count |
+| Result | Type     | Description          |
+| ------ | -------- | -------------------- |
+| n      | (number) | The connection count |
 
 ```bash
 Result:
 n          (numeric) The connection count
 ```
 
-
 ## Examples
 
 ```bash
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getconnectioncount", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```
-

@@ -1,11 +1,12 @@
 ---
 sidebar_position: 2
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # protx
 
-*protx "command" ...*
+_protx "command" ..._
 
 Set of commands to execute ProTx related actions.
 To get help on individual commands, use "help protx command".
@@ -25,14 +26,18 @@ To get help on individual commands, use "help protx command".
   diff              - Calculate a diff and a proof between two smartnode lists
 ```
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/protx.webm').default}`, type: 'video/webm'}]} />
-
+<ReactPlayer
+  playing
+  controls
+  url={[
+    { src: `${require('./assets/protx.webm').default}`, type: 'video/webm' },
+  ]}
+/>
 
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
+| Argument  | Type     | Description            |
+| --------- | -------- | ---------------------- |
 | "command" | (string) | The command to execute |
 
 ```bash
@@ -43,8 +48,8 @@ Arguments:
 ## Output
 
 | Result | Type | Description |
-|--|--|--|
-| ... | ... | ... |
+| ------ | ---- | ----------- |
+| ...    | ...  | ...         |
 
 ```bash
 Result:

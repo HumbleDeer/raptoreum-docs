@@ -4,7 +4,7 @@ sidebar_position: 5
 
 # Send
 
-![Send Window](./assets/send.png)
+![Send Window](/img/wallets/gui/send.png)
 
 1. RTM Address you are sending to.
 2. (Optional) A text label to attach to the address you are sending to.

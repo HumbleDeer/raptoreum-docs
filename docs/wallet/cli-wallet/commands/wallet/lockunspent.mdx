@@ -1,11 +1,12 @@
 ---
 sidebar_position: 38
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # lockunspent
 
-*lockunspent unlock ([{"txid":"txid","vout":n},...])*
+_lockunspent unlock ([{"txid":"txid","vout":n},...])_
 
 Updates list of temporarily unspendable outputs.
 Temporarily lock (unlock=false) or unlock (unlock=true) specified transaction outputs.
@@ -17,27 +18,35 @@ Also see the listunspent call
 
 ```bash
 # List the unspent transactions
-raptoreum-cli listunspent 
+raptoreum-cli listunspent
 
 # Lock an unspent transaction
 raptoreum-cli lockunspent false "[{\"txid\":\"a08e6907dbbd3d809776dbfc5d82e371b764ed838b5655e72f463568df1aadf0\",\"vout\":1}]"
 
 # List the locked transactions
-raptoreum-cli listlockunspent 
+raptoreum-cli listlockunspent
 
 # Unlock the transaction again
 raptoreum-cli lockunspent true "[{\"txid\":\"a08e6907dbbd3d809776dbfc5d82e371b764ed838b5655e72f463568df1aadf0\",\"vout\":1}]"
 ```
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/listlockunspent.webm').default}`, type: 'video/webm'}]} />
+<ReactPlayer
+  playing
+  controls
+  url={[
+    {
+      src: `${require('./assets/listlockunspent.webm').default}`,
+      type: 'video/webm',
+    },
+  ]}
+/>
 
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
-| unlock | (boolean) | The number of transactions to return |
-| "transactions" | (object) | A json array of objects. Each object the txid (string) vout |
+| Argument       | Type      | Description                                                 |
+| -------------- | --------- | ----------------------------------------------------------- |
+| unlock         | (boolean) | The number of transactions to return                        |
+| "transactions" | (object)  | A json array of objects. Each object the txid (string) vout |
 
 ```bash
 Arguments:
@@ -54,9 +63,9 @@ Arguments:
 
 ## Output
 
-| Result | Type | Description |
-|--|--|--|
-| true|false | (boolean) | Whether the command was successful or not |
+| Result | Type  | Description |
+| ------ | ----- | ----------- | ----------------------------------------- |
+| true   | false | (boolean)   | Whether the command was successful or not |
 
 ```bash
 Result:
@@ -68,4 +77,3 @@ true|false    (boolean) Whether the command was successful or not
 ```bash
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "lockunspent", "params": [false, "[{\"txid\":\"a08e6907dbbd3d809776dbfc5d82e371b764ed838b5655e72f463568df1aadf0\",\"vout\":1}]"] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```
-

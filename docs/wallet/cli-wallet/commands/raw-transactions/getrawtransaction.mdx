@@ -1,11 +1,12 @@
 ---
 sidebar_position: 6
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # getrawtransaction
 
-*getrawtransaction "txid" ( verbose )*
+_getrawtransaction "txid" ( verbose )_
 
 NOTE: By default this function only works for mempool transactions. If the -txindex option is
 enabled, it also works for blockchain transactions.
@@ -21,18 +22,31 @@ raptoreum-cli getrawtransaction "mytxid"
 raptoreum-cli getrawtransaction "mytxid" true
 ```
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/sendrawtransaction.webm').default}`, type: 'video/webm'}]} />
+<ReactPlayer
+  playing
+  controls
+  url={[
+    {
+      src: `${require('./assets/sendrawtransaction.webm').default}`,
+      type: 'video/webm',
+    },
+  ]}
+/>
 
 <sub>Video Guide - credit @rocket</sub>
-<ReactPlayer playing controls url='https://www.youtube.com/watch?v=Yd---pu4oTg' muted={true} playing={false} />
-
+<ReactPlayer
+  playing
+  controls
+  url="https://www.youtube.com/watch?v=Yd---pu4oTg"
+  muted={true}
+  playing={false}
+/>
 
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
-| "txid" | (string) | The transaction id |
+| Argument | Type     | Description        |
+| -------- | -------- | ------------------ |
+| "txid"   | (string) | The transaction id |
 
 ```bash
 Arguments:
@@ -42,8 +56,8 @@ Arguments:
 
 ## Output
 
-| Result | Type | Description |
-|--|--|--|
+| Result | Type     | Description                                 |
+| ------ | -------- | ------------------------------------------- |
 | "data" | (string) | The serialized, hex-encoded data for 'txid' |
 
 ```bash
@@ -59,7 +73,7 @@ Result (if verbose is set to true):
   "vin" : [               (array of json objects)
      {
        "txid": "id",    (string) The transaction id
-       "vout": n,         (numeric) 
+       "vout": n,         (numeric)
        "scriptSig": {     (json object) The script
          "asm": "asm",  (string) asm
          "hex": "hex"   (string) hex
@@ -104,4 +118,3 @@ Result (if verbose is set to true):
 ```bash
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getrawtransaction", "params": ["mytxid", true] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```
-

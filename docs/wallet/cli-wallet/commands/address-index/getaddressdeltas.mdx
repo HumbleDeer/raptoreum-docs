@@ -1,7 +1,8 @@
 ---
 sidebar_position: 2
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # getaddressdeltas
 
@@ -9,17 +10,24 @@ Get balance of specific address
 
 `raptoreum-cli getaddressdeltas '{"addresses": ["XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg"]}'`
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/getaddressdeltas.webm').default}`, type: 'video/webm'}]} />
-
+<ReactPlayer
+  playing
+  controls
+  url={[
+    {
+      src: `${require('./assets/getaddressdeltas.webm').default}`,
+      type: 'video/webm',
+    },
+  ]}
+/>
 
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
+| Argument    | Type     | Description                              |
+| ----------- | -------- | ---------------------------------------- |
 | "addresses" | (string) | (string) The base58check encoded address |
-| "start" | (number) | The start block height |
-| "end" | (number) | The end block height |
+| "start"     | (number) | The start block height                   |
+| "end"       | (number) | The end block height                     |
 
 ```bash
 Arguments:
@@ -36,14 +44,14 @@ Arguments:
 
 ## Output
 
-| Result | Type | Description |
-|--|--|--|
-| "satoshis" | (number) | The current balance in duffs |
-| "txid" | (string) | The related txid |
-| "index" | (number) | The related input or output index |
-| "blockindex" | (number) | The related block index |
-| "height" | (number) | The block height |
-| "address" | (string) | The base58check encoded address |
+| Result       | Type     | Description                       |
+| ------------ | -------- | --------------------------------- |
+| "satoshis"   | (number) | The current balance in duffs      |
+| "txid"       | (string) | The related txid                  |
+| "index"      | (number) | The related input or output index |
+| "blockindex" | (number) | The related block index           |
+| "height"     | (number) | The block height                  |
+| "address"    | (string) | The base58check encoded address   |
 
 ```bash
 Result:
@@ -59,10 +67,8 @@ Result:
 ]
 ```
 
-
 ## Examples
 
 ```bash
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getaddressdeltas", "params": [{"addresses": ["XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg"]}] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```
-

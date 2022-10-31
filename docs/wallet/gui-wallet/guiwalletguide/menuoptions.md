@@ -6,7 +6,7 @@ sidebar_position: 8
 
 ## File Menu
 
-![File Menu](./assets/menufile.png)
+![File Menu](/img/wallets/gui/menu/menufile.png)
 
 1. Open URI → Load a Payment Requestby URI
 2. Backup Wallet → Create a Backup Wallet.dat
@@ -18,7 +18,7 @@ sidebar_position: 8
 
 ## Settings Menu
 
-![Settings Menu](./assets/menusettings.png)
+![Settings Menu](/img/wallets/gui/menu/menusettings.png)
 
 1. Encrypt Wallet → Encrypts the Wallet with Password
 2. Change Passphrase → Allows Changing the Password
@@ -27,7 +27,7 @@ sidebar_position: 8
 
 ## Tools Menu
 
-![Tools Menu](./assets/menutools.png)
+![Tools Menu](/img/wallets/gui/menu/menutools.png)
 
 1. Information → Wallet & NetworkInfo
 2. Debug Console → Allows Direct CommandInputs
@@ -39,7 +39,7 @@ sidebar_position: 8
 
 ## Help Menu
 
-![Help Menu](./assets/menuhelp.png)
+![Help Menu](/img/wallets/gui/menu/menuhelp.png)
 
 1. Command-line Options → List of Debug Console Commands
 2. PrivateSend Information → Explains how PrivateSend Works

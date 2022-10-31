@@ -1,11 +1,12 @@
 ---
 sidebar_position: 20
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # importaddress
 
-*importaddress "address" ( "label" rescan p2sh )*
+_importaddress "address" ( "label" rescan p2sh )_
 
 Adds a script (in hex) or address that can be watched as if it were in your wallet but cannot be used to spend. Requires a new wallet backup.
 
@@ -23,18 +24,25 @@ raptoreum-cli importaddress "myscript"
 raptoreum-cli importaddress "myscript" "testing" false
 ```
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/importaddress.webm').default}`, type: 'video/webm'}]} />
+<ReactPlayer
+  playing
+  controls
+  url={[
+    {
+      src: `${require('./assets/importaddress.webm').default}`,
+      type: 'video/webm',
+    },
+  ]}
+/>
 
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
-| "script" | (string) | The hex-encoded script (or address)  |
-| "label" | (bool) | An optional label |
-| rescan | (bool) | Rescan the wallet for transactions |
-| p2sh | (bool) | Add the P2SH version of the script as well |
-
+| Argument | Type     | Description                                |
+| -------- | -------- | ------------------------------------------ |
+| "script" | (string) | The hex-encoded script (or address)        |
+| "label"  | (bool)   | An optional label                          |
+| rescan   | (bool)   | Rescan the wallet for transactions         |
+| p2sh     | (bool)   | Add the P2SH version of the script as well |
 
 ```bash
 Arguments:
@@ -47,8 +55,8 @@ Arguments:
 ## Output
 
 | Result | Type | Description |
-|--|--|--|
-| ... | ... | ... |
+| ------ | ---- | ----------- |
+| ...    | ...  | ...         |
 
 ```bash
 Result:
@@ -62,4 +70,3 @@ Result:
 ```bash
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "importaddress", "params": ["myscript", "testing", false] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```
-

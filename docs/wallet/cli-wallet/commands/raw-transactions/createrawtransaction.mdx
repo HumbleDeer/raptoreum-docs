@@ -1,11 +1,12 @@
 ---
 sidebar_position: 2
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # createrawtransaction
 
-*createrawtransaction [{"txid":"id","vout":n},...] {"address":amount,"data":"hex",...} ( locktime )*
+_createrawtransaction [{"txid":"id","vout":n},...] {"address":amount,"data":"hex",...} ( locktime )_
 
 Create a transaction spending the given inputs and creating new outputs.
 Outputs can be addresses or data.
@@ -18,16 +19,30 @@ raptoreum-cli createrawtransaction "[{\"txid\":\"myid\",\"vout\":0}]" "{\"addres
 raptoreum-cli createrawtransaction "[{\"txid\":\"myid\",\"vout\":0}]" "{\"data\":\"00010203\"}"
 ```
 
-<ReactPlayer playing controls url={[
-    {src: `${require('./assets/createrawtransaction.webm').default}`, type: 'video/webm'}]} />
+<ReactPlayer
+  playing
+  controls
+  url={[
+    {
+      src: `${require('./assets/createrawtransaction.webm').default}`,
+      type: 'video/webm',
+    },
+  ]}
+/>
 
 <sub>Video Guide - credit @rocket</sub>
-<ReactPlayer playing controls url='https://www.youtube.com/watch?v=Yd---pu4oTg' muted={true} playing={false} />
+<ReactPlayer
+  playing
+  controls
+  url="https://www.youtube.com/watch?v=Yd---pu4oTg"
+  muted={true}
+  playing={false}
+/>
 
 ## Arguments
 
-| Argument | Type | Description |
-|--|--|--|
+| Argument  | Type     | Description                     |
+| --------- | -------- | ------------------------------- |
 | "address" | (string) | The base58check encoded address |
 
 ```bash
@@ -38,7 +53,7 @@ Arguments:
          "txid":"id",    (string, required) The transaction id
          "vout":n,         (numeric, required) The output number
          "sequence":n      (numeric, optional) The sequence number
-       } 
+       }
        ,...
      ]
 2. "outputs"               (object, required) a json object with outputs
@@ -52,15 +67,14 @@ Arguments:
 
 ## Output
 
-| Result | Type | Description |
-|--|--|--|
-| "transaction"   | (string) | hex string of the transaction |
+| Result        | Type     | Description                   |
+| ------------- | -------- | ----------------------------- |
+| "transaction" | (string) | hex string of the transaction |
 
 ```bash
 Result:
 "transaction"              (string) hex string of the transaction
 ```
-
 
 ## Examples
 
@@ -68,4 +82,3 @@ Result:
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "createrawtransaction", "params": ["[{\"txid\":\"myid\",\"vout\":0}]", "{\"address\":0.01}"] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "createrawtransaction", "params": ["[{\"txid\":\"myid\",\"vout\":0}]", "{\"data\":\"00010203\"}"] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/
 ```
-
