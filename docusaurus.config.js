@@ -11,19 +11,22 @@ const lightCodeTheme = require('prism-react-renderer/themes/github');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Raptoreum Docs',
+  title: 'Raptoreum Documentation',
   tagline: 'Documentation surrounding Raptoreum',
   url: 'https://docs.raptoreum.com',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'Raptor3um', // Usually your GitHub org/user name.
+  staticDirectories: ['static'],
+
+  onBrokenLinks: 'warn',
+  onBrokenMarkdownLinks: 'warn',
+
   projectName: 'docs', // Usually your repo name.
-  i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
-  },
+  organizationName: 'Raptor3um', // Usually your GitHub org/user name.
+  // i18n: {
+  //   defaultLocale: 'en',
+  //   locales: ['en'],
+  // },
   presets: [
     [
       '@docusaurus/preset-classic',
@@ -41,6 +44,7 @@ const config = {
     ],
   ],
   plugins: [
+    require.resolve('docusaurus-plugin-image-zoom'),
     require.resolve('docusaurus-lunr-search'),
     // @ts-ignore
     function customPlugin(context, options) {
@@ -72,91 +76,113 @@ const config = {
   ],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
-      colorMode: {
-        defaultMode: 'dark',
-        disableSwitch: false,
-        respectPrefersColorScheme: true,
-      },
-      navbar: {
-        title: 'Raptoreum Docs',
-        logo: {
-          alt: 'Raptoreum',
-          src: 'img/raptoreum_logo.png',
+    (
+      {
+        image: 'img/raptoreum_logo.png',
+        colorMode: {
+          defaultMode: 'dark',
+          disableSwitch: true,
+          respectPrefersColorScheme: false,
         },
-        items: [
-          // {
-          //   type: 'doc',
-          //   docId: 'wallet/intro',
-          //   position: 'left',
-          //   label: 'Wallet',
-          // },
-          // {
-          //   type: 'localeDropdown',
-          //   position: 'right',
-          // },
-          // {
-          //   href: 'https://github.com/Raptor3um/raptoreum',
-          //   label: 'GitHub',
-          //   position: 'right',
-          // },
-        ],
-      },
-      footer: {
-        style: 'dark',
-        links: [
-          {
-            title: 'Links',
-            items: [
-              {
-                label: 'Homepage',
-                to: 'https://www.raptoreum.com',
-              },
-            ],
+        navbar: {
+          title: 'Raptoreum Docs',
+          logo: {
+            alt: 'Raptoreum',
+            src: 'img/raptoreum_logo.png',
           },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Discord',
-                href: 'https://discord.gg/raptoreum',
-              },
-              {
-                label: 'Telegram',
-                href: 'https://t.me/raptoreum',
-              },
-              {
-                label: 'Reddit',
-                href: 'https://www.reddit.com/r/raptoreum/',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/raptoreum',
-              },
-            ],
-          },
-          {
-            title: 'GitHub',
-            items: [
-              {
-                label: 'RaptoreumCore',
-                href: 'https://github.com/Raptor3um/raptoreum',
-              },
-              {
-                label: 'Raptoreum Docs',
-                href: 'https://github.com/Raptor3um/docs',
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} Raptoreum team`,
+          items: [
+            // {
+            //   type: 'doc',
+            //   docId: 'wallet/intro',
+            //   position: 'left',
+            //   label: 'Wallet',
+            // },
+            {
+              type: 'doc',
+              docId: 'faq',
+              position: 'left',
+              label: 'FAQ',
+            },
+            {
+              type: 'localeDropdown',
+              position: 'right',
+            },
+            // {
+            //   href: 'https://github.com/Raptor3um/raptoreum',
+            //   label: 'GitHub',
+            //   position: 'right',
+            // },
+          ],
+        },
+        footer: {
+          style: 'dark',
+          links: [
+            {
+              title: 'Links',
+              items: [
+                {
+                  label: 'Homepage',
+                  to: 'https://www.raptoreum.com',
+                },
+              ],
+            },
+            {
+              title: 'Community',
+              items: [
+                {
+                  label: 'Discord',
+                  href: 'https://discord.gg/raptoreum',
+                },
+                {
+                  label: 'Telegram',
+                  href: 'https://t.me/raptoreum',
+                },
+                {
+                  label: 'Reddit',
+                  href: 'https://www.reddit.com/r/raptoreum/',
+                },
+                {
+                  label: 'Twitter',
+                  href: 'https://twitter.com/raptoreum',
+                },
+                {
+                  label: 'YouTube',
+                  href: 'https://www.youtube.com/channel/UCfFNoa8d5b0Jt8dfwy0eG7g',
+                },
+              ],
+            },
+            {
+              title: 'GitHub',
+              items: [
+                {
+                  label: 'RaptoreumCore',
+                  href: 'https://github.com/Raptor3um/raptoreum',
+                },
+                {
+                  label: 'Raptoreum Docs',
+                  href: 'https://github.com/Raptor3um/docs',
+                },
+              ],
+            },
+          ],
+          copyright: `Copyright © ${new Date().getFullYear()} Raptoreum team`,
 
-      },
-      prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
-      },
-    }),
+        },
+        prism: {
+          theme: lightCodeTheme,
+          darkTheme: darkCodeTheme,
+        },
+        zoom: {
+          selector: '.markdown :not(em) > img',
+          background: {
+            light: 'rgb(255, 255, 255)',
+            dark: 'rgb(50, 50, 50)'
+          },
+          // options you can specify via https://github.com/francoischalifour/medium-zoom#usage
+          config: {}
+        }
+      }
+    ),
 };
 
 module.exports = config;

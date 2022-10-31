@@ -4,7 +4,6 @@ FROM node:16
 # Create application directory
 WORKDIR /usr/src/app
 
-# Install app dependencies
 # Copy both package & package-lock / yarn-lock
 COPY package*.json ./
 COPY yarn*.lock ./
@@ -12,14 +11,14 @@ COPY yarn*.lock ./
 # Install dependencies
 RUN yarn install
 
-# Bundle application source
+# Bundle application source (cache layers)
 COPY . ./
 
 # Runs on 3000
 EXPOSE 3000
 
-# Build app
+# Docusaurus Build 
 RUN yarn build
 
-# Serve
+# Docusaurus serve
 CMD [ "yarn", "serve" ]

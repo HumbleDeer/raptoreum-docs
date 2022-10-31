@@ -2,6 +2,11 @@
 /node_modules
 node_modules
 
+# Package manager cache/files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
 # Production
 /build
 
@@ -15,10 +20,5 @@ node_modules
 .env.development.local
 .env.test.local
 .env.production.local
-
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-node_modules
 
 cross-compile-rtm-miner.zip
