@@ -1,5 +1,5 @@
-# Using Node 16
-FROM node:16
+# Using Node 18
+FROM node:18
 
 # Create application directory
 WORKDIR /usr/src/app
