@@ -135,7 +135,7 @@ const config = {
                 },
                 {
                   label: 'Telegram',
-                  href: 'https://t.me/raptoreum',
+                  href: 'https://t.me/raptoreumm',
                 },
                 {
                   label: 'Reddit',
