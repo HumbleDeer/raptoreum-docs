@@ -35,7 +35,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/Raptor3um/docs',
+          editUrl: 'https://github.com/Raptor3um/docs/tree/develop/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -135,7 +135,7 @@ const config = {
                 },
                 {
                   label: 'Telegram',
-                  href: 'https://t.me/raptoreum',
+                  href: 'https://t.me/raptoreumm',
                 },
                 {
                   label: 'Reddit',
