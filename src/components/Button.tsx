@@ -88,7 +88,7 @@ const Button = (props: any) => {
           }`}
         />
       );
-      buttonURL = '/docs/smartnodes/intro/';
+      buttonURL = '/docs/smartnodes/';
       description = 'Learn about Smartnodes, creation & maintenance.';
       break;
     case 'papers':
