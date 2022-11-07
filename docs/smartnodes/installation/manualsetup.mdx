@@ -1,13 +1,10 @@
 ---
-sidebar_position: 4
+sidebar_position: 2
 ---
-import ReactPlayer from 'react-player'
+
+import ReactPlayer from 'react-player';
 
 # Manual Setup
-
-## Video Guide
-
-<ReactPlayer playing controls url='https://www.youtube.com/watch?v=55ot-iT2GFc' muted={true} playing={false} className="padding-bottom--md"/>
 
 :::note
 
@@ -19,7 +16,7 @@ sudo su
 
 :::
 
-## Procedures
+## Guide
 
 ### 1. Update Server
 
@@ -27,6 +24,7 @@ sudo su
 apt update && apt upgrade -y
 apt install unzip fail2ban -y
 ```
+
 <sub>Unzip is required to unpack the bootstrap.</sub>
 
 ### 2. Add 4GB of SWAP
@@ -60,7 +58,10 @@ echo vm.swappiness = 10 | tee -a /etc/sysctl.conf
 ```
 
 <div class="alert alert--info" role="alert">
-  <sub>Note: <code>swappiness = 10</code> tells system only to use it if absolutely needed.</sub>
+  <sub>
+    Note: <code>swappiness = 10</code> tells system only to use it if absolutely
+    needed.
+  </sub>
 </div>
 
 ### 3. Enable UFW & Open Ports
@@ -142,12 +143,7 @@ This part of the guide is to get your local wallet or control wallet setup. If y
 
 ### 1. Install and Sync Local Wallet:
 
-:::info
-
-Grab latest Raptoreum wallet at `https://raptoreum.com/latest`
-
-:::
-
+*For this step, you will need the RaptoreumCore wallet installed. Follow our [Installing RaptoreumCore](/docs/wallet/) guide for detailed instructions on how to do this.*
 
 Create new directory:
 
@@ -183,14 +179,13 @@ dumpprivkey "address" (address is the receiving address you sent the 1 million R
 - Send 1 million RTM to self (this is current collateral amount)
 - Wait for 2 confirmations
 
-:::note 
+:::note
 
 The private key only allows you to restore the matching receiving address. If you setup multiple nodes you should dump the private key for each collateral receiving address.
 
 :::
 
-
-### 2. Build protx command for control wallet
+### 2. Build protx command for control wallet {#build-protx}
 
 Here is an example protx quick_setup command:
 
@@ -200,16 +195,27 @@ protx quick_setup "c4bbcde9771668fa640c263d4b964f688b0f039f7b684e715d92e4012369f
 
 The structure from left to right is:
 
-- <code>Transaction ID</code>: In your wallet go to "Transactions" right click the one you sent yourself earlier and "Copy Transaction ID". Replace the Transaction ID in example.
-- <code>Collateral index</code>: Tools > Debug console. Type smartnode outputs to check if 1 or 0. Adjust example command if needed.
-- <code>Your smartnode server IP and port</code>. Replace example IP with your Smartnode server IP, leave port as is.
-- <code>Fee address</code>: This is any address in your wallet which contains enough RTM to pay the fee (cannot be the address which you sent the 1 million RTM to). When you enter the protx quick_setup command it is a transaction and needs to be paid for. It is a very small amount 1/2 an RTM is more than enough. In Debug console do "listaddressbalances" to show all addresses with a balance, choose one and replace address in example command.
+- <code>Transaction ID</code>: In your wallet go to "Transactions" right click
+  the one you sent yourself earlier and "Copy Transaction ID". Replace the
+  Transaction ID in example.
+- <code>Collateral index</code>: Tools > Debug console. Type smartnode outputs
+  to check if 1 or 0. Adjust example command if needed.
+- <code>Your smartnode server IP and port</code>. Replace example IP with your
+  Smartnode server IP, leave port as is.
+- <code>Fee address</code>: This is any address in your wallet which contains
+  enough RTM to pay the fee (cannot be the address which you sent the 1 million
+  RTM to). When you enter the protx quick_setup command it is a transaction and
+  needs to be paid for. It is a very small amount 1/2 an RTM is more than
+  enough. In Debug console do "listaddressbalances" to show all addresses with a
+  balance, choose one and replace address in example command.
 
 :::info
 
 Enter the protx quick_setup command in Debug console. This will create a .conf file for that node in the same directory you ran the wallet from. Open it and copy the contents. <u>[See this part in the video guide.](https://youtu.be/55ot-iT2GFc?t=1196)</u>
 
 :::
+
+## Final steps
 
 Back to the smartnode server:
 
@@ -220,20 +226,24 @@ nano ~/.raptoreumcore/raptoreum.conf
 
 Paste in what you copied from the .conf file made during the protx command, save and exit.
 
-Start raptoreumd:
+When done with this, run raptoreumd from the terminal:
 
 ```bash
 ~/./raptoreumd
 ```
 
-Wait two minues and do:
+When this is done, wait a couple minutes until running `~/./raptoreum-cli smartnode status` to check the status of your smartnode. This should return: `Ready Ready`
 
-```bash
-~/./raptoreum-cli smartnode status
-```
-This should return: <code>Ready Ready</code>
+:::success Success!
+Your Smartnode should now be running!
+:::
 
+## Video guides
 
-<div class="alert alert--success" role="alert">
-  <b>Your Smartnode should now be running!</b>
-</div>
+<ReactPlayer
+  playing
+  controls
+  url="https://www.youtube.com/watch?v=55ot-iT2GFc"
+  playing={false}
+/>
+<sub>Video Guide - credit @dk808</sub>
