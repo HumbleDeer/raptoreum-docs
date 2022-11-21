@@ -1,8 +1,5 @@
----
-sidebar_position: 6
----
 
-# HD Wallet
+# Use HD Wallet
 
 Enabling Hierarchical Deterministic (HD) Raptoreum Wallet
 
@@ -11,7 +8,7 @@ Enabling Hierarchical Deterministic (HD) Raptoreum Wallet
 Enter the following command from the command line. This will start a raptoreum wallet with a randomly generated HD wallet seed and no mnemonic passphrase:
 
 ```bash
-raptoreum-qt.exe --usehd=1
+./raptoreum-qt --usehd=1
 ```
 
 After the wallet starts it will warn you that you need to encrypt your wallet after verifying that it works. Open the wallet debug console from Tools -> Debug Console and type the command to see your randomly generated 24-word mnemonic seed phrase as well as your seed in hexadecimal:
@@ -23,7 +20,7 @@ dumphdinfo
 To restore an HD wallet you will need this 24-word seed phrase. You can restore a lost wallet, or create a new wallet with a custom separately generated 24-word mnemonic and passphrase, by running the following command from your command line. Make sure no existing wallet.dat file exists in the wallets data directory:
 
 ```bash
-raptoreum-qt.exe --usehd=1 --mnemonic="YOUR 24-WORD SEED PHRASE" --mnemonicpassphrase="OPTIONAL PASSPHRASE"
+./raptoreum-qt --usehd=1 --mnemonic="YOUR 24-WORD SEED PHRASE" --mnemonicpassphrase="OPTIONAL PASSPHRASE"
 ```
 
 The HD wallet will be restored and your private keys regenerated and your balance will appear after the blockchain sync has finished.
