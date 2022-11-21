@@ -1,69 +1,97 @@
 ---
 sidebar_position: 1
 ---
-import ReactPlayer from 'react-player'
-import ReleaseWidget from '../../../src/components/ReleaseWidget';
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 # Quick Start
 
-Get started quickly with the Raptoreum Wallet GUI.
+Get started quickly with the RaptoreumCore Wallet.
 
-<!-- <ReactPlayer playing controls url={[
-    {src: `${require('./assets/placeholder.webm').default}`, type: 'video/webm'}]} /> -->
+## Usage
 
-## Installation
-
-<Tabs>
-  <TabItem value="windows" label="Windows" default>
-    <ReleaseWidget releaseType="windows" />
-  </TabItem>
-  <TabItem value="mac" label="Mac" default>
-      <ReleaseWidget releaseType="mac" />
-  </TabItem>
-  <TabItem value="unixlinux" label="Unix / Linux">
-    <ReleaseWidget releaseType="ubuntu" />  
-  </TabItem>
-</Tabs>
-
-## Setup
-
-### Installer
-
-- Run the Installer (.exe, .dmg)
-- Follow the steps
-- Run Raptoreum Core
-- Allow Daemon to Sync (Use the [bootstrap](/docs/wallet/bootstrap))
-
-### Windows Binaries
-
-- Extract the zip
-- Use the following per use case:
-  
-  - `raptoreumd` - Raptoreum Daemon
-  - `raptoreum-qt` - Raptoreum Wallet GUI
-  - `raptoreum-cli` - Raptoreum Wallet CLI
-  - `raptoreum-tx` - Raptoreum Tx Utility
-
-- Run Daemon and `raptoreum-qt` for Wallet GUI
-- Allow Daemon to Sync (Use the [bootstrap](/docs/wallet/bootstrap))
-
-### Unix / Linux Binaries
-
-1. Download release for Ubuntu 18 or 20:
-2. Extract contents:
-
-    ```bash
-    tar xzvf raptoreum_1.2.15.3_ubuntu20_64.tar.gz
-    ```
-
-3. Use the following per use case:
+### Binaries
 
    - `raptoreumd` - Raptoreum Daemon
    - `raptoreum-qt` - Raptoreum Wallet GUI
    - `raptoreum-cli` - Raptoreum Wallet CLI
    - `raptoreum-tx` - Raptoreum Tx Utility
 
-4. Run Daemon and `raptoreum-qt` for Wallet GUI
+### The basics
+
+- Generating a new wallet address
+
+### Transactions
+
+- How to make a transaction
+- How to receive a transaction
+
+- How to verify a transaction
+- Transaction confirmation on the blockchain
+- Masternodes & transaction security
+
+### Special features
+
+- Private Sending (PrivateSend/CoinJoin)
+- Futures
+- Assets (Coming soon!)
+
+## Setup
+
+<Tabs>
+  <TabItem value="windows" label="Windows" default>
+    <p>Installer <a href="" class=button button--primary></a></p>
+    <p>Binaries <a href="" class=button button--primary></a></p>
+  </TabItem>
+  <TabItem value="mac" label="Mac" default>
+    <p>Installer <a href="" class=button button--primary></a></p>
+    <p>Binaries <a href="" class=button button--primary></a></p>
+  </TabItem>
+  <TabItem value="linux" label="Linux">
+    <p>Binaries <a href="" class=button button--primary></a></p>
+  </TabItem>
+</Tabs>
+
+### Installer
+
+1. Download the latest release [here][#setup) or on [GitHub][wallet-gh]
+2. Run the installer (.exe or .dmg) and follow the steps
+3. Run the RaptoreumCore Daemon (raptoreumd)
+4. Open the wallet
+    - **CLI**
+      Run raptoreum-cli.exe from the command line to use
+    - **GUI**
+      Run raptoreum-qt.exe to open 
 5. Allow Daemon to Sync (Use the [bootstrap](/docs/wallet/bootstrap))
+
+### Windows Binaries
+
+1. Download the latest release [here][#setup) or on [GitHub][wallet-gh]
+2. Extract the zip file to your desired location
+3. Run the RaptoreumCore Daemon (raptoreumd)
+4. Open the wallet
+    - **CLI**
+      Run raptoreum-cli.exe from the command line to use
+    - **GUI**
+      Run raptoreum-qt.exe to open 
+5. Allow Daemon to Sync (Use the [bootstrap](/docs/wallet/bootstrap))
+
+### Unix / Linux Binaries
+
+1. Download the latest release [here][#setup) or on [GitHub][wallet-gh]
+2. Extract contents (replace asterisks if necessary):
+
+    ```bash
+    tar xzvf raptoreum_*_ubuntu*_64.tar.gz
+    ```
+
+3. Run the RaptoreumCore Daemon (raptoreumd)
+4. Open the wallet
+    - **CLI**
+      Run raptoreum-cli.exe from the command line to use
+    - **GUI**
+      Run raptoreum-qt.exe to open 
+5. Allow Daemon to Sync (Use the [bootstrap](/docs/wallet/bootstrap))
+
+[wallet-gh]: https://github.com/Raptor3um/raptoreum/releases/latest/
