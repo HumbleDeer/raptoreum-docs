@@ -1,3 +1,4 @@
 {
-  "svg.preview.background": "black"
+  "npm.packageManager": "yarn",
+  "eslint.packageManager": "yarn"
 }
