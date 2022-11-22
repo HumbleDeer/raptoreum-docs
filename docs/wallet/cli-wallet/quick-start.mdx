@@ -2,7 +2,6 @@
 sidebar_position: 1
 ---
 
-import ReactPlayer from 'react-player';
 import ReleaseWidget from '../../../src/components/ReleaseWidget';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -11,25 +10,17 @@ import TabItem from '@theme/TabItem';
 
 Get started quickly with the Raptoreum Wallet CLI.
 
-<ReactPlayer
-  playing
-  controls
-  url={[
-    {
-      src: `${require('./assets/cli-wallet.webm').default}`,
-      type: 'video/webm',
-    },
-  ]}
-/>
-
 ## Installation
 
 <Tabs>
   <TabItem value="windows" label="Windows" default>
-    <ReleaseWidget releaseType="windows-cli" />
+    <ReleaseWidget releaseType="windows" />
+  </TabItem>
+  <TabItem value="mac" label="Mac" default>
+      <ReleaseWidget releaseType="mac" />
   </TabItem>
   <TabItem value="unixlinux" label="Unix / Linux">
-    <ReleaseWidget releaseType="ubuntu" />
+    <ReleaseWidget releaseType="ubuntu" />  
   </TabItem>
 </Tabs>
 
