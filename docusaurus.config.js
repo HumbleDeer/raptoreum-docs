@@ -62,6 +62,10 @@ const config = {
                 {
                   test: /\.pdf$/,
                   use: ['file-loader'],
+                },
+                {
+                  test: /\.node$/,
+                  use: ['node-loader'],
                 }
               ],
             },
@@ -77,7 +81,8 @@ const config = {
         image: 'img/raptoreum_logo.png',
         colorMode: {
           defaultMode: 'dark',
-          disableSwitch: true
+          disableSwitch: true,
+          respectPrefersColorScheme: false,
         },
         navbar: {
           title: 'Raptoreum Docs',
