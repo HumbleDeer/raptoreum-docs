@@ -9,7 +9,7 @@ import { motion } from 'framer-motion';
 import styles from './index.module.css';
 import Button from '../components/Button';
 
-import HomepageFeatures from '../components/HomepageFeatures';
+// import HomepageFeatures from '../components/HomepageFeatures';
 import RaptoreumLogo from '../components/RaptoreumLogo';
 import RaptoreumTextLogo from '../components/RaptoreumTextLogo';
 
@@ -109,7 +109,7 @@ export default function Home(): JSX.Element {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="Site description <head />"
+      description="Site description"
     >
       <main>
         <HomepageHeader />
