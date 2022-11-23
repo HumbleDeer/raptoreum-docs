@@ -75,3 +75,9 @@ html[data-theme='dark'] {
 /* .welcome_sidebar {
   background: rgb(223, 117, 20);
 } */
+
+@media (min-width: 997px){
+  :root {
+    --docusaurus-announcement-bar-height: 50px;
+}
+}

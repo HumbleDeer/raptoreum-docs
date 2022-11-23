@@ -1,0 +1,32 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "build",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "docusaurus: build",
+			"detail": "Generate static files in /build"
+		},
+		{
+			"type": "npm",
+			"script": "start",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [],
+			"label": "docusaurus: start",
+			"detail": "Start a development server for the current/default locale. Only builds Client files."
+		},
+		{
+			"type": "npm",
+			"script": "serve",
+			"group": "test",
+			"problemMatcher": [],
+			"label": "docusaurus: serve",
+			"detail": "Serve the current /build on an internal server at http://localhost:3000"
+		}
+	]
+}

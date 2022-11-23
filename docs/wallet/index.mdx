@@ -1,50 +1,77 @@
 ---
 sidebar_position: 1
+title: Introduction
 ---
 
-import Link from '@docusaurus/Link';
+import Link from '@docusaurus/Link'
 
-# Intro
+# RaptoreumCore
 
-<div class="container">
-  <div class="row">
-    <div class="col col--4">
-      <div class="card-demo">
-        <div class="card">
-          <div class="card__header">
-            <h3>Official Wallet</h3>
-          </div>
-          <div class="card__body">
-            <p>Explore the Raptoreum Core wallet</p>
-          </div>
-          <div class="card__footer">
-            <Link to="/docs/wallet/gui-wallet/quick-start">
-              <button class="button button--primary button--block">
-                GUI Wallet 🪙
-              </button>
-            </Link>
-          </div>
-        </div>
+## Binaries
+
+- `raptoreumd` - Raptoreum Daemon
+- `raptoreum-qt` - Raptoreum Wallet GUI
+- `raptoreum-cli` - Raptoreum Wallet CLI
+- `raptoreum-tx` - Raptoreum Tx Utility
+
+## Guides
+
+<div class="row">
+  <div class="col">
+    <div class="card">
+      <div class="card__header">
+        <h2>Official Wallet</h2>
+      </div>
+      <div class="card__body">
+        <p>Explore the Raptoreum Core wallet</p>
+      </div>
+      <div class="card__footer">
+        <Link
+          to="/docs/wallet/gui-wallet/getting-started"
+          className="button button--primary button--block"
+        >
+          GUI Wallet »
+        </Link>
       </div>
     </div>
-    <div class="col col--4">
-      <div class="card-demo">
-        <div class="card">
-          <div class="card__header">
-            <h3>CLI Wallet</h3>
-          </div>
-          <div class="card__body">
-            <p>Explore the terminal-based wallet.</p>
-          </div>
-          <div class="card__footer">
-            <Link to="/docs/wallet/cli-wallet/quick-start">
-              <button class="button button--primary button--block">
-                CLI Wallet 🪙
-              </button>
-            </Link>
-          </div>
-        </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <div class="card__header">
+        <h2>CLI Wallet</h2>
+      </div>
+      <div class="card__body">
+        <p>Explore the terminal-based wallet.</p>
+      </div>
+      <div class="card__footer">
+        <Link
+          to="/docs/wallet/cli-wallet/getting-started"
+          className="button button--primary button--block"
+        >
+          CLI Wallet »
+        </Link>
       </div>
     </div>
   </div>
 </div>
+
+## Learn More
+
+### The basics
+
+- Generating a new wallet address
+
+### Transactions
+
+- How to make a transaction
+- How to receive a transaction
+
+- How to verify a transaction
+- Transaction confirmation on the blockchain
+- Masternodes & transaction security
+
+### Special features
+
+- Private Sending (PrivateSend/CoinJoin)
+- Futures
+- Assets (Coming soon!)

@@ -1,20 +1,29 @@
-# Dependencies
+### Dependencies ###
 /node_modules
 node_modules
+node_modules/*
 
-# Package manager cache/files
+### Package manager cache/files ###
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Production
-/build
+### Production ###
+build/*
+# Use git-add -f to update files in .github folder
+.github
+.github/*
 
-# Generated files
+### Generated files ###
 .docusaurus
+.docusaurus/*
 .cache-loader
+.cache-loader/*
+# Use git-add -f to update files in .vscode folder
+.vscode
+.vscode/* 
 
-# Misc
+### Misc ###
 .DS_Store
 .env.local
 .env.development.local
