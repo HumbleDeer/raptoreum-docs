@@ -112,7 +112,7 @@ const config = {
           {
             label: 'More...',
             position: 'left',
-            to: 'docs/about-raptoreum/',
+            to: 'docs/raptoreum/',
           },
           {
             type: 'localeDropdown',

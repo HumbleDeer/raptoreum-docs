@@ -10,7 +10,7 @@ import {
   DocumentTextIcon,
   ChipIcon,
 } from '@heroicons/react/outline';
-import Layout from '@theme/Layout';
+// import Layout from '@theme/Layout';
 import { useColorMode } from '@docusaurus/theme-common';
 import styles from './Button.module.css';
 
@@ -48,7 +48,7 @@ const Button = (props: any) => {
           }`}
         />
       );
-      buttonURL = '/docs/mining/intro/';
+      buttonURL = '/docs/mining/';
       description = 'Topics around mining Raptoreum';
       break;
     case 'wallet':
@@ -60,7 +60,7 @@ const Button = (props: any) => {
           }`}
         />
       );
-      buttonURL = '/docs/wallet/intro/';
+      buttonURL = '/docs/wallet/';
       description = 'Find a wallet - Learn about the CLI Wallet';
       break;
     case 'network':
@@ -88,7 +88,7 @@ const Button = (props: any) => {
           }`}
         />
       );
-      buttonURL = '/docs/smartnodes/intro/';
+      buttonURL = '/docs/smartnodes/';
       description = 'Learn about Smartnodes, creation & maintenance.';
       break;
     case 'papers':
@@ -100,7 +100,7 @@ const Button = (props: any) => {
           }`}
         />
       );
-      buttonURL = '/docs/about-raptoreum/papers/raptoreumlightpaper';
+      buttonURL = '/docs/raptoreum/papers/raptoreumlightpaper';
       description = 'Read proposals and developmental plans';
       break;
     default:
