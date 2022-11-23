@@ -128,10 +128,10 @@ const config = {
       announcementBar: {
         id: 'new-wallet-release',
         content:
-          'Wallet <b>v1.3.7.01</b>: There is a new version of the wallet! Updating is required to keep your wallet functioning after the <a href="/docs/raptoreum/futures" >Futures</a> release!',
+          'Release <b>v1.3.17.01</b>: There is a new version of the wallet! Updating is required to keep your wallet functioning after the <a href="/docs/raptoreum/futures" >Futures</a> release!',
         backgroundColor: 'var(--ifm-color-danger)',
         textColor: 'var(--ifm-color-secondary)',
-        isCloseable: true,
+        isCloseable: false,
       },
       footer: {
         style: 'dark',

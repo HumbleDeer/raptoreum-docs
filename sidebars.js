@@ -70,6 +70,14 @@ const sidebars = {
     },
   ],
 
+  sidebarsliceSupport: [
+      {
+        type: "link",
+        label: "Discord",
+        href: "http://discord.gg/raptoreum",
+      }
+  ]
+
   // But you can create a sidebar manually
   /*
   tutorialSidebar: [
