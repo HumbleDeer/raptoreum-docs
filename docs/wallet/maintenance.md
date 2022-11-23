@@ -1,27 +1,12 @@
----
-sidebar_position: 6
----
 
 # Maintenance
 
-Raptoreumcore Maintenance
+Learn how to perform routine or special maintenance tasks on your RaptoreumCore wallet.   
+Regular maintenance is recommended for a proper functioning of your wallet.
 
-## Restoring from Backup
+## Restoring from backup
 
-:::note Info
-
-You should always have a recent encrypted wallet.dat backup saved in multiple locations as well as offline, such on a safely stored USB drive. One copy is no copies, two copies is one copy.
-
-:::
-
-:::info Reminder
-
-Each time your wallet closes it automatically makes a backup of your wallet.dat file in the backups directory inside your Raptoreumcore data directory. Data directory default locations are as follows:
-
-Windows: `%AppData%\RaptoreumCore`
-Unix: `~/.raptoreumcore`
-
-:::
+Each time your wallet closes, it automatically makes a backup of your wallet.dat file. These are automatically renamed by their date of creation, and copied to the `backups` folder in your *RaptoreumCore Data directory*.
 
 1. Stop the wallet, wait two minutes.
 2. Rename the current wallet.dat so it does not get overwritten, if you know for sure it is not used you can delete it.
@@ -29,6 +14,12 @@ Unix: `~/.raptoreumcore`
 4. Start your wallet, wait for it to rescan and fully resynchronize with the Raptoreum blockchain.
 
 To restore a Raptoreumcore wallet which is using HD mode with mnemonic phrase see below:
+
+:::note Info
+
+You should always have a recent encrypted wallet.dat backup saved in multiple locations as well as offline, such on a safely stored USB drive. One copy is no copies, two copies is one copy.
+
+:::
 
 ### Moving Wallet To Another PC
 
