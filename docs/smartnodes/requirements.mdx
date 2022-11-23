@@ -11,12 +11,13 @@ In both situations, it is recommended to host a Smartnode with a high-performanc
 ## Hardware
 
 ### Minimum specifications
-- 1 CPU core with [SMT](https://en.wikipedia.org/wiki/Simultaneous_multithreading) or [hyperthreading](https://www.intel.com/content/www/us/en/gaming/resources/hyper-threading.html)
-- 2GB of RAM
+
+- 1 CPU core with [SMT][SMT] or [hyperthreading][HT]
+- 2 GiB of RAM
 - 6 GiB of hard drive space
 - Fast Ethernet connection
 
-**For VPS:** SSH (Secure Shell) connection is required for remote adminsitration.
+**For VPS:** SSH (Secure Shell) connection is required for remote administration.
 
 **Processor:** At a minimum, we recommend an Intel Celeron or equivalently powerful processor.
 
@@ -24,11 +25,14 @@ In both situations, it is recommended to host a Smartnode with a high-performanc
 
 ### Recommended specifications
 
-x1
+- 2 CPU cores without [SMT][SMT] or [hyperthreading][HT]
+- 3 GiB of RAM
+- 20 GiB of hard drive space
+- 1GBase-T Ethernet connection
 
-SSD / NVME powered storage is also highly recommended.
+Using Solid State Drive powered storage (SATA or [NVMe][NVMe]) is highly recommended.
 
-:::warning
+:::warning Crypto on VPS
 
 Some VPS providers explicitly or implicitly ban use of cryptocurrency software
 
@@ -46,14 +50,6 @@ Some installation scripts use Aptitude for managing packages, and will thus not 
 
 **RaptoreumCore packages are built on top of Ubuntu 22.02 LTS and is hence supported by default.**
 
-### Basics
-
-These tools or packages are required or highly recommended for the basic installation of the Raptoreum Smartnode
-
-x2
-
-### Extras
-
-These tools or packages are optional, but make a lot of future steps easier to execute
-
-y2
+[SMT]: https://en.wikipedia.org/wiki/Simultaneous_multithreading
+[HT]: https://www.intel.com/content/www/us/en/gaming/resources/hyper-threading.html
+[NVMe]: https://en.wikipedia.org/wiki/NVM_Express
