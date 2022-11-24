@@ -12,15 +12,17 @@ const lightCodeTheme = require('prism-react-renderer/themes/github');
 const config = {
   title: 'Raptoreum Documentation',
   tagline: 'Documentation surrounding Raptoreum',
-  url: 'https://docs.raptoreum.com',
-  baseUrl: '/',
+  url: process.env.SITE_URL ? process.env.SITE_URL : 'https://docs.raptoreum.com',
+  baseUrl: process.env.BASE_URL ? process.env.BASE_URL : '/',
+  trailingSlash: true,
+
   favicon: 'img/favicon.ico',
   staticDirectories: ['static'],
 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
-  projectName: 'docs', // Usually your repo name.
+  projectName: 'raptoreum-docs', // Usually your repo name.
   organizationName: 'Raptor3um', // Usually your GitHub org/user name.
   i18n: {
     defaultLocale: 'en',
@@ -128,7 +130,7 @@ const config = {
       announcementBar: {
         id: 'new-wallet-release',
         content:
-          'Release <b>v1.3.17.01</b>: There is a new version of the wallet! Updating is required to keep your wallet functioning after the <a href="/docs/raptoreum/futures" >Futures</a> release!',
+          'Release <b>v1.3.17.01</b>: There is a new version of the wallet! Updating is required to keep your wallet functioning after the <a href="docs/raptoreum/futures" >Futures</a> release!',
         backgroundColor: 'var(--ifm-color-danger)',
         textColor: 'var(--ifm-color-secondary)',
         isCloseable: false,
