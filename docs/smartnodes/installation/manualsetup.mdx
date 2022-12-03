@@ -1,5 +1,6 @@
 ---
-sidebar_position: 2
+pagination_previous: smartnodes/requirements
+pagination_next: wallet/bootstrap
 ---
 
 import ReactPlayer from 'react-player';
@@ -115,15 +116,15 @@ Get Raptoreum wallet / daemon and bootstrap:
 ```bash
 mkdir -p rtm_latest
 cd rtm_latest
-wget https://github.com/Raptor3um/raptoreum/releases/download/1.2.15.3/raptoreum_1.2.15.3_ubuntu20_64.tar.gz
-tar -xvf raptoreum_1.2.15.3_ubuntu20_64.tar.gz
+wget https://github.com/Raptor3um/raptoreum/releases/download/1.3.17.01/raptoreum-ubuntu20-1.3.17.01.tar.gz
+tar -xvf raptoreum-ubuntu20-1.3.17.01.tar.gz
 cd ..
-wget https://github.com/Raptor3um/raptoreum/releases/download/1.2.15.3/bootstrap.zip
+wget https://bootstrap.raptoreum.com/bootstraps_for_v1.3.17.00/bootstrap.zip
 unzip bootstrap.zip
 mkdir ~/.raptoreumcore && touch ~/.raptoreumcore/raptoreum.conf
 cp -R blocks chainstate evodb llmq ~/.raptoreumcore
 echo "daemon=1" >> ~/.raptoreumcore/raptoreum.conf
-~/rtm_latest/./raptoreumd
+~/rtm_latest/raptoreum-ubuntu20-1.3.17.01/./raptoreumd
 echo all done!
 ```
 
@@ -143,14 +144,11 @@ This part of the guide is to get your local wallet or control wallet setup. If y
 
 ### 1. Install and Sync Local Wallet:
 
-*For this step, you will need the RaptoreumCore wallet installed. Follow our [Installing RaptoreumCore](docs/wallet/) guide for detailed instructions on how to do this.*
+For this step, you will need the RaptoreumCore wallet installed. 
 
-Create new directory:
+Follow our [RaptoreumCore Wallet](docs/wallet/) guides for detailed instructions on how to do this.
 
-```bash
-Windows - %AppData%\RaptoreumCore
-Linux / MAC - ~/.raptoreumcore
-```
+To speed up the synchronization, use our POWCache or Bootstrap packages: [Using Powcache & Bootstrap](docs/wallet/bootstrap)
 
 Grab bootstrap from github release and unpack in the above directory (highly recommended as reduces sync time drastically)
 
