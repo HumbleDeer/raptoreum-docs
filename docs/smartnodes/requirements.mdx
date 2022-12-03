@@ -13,21 +13,23 @@ In both situations, it is recommended to host a Smartnode with a high-performanc
 ### Minimum specifications
 
 - 1 CPU core with [SMT][SMT] or [hyperthreading][HT]
-- 2 GiB of RAM
-- 6 GiB of hard drive space
+- 3 GiB of RAM
+- 15 GiB of hard drive space
+- 6 GiB of swap disk space
 - Fast Ethernet connection
 
 **For VPS:** SSH (Secure Shell) connection is required for remote administration.
 
 **Processor:** At a minimum, we recommend an Intel Celeron or equivalently powerful processor.
 
-**Storage:** The storage space required by a Smartnode increases over time. 6 GiB of storage space will only suffice for installing a Smartnode from scratch at the start.
+**Storage:** The storage space required by a Smartnode increases over time. 15 GiB of storage space will only suffice for installing a Smartnode from scratch at the start. For systems with a larger amount of RAM, a smaller swapdisk can be allocated.
 
 ### Recommended specifications
 
 - 2 CPU cores without [SMT][SMT] or [hyperthreading][HT]
-- 3 GiB of RAM
+- 4 GiB of RAM
 - 20 GiB of hard drive space
+- Appropriate swap disk space
 - 1GBase-T Ethernet connection
 
 Using Solid State Drive powered storage (SATA or [NVMe][NVMe]) is highly recommended.
@@ -44,6 +46,12 @@ Running a smartnode requires some software to be installed as well.
 
 ### Operating system
 
+Officially supported OS:
+- Ubuntu 20.04
+- ubuntu 22.04 
+
+Using any other OS may result in unexpected behavior and [PoSe][] bans. Installing dependencies VIA Aptitude is only needed if building Raptoreumcore from source, if using released binaries it should not be needed.
+
 Operating system requirements are fairly simple. 
 
 Some installation scripts use Aptitude for managing packages, and will thus not function without. Debian, Ubuntu, and related distributions of Debian are examples of distributions utilizing Aptitude.
@@ -53,3 +61,4 @@ Some installation scripts use Aptitude for managing packages, and will thus not 
 [SMT]: https://en.wikipedia.org/wiki/Simultaneous_multithreading
 [HT]: https://www.intel.com/content/www/us/en/gaming/resources/hyper-threading.html
 [NVMe]: https://en.wikipedia.org/wiki/NVM_Express
+[PoSe]: docs/smartnodes/troubleshooting/pose-ban
