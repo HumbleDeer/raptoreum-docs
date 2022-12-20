@@ -12,7 +12,9 @@ const lightCodeTheme = require('prism-react-renderer/themes/github');
 const config = {
   title: 'Raptoreum Documentation',
   tagline: 'Documentation surrounding Raptoreum',
-  url: process.env.SITE_URL ? process.env.SITE_URL : 'https://docs.raptoreum.com',
+  url: process.env.SITE_URL
+    ? process.env.SITE_URL
+    : 'https://docs.raptoreum.com',
   baseUrl: process.env.BASE_URL ? process.env.BASE_URL : '/',
   trailingSlash: true,
 
@@ -112,7 +114,7 @@ const config = {
             to: 'docs/mining/',
           },
           {
-            label: 'More...',
+            label: 'About RTM',
             position: 'left',
             to: 'docs/raptoreum/',
           },
