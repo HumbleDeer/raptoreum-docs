@@ -3,7 +3,7 @@
  * bundles Infima by default. Infima is a CSS framework designed to
  * work well for content-centric websites.
  */
- /* ./styles/globals.css */
+/* ./styles/globals.css */
 
 /* You can override the default Infima variables here. */
 :root {
@@ -15,6 +15,12 @@
   --ifm-color-primary-lighter: #09a8ef;
   --ifm-color-primary-lightest: #22b5f7;
   --ifm-code-font-size: 95%;
+
+  --rtm-color-main: red;
+}
+
+.color--rtm {
+  color: var(--rtm-color-main);
 }
 
 .docusaurus-highlight-code-line {
@@ -35,7 +41,7 @@ html[data-theme='dark'] {
   --ifm-color-primary-darkest: #066692;
   --ifm-color-primary-light: #09a1e5;
   --ifm-color-primary-lighter: #09a8ef;
-  --ifm-color-primary-lightest: #FFFFFF;
+  --ifm-color-primary-lightest: #ffffff;
   /* --ifm-color-primary-lightest: #22b5f7; */
 }
 
@@ -76,8 +82,16 @@ html[data-theme='dark'] {
   background: rgb(223, 117, 20);
 } */
 
-@media (min-width: 997px){
+@media (min-width: 997px) {
   :root {
     --docusaurus-announcement-bar-height: 50px;
+  }
 }
+
+.button--download::before {
+  content: '⇩ ';
+  font-size: 125%;
+  color: white;
+  font-weight: bolder;
+  vertical-align: baseline;
 }

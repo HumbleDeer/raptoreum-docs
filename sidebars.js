@@ -70,8 +70,8 @@ const sidebars = {
           items: [
             {
               label: 'Assets Whitepaper',
-              type: 'link',
-              href: '/pdf/RTM_Assets_Whitepaper.pdf',
+              type: 'doc',
+              id: 'raptoreum/papers/assets-whitepaper',
             },
             {
               label: 'GhostRider Whitepaper',

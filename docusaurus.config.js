@@ -16,10 +16,10 @@ const config = {
     ? process.env.SITE_URL
     : 'https://docs.raptoreum.com',
   baseUrl: process.env.BASE_URL ? process.env.BASE_URL : '/',
-  trailingSlash: true,
+  trailingSlash: false,
 
   favicon: 'img/favicon.ico',
-  staticDirectories: ['static'],
+  staticDirectories: ['static', 'public'],
 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
