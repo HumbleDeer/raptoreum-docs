@@ -63,22 +63,21 @@ const sidebars = {
       label: 'About RTM',
       collapsible: false,
       collapsed: false,
+      link: {
+        type: 'doc',
+        id: 'raptoreum/what-is-raptoreum',
+      },
       items: [
-        {
-          label: 'What is Raptoreum?',
-          type: 'doc',
-          id: 'raptoreum/what-is-raptoreum',
-        },
+
         {
           type: 'category',
           label: 'Whitepapers',
           link: {
             type: 'generated-index',
-            title: 'Docusaurus Guides',
-            description: 'Learn about the most important Docusaurus concepts!',
-            slug: '/category/docusaurus-guides',
-            keywords: ['guides'],
-            image: '/img/docusaurus.png',
+            title: 'Whitepapers',
+            description: 'Read the whitepapers & other legal documentation',
+            slug: 'whitepapers',
+            keywords: ['whitepaper'],
           },
           items: [
             {
@@ -99,12 +98,12 @@ const sidebars = {
             {
               label: 'RTM Contracts',
               type: 'link',
-              href: '/public/whitepapers/Raptoreum_Assets_Whitepaper.pdf',
+              href: '/public/whitepapers/Raptoreum_Contracts_Whitepaper_EN.pdf',
             },
             {
               label: 'Reward Structure',
               type: 'link',
-              href: '/public/whitepapers/Raptoreum_Assets_Whitepaper.pdf',
+              href: '/public/whitepapers/Raptoreum_Rewards_Structure_Whitepaper.pdf',
             },
           ],
         },
