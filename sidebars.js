@@ -65,9 +65,27 @@ const sidebars = {
       collapsed: false,
       items: [
         {
+          label: 'What is Raptoreum?',
+          type: 'doc',
+          id: 'raptoreum/what-is-raptoreum',
+        },
+        {
           type: 'category',
           label: 'Whitepapers',
+          link: {
+            type: 'generated-index',
+            title: 'Docusaurus Guides',
+            description: 'Learn about the most important Docusaurus concepts!',
+            slug: '/category/docusaurus-guides',
+            keywords: ['guides'],
+            image: '/img/docusaurus.png',
+          },
           items: [
+            {
+              label: 'Litepaper',
+              type: 'link',
+              href: '/public/whitepapers/Raptoreum_Litepaper.pdf',
+            },
             {
               label: 'RTM Assets',
               type: 'doc',
@@ -77,11 +95,6 @@ const sidebars = {
               label: 'GhostRider Algorithm',
               type: 'link',
               href: '/public/whitepapers/GhostRider_Whitepaper.pdf',
-            },
-            {
-              label: 'RTL Litepaper',
-              type: 'link',
-              href: '/public/whitepapers/Raptoreum_Litepaper.pdf',
             },
             {
               label: 'RTM Contracts',
@@ -104,7 +117,7 @@ const sidebars = {
           label: 'Exchanges',
           type: 'doc',
           id: 'raptoreum/exchanges',
-        },        
+        },
         {
           label: 'Shared nodes',
           type: 'doc',
