@@ -132,7 +132,7 @@ This document is not financial advice and it contains no financial advice. This 
 
 <a
   class="button button--sm button--primary button--download"
-  href="/public/whitepapers/assets-whitepaper.pdf"
+  href="/public/whitepapers/Raptoreum_Assets_Whitepaper.pdf"
   target="_parent"
   download
 >
