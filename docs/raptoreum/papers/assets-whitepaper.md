@@ -1,8 +1,14 @@
 ---
 id: assets-whitepaper
+# title: Assets whitepaper
+description: Raptoreum's uniquely scaleable Assets allow you to tokenize anything easily and securely through well-known programming languages and masternodes
+keywords: [assets, scaling, tokens, contracts, rtm, scalability, whitepaper]
+# image:./assets-whitepaper/xxxx.jpg
 ---
 
 # Asset transaction scalability & usability solutions
+
+<a class="button button--sm button--primary button--download" style={{margin: 0 + 0 + 0 + "auto"}} href="/public/whitepapers/Raptoreum_Assets_Whitepaper.pdf" target="_parent" download>Raptoreum_Assets_Whitepaper.pdf</a>
 
 ## Preface
 
@@ -129,12 +135,3 @@ This document is not financial advice and it contains no financial advice. This 
 [(2)]: https://blockchainhub.net/tokens/
 [(3)]: https://ethereum.org/en/developers/docs/standards/tokens/erc-20/
 [(4)]: https://blog.dash.org/mitigating-51-attacks-with-llmq-based-chainlocks-7266aa648ec
-
-<a
-  class="button button--sm button--primary button--download"
-  href="/public/whitepapers/Raptoreum_Assets_Whitepaper.pdf"
-  target="_parent"
-  download
->
-  Download Assets whitepaper
-</a>

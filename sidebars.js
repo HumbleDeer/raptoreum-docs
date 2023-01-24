@@ -82,28 +82,28 @@ const sidebars = {
           items: [
             {
               label: 'Litepaper',
-              type: 'link',
-              href: '/public/whitepapers/Raptoreum_Litepaper.pdf',
-            },
-            {
-              label: 'RTM Assets',
               type: 'doc',
-              id: 'raptoreum/papers/assets-whitepaper',
-            },
-            {
-              label: 'GhostRider Algorithm',
-              type: 'link',
-              href: '/public/whitepapers/GhostRider_Whitepaper.pdf',
-            },
-            {
-              label: 'RTM Contracts',
-              type: 'link',
-              href: '/public/whitepapers/Raptoreum_Contracts_Whitepaper_EN.pdf',
+              id: 'raptoreum/papers/litepaper',
             },
             {
               label: 'Reward Structure',
-              type: 'link',
-              href: '/public/whitepapers/Raptoreum_Rewards_Structure_Whitepaper.pdf',
+              type: 'doc',
+              id: 'raptoreum/papers/rewards-emissions',
+            },
+            {
+              label: 'Assets',
+              type: 'doc',
+              id: 'raptoreum/papers/assets-whitepaper',
+            },            
+            {
+              label: 'Smart Contracts',
+              type: 'doc',
+              id: 'raptoreum/papers/smart-contracts-whitepaper',
+            },            
+            {
+              label: 'GhostRider Algorithm',
+              type: 'doc',
+              id: 'raptoreum/papers/gr-whitepaper',
             },
           ],
         },
