@@ -48,7 +48,7 @@ const Button = (props: any) => {
           }`}
         />
       );
-      buttonURL = 'docs/mining/';
+      buttonURL = 'mining/';
       description = 'Topics around mining Raptoreum';
       break;
     case 'wallet':
@@ -60,7 +60,7 @@ const Button = (props: any) => {
           }`}
         />
       );
-      buttonURL = 'docs/wallet/';
+      buttonURL = 'wallet/';
       description = 'Find a wallet - Learn about the CLI Wallet';
       break;
     case 'network':
@@ -88,7 +88,7 @@ const Button = (props: any) => {
           }`}
         />
       );
-      buttonURL = 'docs/smartnodes/';
+      buttonURL = 'smartnodes/';
       description = 'Learn about Smartnodes, creation & maintenance.';
       break;
     case 'papers':
@@ -100,7 +100,7 @@ const Button = (props: any) => {
           }`}
         />
       );
-      buttonURL = 'docs/raptoreum/papers/raptoreumlightpaper';
+      buttonURL = 'raptoreum/papers/';
       description = 'Read proposals and developmental plans';
       break;
     default:

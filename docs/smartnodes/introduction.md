@@ -1,0 +1,16 @@
+---
+id: introduction
+description: Introduction to Raptoreuml Smartnodes
+---
+
+# What are Smartnodes?
+
+Smartnodes are responsible for storing and executing smart contracts. They function through the use of nodes handle contracts rather than adding the smart contracts directly to blocks. Using Smartnodes for storing and executing smartnodes greatly reduces the chances of scaling issues, like Ethereum has been experiencing.
+
+Raptoreum's Smartnodes benefit from a few key optimizations:
+
+- Improved scaling
+- Stronger security
+- Better resistance against 51% attacks
+- Larger smart contracts
+- Wider variety of languages used to create smart contracts

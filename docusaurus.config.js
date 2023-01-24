@@ -35,8 +35,13 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
+          path: 'docs',
+          routeBasePath: "/",
+          exclude: [
+            '**/developers/**',
+          ],
           // Please change this to your repo.
-          editUrl: 'https://github.com/Raptor3um/docs/tree/develop/',
+          editUrl: 'https://github.com/Raptor3um/raptoreum-docs/tree/develop/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -74,6 +79,16 @@ const config = {
         },
       };
     },
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'dev-docs',
+        path: 'docs/developers',
+        routeBasePath: '/developers',
+        sidebarPath: require.resolve('./sidebarDevelopers.js'),
+        // ... other options
+      },
+    ],
   ],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
@@ -99,22 +114,22 @@ const config = {
           {
             label: 'Wallet',
             position: 'left',
-            to: 'docs/wallet/',
+            to: 'wallet/',
           },
           {
             label: 'Smartnodes',
             position: 'left',
-            to: 'docs/smartnodes/',
+            to: 'smartnodes/',
           },
           {
             label: 'Mining',
             position: 'left',
-            to: 'docs/mining/',
+            to: 'mining/',
           },
           {
             label: 'More...',
             position: 'left',
-            to: 'docs/raptoreum/',
+            to: 'raptoreum/',
           },
           {
             type: 'localeDropdown',
