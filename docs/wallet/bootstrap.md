@@ -1,59 +1,53 @@
 ---
 sidebar_position: 4
-title: "Powcache & Bootstrap"
 ---
 
-# Using Powcache & Bootstrap
+# Bootstrapping Raptoreum Core
 
-The bootstrap data is provided to speed up syncing. Simply download the bootstrap data and extract to your Raptoreum data directory.
-Syncing without the bootstrap can take a significant amount of time.
+Bootstrap packages contain blocks of pre-verified blockchain data, and is provided to speed up the synchronization of the Raptoreum Core walet.
 
-## Download
+When the wallet synchronizes with the network from scratch, it is forced to recalculate all the block hashes sequentially. This is a very CPU intensive process. Hence, synchronizing without these bootstrapping packages can take a significant amount of time.
 
-<div>
-  <div className="container padding--sm">
-    <h2>v1.3.17.00 or up</h2>
-    <div className="row padding--sm">
-      <div className="col col--4">POW Cache</div>
-      <div className="col col--6">
-        <a
-          class="button button--primary"
-          href="https://bootstrap.raptoreum.com/powcaches/powcache.dat"
-          download
-        >
-          💾 POW Cache (.dat)
-        </a>
-      </div>
-    </div>
-    <div className="row padding--sm">
-      <div className="col col--4">Classic Bootstrap</div>
-      <div className="col col--6">
-        <a
-          class="button button--primary"
-          href="https://bootstrap.raptoreum.com/bootstraps_for_v1.3.17.00/bootstrap.tar.xz"
-          download
-        >
-          💾 Bootstrap without indexes (.tar.gz)
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
+A specific subset of the data in this bootstrap package, known as the POW cache, can be used to significantly speed up the process without requiring large files. The POW cache solves this issue by providing pre-calculated hashes for the blockchain files known as indexes.
 
-## Usage
+## POW cache
 
-Follow these steps:
+The POW cache method provides the best value, being very small while still decreasing synchronisation times significantly.
 
-- Delete folders and files:
+The POW cache method uses **one file** only: `powcache.dat`.
+
+## Full bootstrap
+
+The full bootstrap may be required in some situations. Use this when instructed or when the POW Cache method does not work.
+
+The full bootstrap package contains the following file and folders: `powcache.dat`, `blocks`, `chainstate`, `evodb`, `llmq`.
+
+# Download
+
+It's important to download the correct version of bootstrap package for your version of wallet. In most circumstances, you do not need the package that includes indexes.
+
+<button class="button--primary" href="https://bootstrap.raptoreum.com/">bootstrap.raptoreum.com</button>
+
+# Using the bootstraps
+
+1. Stop Raptoreum Core and/or the Raptoreum Core daemon
+2. Open your Raptoreum Core directory
+
+  - Unix/Linux: `~/.raptoreumcore`
+  - Windows: `%AppData%\RaptoreumCore`
+
+3. Create a copy of your `wallet.dat` file in a safe location
+4. Delete the following file and folders:
+
+  - powcache.dat
   - blocks
   - llmq
   - chainstate
   - evodb
-  - powcache.dat
-- Extract to the appropriate data directory:
-  - Unix/Linux: `~/.raptoreumcore`
-  - Windows: `%AppData%\RaptoreumCore`
-- Restart Raptoreum Daemon (raptoreumd) and wait for sync
+
+5. Extract the bootstrap package / POW cache file to your Raptoreum Core data directory
+6. Copy your `wallet.dat` file back in to your Raptoreum Core data directory. Keep a backup for safety.
+7. Restart Raptoreum Core and/or the Raptoreum Core daemon
 
 :::danger Wallet.dat
 Do not delete your wallet.dat file without having a backup! This file holds your access to your wallet data. Losing it can mean losing your funds!
